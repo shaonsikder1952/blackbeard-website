@@ -1,47 +1,77 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Chrome } from "lucide-react";
+import { ArrowRight, Chrome, Star } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 py-20">
-      {/* Background grid effect */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
+    <section className="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
+      {/* Enhanced background with subtle animation */}
+      <div className="absolute inset-0 grid-bg opacity-30" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,transparent_50%)]" />
       
-      <div className="relative max-w-4xl mx-auto text-center space-y-8">
-        {/* Hero headline */}
-        <div className="space-y-4">
-          <h1 className="hero-text leading-tight">
+      <div className="relative max-w-5xl mx-auto text-center space-y-12">
+        {/* Trust indicator - animated */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface/50 border border-border/50 backdrop-blur-sm animate-fade-in-up">
+          <div className="flex items-center gap-1">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+            ))}
+          </div>
+          <span className="text-sm text-foreground-muted">Trusted by 50k+ users</span>
+        </div>
+
+        {/* Hero headline with enhanced typography */}
+        <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          <h1 className="hero-text">
             Rewrite any text in your
             <br />
-            voice — instantly
+            <span className="relative">
+              voice — instantly
+              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-accent rounded-full animate-pulse-glow"></div>
+            </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-foreground-muted max-w-2xl mx-auto leading-relaxed">
+          <p className="hero-description max-w-3xl mx-auto">
             Blackbeard is an AI Chrome extension that rewrites text
-            to sound like you.
+            to sound like you. Perfect for Gmail, LinkedIn, Twitter, and anywhere you write.
           </p>
         </div>
 
-        {/* CTA Button */}
-        <div className="pt-4">
-          <Button variant="brand" size="lg" className="group">
-            <Chrome className="w-5 h-5 mr-2" />
+        {/* Enhanced CTA with better styling */}
+        <div className="pt-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <Button variant="brand" size="lg" className="group animate-pulse-glow">
+            <Chrome className="w-5 h-5 mr-3" />
             Install on Chrome
-            <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="w-5 h-5 ml-3 transition-transform group-hover:translate-x-1" />
           </Button>
+          
+          <p className="text-sm text-foreground-subtle mt-3">
+            Free to install • No signup required • 5 rewrites daily
+          </p>
         </div>
 
-        {/* Trust indicators */}
-        <div className="pt-8">
-          <p className="text-sm text-foreground-subtle mb-4">Trusted by thousands of users</p>
-          <div className="flex items-center justify-center space-x-8 opacity-60">
-            <div className="text-xs font-medium">5 rewrites/day</div>
-            <div className="w-1 h-1 bg-foreground-subtle rounded-full" />
-            <div className="text-xs font-medium">No signup required</div>
-            <div className="w-1 h-1 bg-foreground-subtle rounded-full" />
-            <div className="text-xs font-medium">Privacy focused</div>
+        {/* Enhanced trust indicators with better layout */}
+        <div className="pt-12 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
+            <div className="flex items-center gap-3">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium text-foreground-muted">Free tier available</span>
+            </div>
+            <div className="hidden sm:block w-px h-4 bg-border"></div>
+            <div className="flex items-center gap-3">
+              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+              <span className="text-sm font-medium text-foreground-muted">Works everywhere</span>
+            </div>
+            <div className="hidden sm:block w-px h-4 bg-border"></div>
+            <div className="flex items-center gap-3">
+              <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+              <span className="text-sm font-medium text-foreground-muted">Privacy focused</span>
+            </div>
           </div>
         </div>
+
+        {/* Subtle floating elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-brand-primary/10 rounded-full blur-xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-32 h-32 bg-brand-primary/5 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
     </section>
   );

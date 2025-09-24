@@ -62,10 +62,17 @@ export default {
           border: "hsl(var(--card-border))",
         },
       },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
       backgroundImage: {
         "gradient-hero": "var(--gradient-hero)",
         "gradient-card": "var(--gradient-card)",
         "gradient-accent": "var(--gradient-accent)",
+        "grid-pattern": "linear-gradient(to right, rgba(148, 163, 184, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(148, 163, 184, 0.1) 1px, transparent 1px)",
+      },
+      backgroundSize: {
+        "grid": "4rem 4rem",
       },
       boxShadow: {
         brand: "var(--shadow-brand)",
