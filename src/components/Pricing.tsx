@@ -71,21 +71,21 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="py-32 px-6 relative">
+    <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 relative">
       {/* Background decorations */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(59,130,246,0.05)_0%,transparent_50%)]" />
       
-      <div className="max-w-8xl mx-auto">
-        <div className="text-center mb-20 animate-fade-in-up">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16 sm:mb-20 animate-fade-in-up">
+          <h2 className="section-title">
             Simple Pricing
           </h2>
-          <p className="text-xl text-foreground-muted max-w-2xl mx-auto leading-relaxed">
+          <p className="section-description mx-auto">
             Choose the plan that works best for you. Upgrade or downgrade at any time.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
             <div 
               key={index}
@@ -96,38 +96,38 @@ const Pricing = () => {
             >
               {/* Badge for featured plan */}
               {plan.badge && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-brand-primary text-brand-primary-foreground px-4 py-2 text-sm font-semibold rounded-full flex items-center gap-2 shadow-brand">
-                    <Star className="w-4 h-4 fill-current" />
+                <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-brand-primary text-brand-primary-foreground px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold rounded-full flex items-center gap-1.5 sm:gap-2 shadow-brand">
+                    <Star className="w-3 h-3 sm:w-4 sm:h-4 fill-current" />
                     {plan.badge}
                   </div>
                 </div>
               )}
 
               {/* Plan header */}
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold mb-3 text-foreground">{plan.name}</h3>
-                <div className="mb-3">
+              <div className="text-center mb-6 sm:mb-8">
+                <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-foreground">{plan.name}</h3>
+                <div className="mb-2 sm:mb-3">
                   {plan.price ? (
                     <div className="flex items-baseline justify-center">
-                      <span className="text-5xl font-bold text-foreground">{plan.price}</span>
-                      <span className="text-foreground-muted ml-2 text-lg">{plan.period}</span>
+                      <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">{plan.price}</span>
+                      <span className="text-foreground-muted ml-1 sm:ml-2 text-sm sm:text-base lg:text-lg">{plan.period}</span>
                     </div>
                   ) : (
-                    <div className="text-5xl font-bold text-foreground">Free</div>
+                    <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">Free</div>
                   )}
                 </div>
-                <p className="text-foreground-muted">{plan.description}</p>
+                <p className="text-sm sm:text-base text-foreground-muted">{plan.description}</p>
               </div>
 
               {/* Features list */}
-              <ul className="space-y-4 mb-10">
+              <ul className="space-y-3 sm:space-y-4 mb-8 sm:mb-10">
                 {plan.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start group">
                     <div className="flex-shrink-0">
-                      <Check className="w-5 h-5 text-brand-primary mt-0.5 group-hover:scale-110 transition-transform duration-200" />
+                      <Check className="w-4 h-4 sm:w-5 sm:h-5 text-brand-primary mt-0.5 group-hover:scale-110 transition-transform duration-200" />
                     </div>
-                    <span className="text-foreground-muted ml-3 leading-relaxed">{feature}</span>
+                    <span className="text-sm sm:text-base text-foreground-muted ml-2 sm:ml-3 leading-relaxed">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -135,17 +135,17 @@ const Pricing = () => {
               {/* CTA Button */}
               <Button 
                 variant={plan.featured ? "brand" : "outline"} 
-                className="w-full group"
+                className="w-full group text-sm sm:text-base"
                 size="lg"
               >
                 {plan.cta}
-                {plan.featured && <Zap className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform duration-200" />}
+                {plan.featured && <Zap className="w-3 h-3 sm:w-4 sm:h-4 ml-1.5 sm:ml-2 group-hover:scale-110 transition-transform duration-200" />}
               </Button>
 
               {/* Special offer indicator for featured plan */}
               {plan.featured && (
-                <div className="mt-4 text-center">
-                  <p className="text-sm text-brand-primary font-medium">
+                <div className="mt-3 sm:mt-4 text-center">
+                  <p className="text-xs sm:text-sm text-brand-primary font-medium">
                     ✨ 14-day free trial included
                   </p>
                 </div>
@@ -155,8 +155,8 @@ const Pricing = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <p className="text-foreground-subtle">
+        <div className="text-center mt-12 sm:mt-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <p className="text-sm sm:text-base text-foreground-subtle">
             All plans include a 14-day free trial. No credit card required.
           </p>
         </div>

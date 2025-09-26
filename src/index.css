@@ -83,20 +83,43 @@
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 
-  /* Enhanced Typography */
+  /* Enhanced Typography - Balanced Sizing */
   .hero-text {
-    @apply text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[0.9];
+    @apply text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[0.95];
     background: linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--foreground-muted)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 800;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.02em;
   }
 
   .hero-description {
-    @apply text-lg sm:text-xl lg:text-2xl text-foreground-muted leading-relaxed;
+    @apply text-lg sm:text-xl lg:text-xl text-foreground-muted leading-relaxed;
     font-weight: 400;
+    line-height: 1.5;
+    max-width: 80ch;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6;
+    color: hsl(var(--foreground));
+    line-height: 1.1;
+  }
+
+  .section-description {
+    @apply text-lg sm:text-xl text-foreground-muted leading-relaxed;
+    max-width: 65ch;
+  }
+
+  .feature-title {
+    @apply text-xl sm:text-2xl font-semibold mb-3;
+    color: hsl(var(--foreground));
+    line-height: 1.2;
+  }
+
+  .feature-description {
+    @apply text-base sm:text-lg text-foreground-muted leading-relaxed;
     line-height: 1.6;
   }
 

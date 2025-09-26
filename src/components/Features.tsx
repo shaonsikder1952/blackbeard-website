@@ -23,21 +23,21 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-32 px-6 relative">
+    <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 relative">
       {/* Background decorations */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.05)_0%,transparent_50%)]" />
       
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20 animate-fade-in-up">
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16 sm:mb-20 animate-fade-in-up">
+          <h2 className="section-title">
             Why Blackbeard?
           </h2>
-          <p className="text-xl text-foreground-muted max-w-2xl mx-auto leading-relaxed">
+          <p className="section-description mx-auto">
             The smartest way to maintain your voice across all your communications
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
+        <div className="grid md:grid-cols-3 gap-8 sm:gap-12 lg:gap-16">
           {features.map((feature, index) => (
             <div 
               key={index}
@@ -47,19 +47,19 @@ const Features = () => {
               }}
             >
               {/* Enhanced icon with gradient background */}
-              <div className="relative mx-auto mb-8">
+              <div className="relative mx-auto mb-6 sm:mb-8">
                 <div className={`feature-icon bg-gradient-to-br ${feature.color} shadow-2xl`}>
-                  <feature.icon className="w-7 h-7 text-white" />
+                  <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
                 {/* Animated ring */}
                 <div className="absolute inset-0 rounded-xl border-2 border-transparent bg-gradient-to-br from-brand-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
               
-              <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-brand-primary transition-colors duration-300">
+              <h3 className="feature-title group-hover:text-brand-primary transition-colors duration-300">
                 {feature.title}
               </h3>
               
-              <p className="text-foreground-muted leading-relaxed text-lg max-w-sm mx-auto">
+              <p className="feature-description max-w-sm mx-auto">
                 {feature.description}
               </p>
 
@@ -70,10 +70,10 @@ const Features = () => {
         </div>
 
         {/* Additional visual elements */}
-        <div className="flex justify-center mt-20 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-          <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-surface/50 border border-border/50 backdrop-blur-sm">
-            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span className="text-sm font-medium text-foreground-muted">Real-time adaptation to your style</span>
+        <div className="flex justify-center mt-16 sm:mt-20 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+          <div className="flex items-center gap-2 sm:gap-3 px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-surface/50 border border-border/50 backdrop-blur-sm">
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse"></div>
+            <span className="text-xs sm:text-sm font-medium text-foreground-muted">Real-time adaptation to your style</span>
           </div>
         </div>
       </div>
