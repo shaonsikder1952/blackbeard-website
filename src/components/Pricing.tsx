@@ -25,12 +25,10 @@ const Pricing = () => {
       description: "For power users",
       badge: "Most Popular",
       features: [
-        "Unlimited rewrites",
+        "50 rewrites per day",
         "Advanced style rules",
-        "Team collaboration", 
         "Premium AI models",
-        "Priority support",
-        "API access"
+        "Priority support"
       ],
       cta: "Start Free Trial",
       featured: true,
