@@ -37,17 +37,17 @@ const Features = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 max-w-4xl mx-auto">
+        <div className="flex flex-col items-center gap-12 sm:gap-16">
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="text-center group relative animate-fade-in-up"
+              className="flex flex-col items-center text-center group relative animate-fade-in-up w-full max-w-md"
               style={{
                 animationDelay: `${index * 0.2}s`
               }}
             >
               {/* Enhanced icon with gradient background */}
-              <div className="relative mx-auto mb-6 sm:mb-8">
+              <div className="relative mb-6 sm:mb-8">
                 <div className={`feature-icon bg-gradient-to-br ${feature.color} shadow-2xl`}>
                   <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
@@ -59,7 +59,7 @@ const Features = () => {
                 {feature.title}
               </h3>
               
-              <p className="feature-description max-w-sm mx-auto">
+              <p className="feature-description max-w-sm">
                 {feature.description}
               </p>
 
