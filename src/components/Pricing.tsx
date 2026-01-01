@@ -4,7 +4,7 @@ import { Check, Star, Zap } from "lucide-react";
 const Pricing = () => {
   const plans = [
     {
-      name: "Free",
+      name: "Free Trial",
       price: null,
       period: null,
       description: "Perfect for trying out",
@@ -19,54 +19,21 @@ const Pricing = () => {
       featured: false,
     },
     {
-      name: "Starter",
-      price: "$9",
-      period: "/month",
-      description: "Perfect for individuals",
-      badge: null,
-      features: [
-        "100 rewrites/day",
-        "Advanced style rules",
-        "Priority support", 
-        "Advanced AI model",
-        "Custom shortcuts"
-      ],
-      cta: "Start Free Trial",
-      featured: false,
-    },
-    {
-      name: "Pro",
+      name: "Premium",
       price: "$19",
       period: "/month",
       description: "For power users",
       badge: "Most Popular",
       features: [
         "Unlimited rewrites",
+        "Advanced style rules",
         "Team collaboration", 
-        "Custom integrations",
-        "Analytics dashboard",
         "Premium AI models",
+        "Priority support",
         "API access"
       ],
       cta: "Start Free Trial",
       featured: true,
-    },
-    {
-      name: "Unlimited",
-      price: "$29",
-      period: "/month",
-      description: "For businesses",
-      badge: null,
-      features: [
-        "Everything in Pro",
-        "Unlimited team members",
-        "White-label solution", 
-        "Dedicated support",
-        "Custom AI training",
-        "SLA guarantee"
-      ],
-      cta: "Contact Sales",
-      featured: false,
     },
   ];
 
@@ -85,7 +52,7 @@ const Pricing = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-3xl mx-auto">
           {plans.map((plan, index) => (
             <div 
               key={index}
