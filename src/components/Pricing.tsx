@@ -20,7 +20,7 @@ const Pricing = () => {
     },
     {
       name: "Premium",
-      price: "$19",
+      price: "$8.99",
       period: "/month",
       description: "For power users",
       badge: "Most Popular",
