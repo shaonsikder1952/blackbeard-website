@@ -1,73 +1,113 @@
-# Welcome to your Lovable project
 
-## Project info
+# Blackbeard Website
 
-**URL**: https://lovable.dev/projects/4bda4e21-c581-4f79-9fbc-92b935588d1b
+The official website for **Blackbeard**, an AI-powered Chrome extension that rewrites text to match your unique writing voice.
 
-## How can I edit this code?
+This repository contains the marketing website where users can learn about Blackbeard and download the Chrome extension.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## What is Blackbeard?
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4bda4e21-c581-4f79-9fbc-92b935588d1b) and start prompting.
+Blackbeard is an AI Chrome extension that rewrites any text to sound like *you*.
 
-Changes made via Lovable will be committed automatically to this repo.
+Instead of generating generic AI-style content, Blackbeard adapts to your personal tone using:
 
-**Use your preferred IDE**
+* Writing samples
+* Custom style rules
+* Continuous style learning
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+It works directly inside text boxes on sites like Gmail, LinkedIn, Twitter, Google Docs, and more.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+No copy-paste. One click. Your voice.
 
-Follow these steps:
+---
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Website Features
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+* Clear product explanation and positioning
+* Chrome extension download flow
+* Simple pricing breakdown (Free + Premium)
+* Privacy-focused messaging
+* Lightweight, fast-loading landing page
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## Tech Stack
+
+* Frontend: HTML / CSS / JavaScript (or add framework if applicable)
+* Hosting: (add Netlify / Vercel / Cloudflare Pages if relevant)
+* No backend required for the website itself
+
+> Note: The AI rewriting logic and Chrome extension live in separate repositories.
+
+---
+
+## Project Structure
+
+```
+/
+├── public/            # Static assets
+├── src/               # Website source files
+├── index.html         # Entry point
+├── styles/            # CSS styles
+├── scripts/           # JS logic
+└── README.md
 ```
 
-**Edit a file directly in GitHub**
+(Adjust this if your structure is different.)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## Getting Started (Local Development)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Clone the repository
 
-## What technologies are used for this project?
+```bash
+git clone https://github.com/your-username/blackbeard-website.git
+```
 
-This project is built with:
+2. Open the project
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+cd blackbeard-website
+```
 
-## How can I deploy this project?
+3. Run locally
+   If it’s a static site, simply open `index.html` in your browser.
+   If you use a dev server or framework, run the appropriate command.
 
-Simply open [Lovable](https://lovable.dev/projects/4bda4e21-c581-4f79-9fbc-92b935588d1b) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## Related Projects
 
-Yes, you can!
+* **Blackbeard Chrome Extension** – Core product
+* **Blackbeard Backend / Rewrite Agent** – AI logic and style learning
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+(You can link those repos later.)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+---
+
+## Roadmap
+
+* Improve copy and messaging
+* Add real before/after rewrite examples
+* Better onboarding explanation
+* SEO and performance optimizations
+
+---
+
+## License
+
+MIT License
+Free to use, modify, and build upon.
+
+---
+
+## Contact
+
+If you have feedback, ideas, or want to collaborate:
+
+* Email: shaon@framic.live
+* Website: www.bbrewrite.live
+
