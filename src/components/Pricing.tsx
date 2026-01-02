@@ -15,7 +15,7 @@ const Pricing = () => {
         "Works on major sites",
         "Community support"
       ],
-      cta: "Get Started",
+      cta: "Start Free Trial",
       featured: false,
     },
     {
@@ -30,7 +30,7 @@ const Pricing = () => {
         "Premium AI models",
         "Priority support"
       ],
-      cta: "Start Free Trial",
+      cta: "Get Started",
       featured: true,
     },
   ];
@@ -122,7 +122,7 @@ const Pricing = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-12 sm:mt-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
           <p className="text-sm sm:text-base text-foreground-subtle">
-            All plans include a 14-day free trial. No credit card required.
+            Your data stays private, start instantly
           </p>
         </div>
       </div>
