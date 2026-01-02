@@ -73,7 +73,7 @@ const Footer = () => {
         {/* Bottom section */}
         <div className="pt-6 sm:pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center space-y-3 sm:space-y-4 md:space-y-0">
           <p className="text-foreground-subtle text-xs sm:text-sm text-center md:text-left">
-            © 2024 Blackbeard. All rights reserved. Made with ❤️ for better writing.
+            © 2026 Blackbeard. All rights reserved. Made with ❤️ for better writing.
           </p>
           <div className="flex items-center space-x-2 text-xs sm:text-sm text-foreground-subtle">
             <span>Built with</span>
