@@ -16,13 +16,13 @@ const Hero = () => {
               <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
             ))}
           </div>
-          <span className="text-xs sm:text-sm text-foreground-muted">Trusted by 50k+ users</span>
+          <span className="text-xs sm:text-sm text-foreground-muted">Trusted by 10k+ users</span>
         </div>
 
         {/* Hero headline with enhanced typography */}
         <div className="space-y-4 sm:space-y-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
           <h1 className="hero-text">
-            Rewrite any text in your
+            Rewrite any text in your own style
             <br />
             <span className="relative">
               voice — instantly
@@ -45,7 +45,7 @@ const Hero = () => {
           </Button>
           
           <p className="text-xs sm:text-sm text-foreground-subtle mt-3">
-            Free to install • No signup required • 5 rewrites daily
+            Dead simple • Transparent pricing • 5 free rewrites per day
           </p>
         </div>
 
