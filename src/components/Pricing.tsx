@@ -111,7 +111,7 @@ const Pricing = () => {
               {plan.featured && (
                 <div className="mt-3 sm:mt-4 text-center">
                   <p className="text-xs sm:text-sm text-brand-primary font-medium">
-                    ✨ 14-day free trial included
+                    ✨ Exciting perks coming soon
                   </p>
                 </div>
               )}
