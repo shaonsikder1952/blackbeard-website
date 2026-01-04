@@ -2,7 +2,7 @@ import { Github, Twitter, Mail } from "lucide-react";
 
 const Footer = () => {
   const links = [
-    { label: "Privacy", href: "#" },
+    { label: "Privacy", href: "/privacy" },
     { label: "Terms", href: "/terms" },
     { label: "Contact", href: "#" },
     { label: "Documentation", href: "#" },
