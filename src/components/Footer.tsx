@@ -5,7 +5,7 @@ const Footer = () => {
     { label: "Privacy", href: "/privacy" },
     { label: "Terms", href: "/terms" },
     { label: "Contact", href: "/contact" },
-    { label: "Documentation", href: "#" },
+    { label: "Documentation", href: "/documentation" },
   ];
 
   const socialLinks = [
