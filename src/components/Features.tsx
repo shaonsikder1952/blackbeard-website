@@ -1,4 +1,5 @@
 import { Feather, Globe, Zap } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Features = () => {
   const features = [
@@ -28,6 +29,27 @@ const Features = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.05)_0%,transparent_50%)]" />
       
       <div className="max-w-6xl mx-auto">
+        {/* Tutorial Video Section */}
+        <div className="text-center mb-16 sm:mb-20 lg:mb-24 animate-fade-in-up">
+          <h2 className="section-title mb-8 sm:mb-10">
+            Tutorial Video
+          </h2>
+          <div className="max-w-xl sm:max-w-2xl lg:max-w-4xl mx-auto">
+            <div className="rounded-xl sm:rounded-2xl overflow-hidden border border-border/50 shadow-lg shadow-brand-primary/5 bg-surface/30 backdrop-blur-sm">
+              <AspectRatio ratio={16 / 9}>
+                <iframe
+                  src="https://www.youtube.com/embed/u31qwQUeGuM"
+                  title="Blackbeard Tutorial"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </AspectRatio>
+            </div>
+          </div>
+        </div>
+
+        {/* Why Blackbeard Section */}
         <div className="text-center mb-16 sm:mb-20 animate-fade-in-up">
           <h2 className="section-title">
             Why Blackbeard?
