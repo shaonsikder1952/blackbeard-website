@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   const links = [
-    { label: "Privacy", href: "src/pages/privacy.tsx" },
-    { label: "Terms", href: "src/pages/terms.tsx" },
-    { label: "Contact", href: "src/pages/contact.tsx" },
-    { label: "Documentation", href: "src/pages/documentation.tsx" },
+    { label: "Privacy", href: "/#/privacy.tsx" },
+    { label: "Terms", href: "/#/terms.tsx" },
+    { label: "Contact", href: "/#/contact.tsx" },
+    { label: "Documentation", href: "/#/documentation.tsx" },
   ];
 
   const socialLinks = [
