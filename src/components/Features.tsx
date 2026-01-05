@@ -38,7 +38,7 @@ const Features = () => {
             <div className="rounded-xl sm:rounded-2xl overflow-hidden border border-border/50 shadow-lg shadow-brand-primary/5 bg-surface/30 backdrop-blur-sm">
               <AspectRatio ratio={16 / 9}>
                 <iframe
-                  src="https://www.youtube.com/embed/u31qwQUeGuM"
+                  src="https://www.youtube-nocookie.com/embed/u31qwQUeGuM?rel=0&modestbranding=1&iv_load_policy=3&fs=1"
                   title="Blackbeard Tutorial"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
