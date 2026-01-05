@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import doc from "../../docs/BBRewrite.md?raw";
 
-// A small markdown-to-HTML converter for basic formatting used in the docs
+// Simple Markdown-to-HTML converter
 function escapeHtml(unsafe: string) {
   return unsafe
     .replace(/&/g, "&amp;")
@@ -15,7 +15,7 @@ function renderInline(md: string) {
   return md
     .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
     .replace(/\*(.*?)\*/g, "<em>$1</em>")
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "<a href=\"$2\" target=\"_blank\" rel=\"noopener noreferrer\">$1</a>");
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
 }
 
 function convertMarkdown(md: string) {
@@ -27,14 +27,10 @@ function convertMarkdown(md: string) {
   for (let i = 0; i < lines.length; i++) {
     let line = lines[i];
 
-    if (line.trim().startsWith('```')) {
-      if (!inCode) {
-        inCode = true;
-        html += '<pre><code>';
-      } else {
-        inCode = false;
-        html += '</code></pre>';
-      }
+    // Code block
+    if (line.trim().startsWith("```")) {
+      inCode = !inCode;
+      html += inCode ? '<pre class="rounded-lg bg-gray-900 p-4 overflow-x-auto"><code>' : "</code></pre>";
       continue;
     }
 
@@ -43,50 +39,54 @@ function convertMarkdown(md: string) {
       continue;
     }
 
+    // Headings
     if (/^#{1,6}\s+/.test(line)) {
       const match = line.match(/^(#{1,6})\s+(.*)$/);
       if (match) {
         const level = match[1].length;
         const content = renderInline(escapeHtml(match[2]));
-        html += `<h${level}>${content}</h${level}>`;
+        html += `<h${level} class="mt-6 mb-4 font-semibold text-foreground">${content}</h${level}>`;
       }
       continue;
     }
 
+    // Blockquote
     if (/^>\s+/.test(line)) {
-      const content = renderInline(escapeHtml(line.replace(/^>\s+/, '')));
-      html += `<blockquote>${content}</blockquote>`;
+      const content = renderInline(escapeHtml(line.replace(/^>\s+/, "")));
+      html += `<blockquote class="border-l-4 border-brand-primary pl-4 italic text-foreground-muted my-4">${content}</blockquote>`;
       continue;
     }
 
+    // List
     if (/^\s*[-*]\s+/.test(line)) {
       if (!inList) {
         inList = true;
-        html += '<ul>';
+        html += '<ul class="list-disc list-inside mb-4">';
       }
-      const content = renderInline(escapeHtml(line.replace(/^\s*[-*]\s+/, '')));
-      html += `<li>${content}</li>`;
-      // check if next line is not a list item to close the list
-      const nextLine = lines[i+1] || '';
+      const content = renderInline(escapeHtml(line.replace(/^\s*[-*]\s+/, "")));
+      html += `<li class="mb-1">${content}</li>`;
+      const nextLine = lines[i + 1] || "";
       if (!/^\s*[-*]\s+/.test(nextLine)) {
-        html += '</ul>';
+        html += "</ul>";
         inList = false;
       }
       continue;
     }
 
+    // Tables (preformatted for simplicity)
     if (/^\|/.test(line)) {
-      // Render tables as preformatted to preserve layout
-      html += `<pre>${escapeHtml(line)}</pre>`;
+      html += `<pre class="overflow-x-auto bg-gray-800 rounded-md p-2 mb-4 text-sm">${escapeHtml(line)}</pre>`;
       continue;
     }
 
+    // Empty lines
     if (line.trim() === "") {
-      html += '<p></p>';
+      html += "<p></p>";
       continue;
     }
 
-    html += `<p>${renderInline(escapeHtml(line))}</p>`;
+    // Paragraph
+    html += `<p class="mb-4 leading-relaxed">${renderInline(escapeHtml(line))}</p>`;
   }
 
   return html;
@@ -102,12 +102,20 @@ const Documentation = () => {
   return (
     <div className="min-h-screen bg-background py-16 sm:py-24 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto prose prose-invert">
-        <Link to="/" className="inline-flex items-center gap-2 text-foreground-muted hover:text-brand-primary transition-colors mb-8">
+        {/* Back link */}
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 text-foreground-muted hover:text-brand-primary transition-colors mb-8 font-medium"
+        >
           <ArrowLeft className="w-4 h-4" />
           Back to Home
         </Link>
 
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        {/* Documentation content */}
+        <div
+          className="prose prose-invert"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
       </div>
     </div>
   );
