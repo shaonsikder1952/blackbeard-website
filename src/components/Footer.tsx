@@ -1,4 +1,5 @@
 import { Github, Twitter, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const links = [
@@ -36,16 +37,24 @@ const Footer = () => {
           <div className="space-y-3 sm:space-y-4">
             <h3 className="text-base sm:text-lg font-semibold text-foreground">Resources</h3>
             <nav className="flex flex-col space-y-2 sm:space-y-3">
-              {links.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  className="text-sm sm:text-base text-foreground-muted hover:text-brand-primary transition-colors duration-200 inline-flex items-center group"
-                >
-                  {link.label}
-                  <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">→</span>
-                </a>
-              ))}
+              {links.map((link, index) => {
+                const isInternal = link.href && link.href.startsWith('/');
+                const commonProps = {
+                  className: "text-sm sm:text-base text-foreground-muted hover:text-brand-primary transition-colors duration-200 inline-flex items-center group",
+                };
+
+                return isInternal ? (
+                  <Link key={index} to={link.href} {...commonProps}>
+                    {link.label}
+                    <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">→</span>
+                  </Link>
+                ) : (
+                  <a key={index} href={link.href} {...commonProps}>
+                    {link.label}
+                    <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">→</span>
+                  </a>
+                );
+              })}
             </nav>
           </div>
 
