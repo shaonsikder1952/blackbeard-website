@@ -1,7 +1,10 @@
-import { Feather, Globe, Zap } from "lucide-react";
+import { useState } from "react";
+import { Feather, Globe, Zap, Play } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Features = () => {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  
   const features = [
     {
       icon: Feather,
@@ -37,13 +40,35 @@ const Features = () => {
           <div className="max-w-xl sm:max-w-2xl lg:max-w-4xl mx-auto">
             <div className="rounded-xl sm:rounded-2xl overflow-hidden border border-border/50 shadow-lg shadow-brand-primary/5 bg-surface/30 backdrop-blur-sm">
               <AspectRatio ratio={16 / 9}>
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/u31qwQUeGuM?rel=0&modestbranding=1&iv_load_policy=3&fs=1"
-                  title="Blackbeard Tutorial"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                />
+                {isVideoPlaying ? (
+                  <iframe
+                    src="https://www.youtube-nocookie.com/embed/u31qwQUeGuM?rel=0&modestbranding=1&iv_load_policy=3&fs=1&autoplay=1"
+                    title="Blackbeard Tutorial"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  />
+                ) : (
+                  <button
+                    onClick={() => setIsVideoPlaying(true)}
+                    className="relative w-full h-full group cursor-pointer bg-background"
+                  >
+                    {/* Thumbnail */}
+                    <img
+                      src="https://img.youtube.com/vi/u31qwQUeGuM/maxresdefault.jpg"
+                      alt="Tutorial video thumbnail"
+                      className="w-full h-full object-cover"
+                    />
+                    {/* Dark overlay */}
+                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-300" />
+                    {/* Play button */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-brand-primary/90 group-hover:bg-brand-primary group-hover:scale-110 transition-all duration-300 flex items-center justify-center shadow-2xl">
+                        <Play className="w-7 h-7 sm:w-9 sm:h-9 text-white fill-white ml-1" />
+                      </div>
+                    </div>
+                  </button>
+                )}
               </AspectRatio>
             </div>
           </div>
