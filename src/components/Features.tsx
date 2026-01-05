@@ -27,14 +27,14 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 relative">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 relative">
       {/* Background decorations */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.05)_0%,transparent_50%)]" />
       
       <div className="max-w-6xl mx-auto">
         {/* Tutorial Video Section */}
-        <div className="text-center mb-16 sm:mb-20 lg:mb-24 animate-fade-in-up">
-          <h2 className="section-title mb-8 sm:mb-10">
+        <div className="text-center mb-10 sm:mb-12 animate-fade-in-up">
+          <h2 className="section-title mb-6 sm:mb-8">
             Tutorial Video
           </h2>
           <div className="max-w-xl sm:max-w-2xl lg:max-w-4xl mx-auto">
@@ -75,7 +75,7 @@ const Features = () => {
         </div>
 
         {/* Why Blackbeard Section */}
-        <div className="text-center mb-16 sm:mb-20 animate-fade-in-up">
+        <div className="text-center mb-10 sm:mb-12 animate-fade-in-up">
           <h2 className="section-title">
             Why Blackbeard?
           </h2>
@@ -84,7 +84,7 @@ const Features = () => {
           </p>
         </div>
 
-        <div className="flex flex-col items-center gap-12 sm:gap-16">
+        <div className="flex flex-col items-center gap-8 sm:gap-10">
           {features.map((feature, index) => (
             <div 
               key={index}
@@ -117,7 +117,7 @@ const Features = () => {
         </div>
 
         {/* Additional visual elements */}
-        <div className="flex justify-center mt-16 sm:mt-20 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+        <div className="flex justify-center mt-10 sm:mt-12 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
           <div className="flex items-center gap-2 sm:gap-3 px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-surface/50 border border-border/50 backdrop-blur-sm">
             <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse"></div>
             <span className="text-xs sm:text-sm font-medium text-foreground-muted">Real-time adaptation to your style</span>

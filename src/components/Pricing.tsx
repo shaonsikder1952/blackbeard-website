@@ -36,12 +36,12 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 relative">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 relative">
       {/* Background decorations */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(59,130,246,0.05)_0%,transparent_50%)]" />
       
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 sm:mb-20 animate-fade-in-up">
+        <div className="text-center mb-10 sm:mb-12 animate-fade-in-up">
           <h2 className="section-title">
             Simple Pricing
           </h2>
@@ -120,7 +120,7 @@ const Pricing = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-12 sm:mt-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        <div className="text-center mt-8 sm:mt-10 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
           <p className="text-sm sm:text-base text-foreground-subtle">
             Your data stays private, start instantly
           </p>

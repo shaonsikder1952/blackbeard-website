@@ -3,12 +3,12 @@ import { ArrowRight, Chrome, Star } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 overflow-hidden">
+    <section className="relative min-h-[80vh] flex items-center justify-center px-4 sm:px-6 py-12 sm:py-16 overflow-hidden">
       {/* Enhanced background with subtle animation */}
       <div className="absolute inset-0 grid-bg opacity-30" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,transparent_50%)]" />
       
-      <div className="relative max-w-4xl mx-auto text-center space-y-8 sm:space-y-10 lg:space-y-12">
+      <div className="relative max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
         {/* Trust indicator - animated */}
         <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-surface/50 border border-border/50 backdrop-blur-sm animate-fade-in-up">
           <div className="flex items-center gap-1">
@@ -50,7 +50,7 @@ const Hero = () => {
         </div>
 
         {/* Enhanced trust indicators with better layout */}
-        <div className="pt-8 sm:pt-10 lg:pt-12 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+        <div className="pt-4 sm:pt-6 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-12">
             <div className="flex items-center gap-2 sm:gap-3">
               <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse"></div>
