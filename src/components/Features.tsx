@@ -84,34 +84,29 @@ const Features = () => {
           </p>
         </div>
 
-        <div className="flex flex-col items-center gap-8 sm:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="flex flex-col items-center text-center group relative animate-fade-in-up w-full max-w-md"
+              className="flex flex-col items-center text-center group relative animate-fade-in-up p-6 rounded-2xl bg-surface/30 border border-border/30 hover:border-brand-primary/30 transition-all duration-300"
               style={{
-                animationDelay: `${index * 0.2}s`
+                animationDelay: `${index * 0.1}s`
               }}
             >
-              {/* Enhanced icon with gradient background */}
-              <div className="relative mb-6 sm:mb-8">
-                <div className={`feature-icon bg-gradient-to-br ${feature.color} shadow-2xl`}>
-                  <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+              {/* Icon */}
+              <div className="relative mb-4">
+                <div className={`feature-icon bg-gradient-to-br ${feature.color} shadow-xl`}>
+                  <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
-                {/* Animated ring */}
-                <div className="absolute inset-0 rounded-xl border-2 border-transparent bg-gradient-to-br from-brand-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
               
-              <h3 className="feature-title group-hover:text-brand-primary transition-colors duration-300">
+              <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-brand-primary transition-colors duration-300">
                 {feature.title}
               </h3>
               
-              <p className="feature-description max-w-sm">
+              <p className="text-sm text-muted-foreground">
                 {feature.description}
               </p>
-
-              {/* Subtle hover effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
             </div>
           ))}
         </div>
