@@ -12,11 +12,25 @@ interface BlogPost {
   slug: string;
 }
 
+// ============================================================
+// BLOG POSTS DATA - Edit this array to add/remove/update posts
+// Each post needs a matching entry in src/pages/BlogPost.tsx
+// ============================================================
 const blogPosts: BlogPost[] = [
   {
     id: "1",
+    title: "How AI is Revolutionizing Content Creation in 2026",
+    excerpt: "Discover how artificial intelligence is transforming the way we write, edit, and publish content across all industries.",
+    category: "AI & Technology",
+    readTime: "8 min read",
+    date: "Jan 5, 2026",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
+    slug: "ai-revolutionizing-content-creation"
+  },
+  {
+    id: "2",
     title: "Getting Started with Blackbeard: A Complete Guide",
-    excerpt: "Learn how to set up and configure Blackbeard for your development workflow in just minutes.",
+    excerpt: "Learn how to set up and configure Blackbeard for your writing workflow in just minutes.",
     category: "Tutorial",
     readTime: "5 min read",
     date: "Jan 3, 2026",
@@ -24,9 +38,9 @@ const blogPosts: BlogPost[] = [
     slug: "getting-started-blackbeard"
   },
   {
-    id: "2",
-    title: "10 Tips to Maximize Your Productivity",
-    excerpt: "Discover advanced techniques and shortcuts that will supercharge your coding efficiency.",
+    id: "3",
+    title: "10 Tips to Maximize Your Writing Productivity",
+    excerpt: "Discover advanced techniques and shortcuts that will supercharge your content creation efficiency.",
     category: "Productivity",
     readTime: "7 min read",
     date: "Dec 28, 2025",
@@ -34,9 +48,9 @@ const blogPosts: BlogPost[] = [
     slug: "maximize-productivity-tips"
   },
   {
-    id: "3",
-    title: "The Future of Developer Tools in 2026",
-    excerpt: "Explore upcoming trends and innovations that will shape the developer experience.",
+    id: "4",
+    title: "The Future of Writing Tools in 2026",
+    excerpt: "Explore upcoming trends and innovations that will shape the content creation experience.",
     category: "Industry",
     readTime: "8 min read",
     date: "Dec 20, 2025",
@@ -44,34 +58,24 @@ const blogPosts: BlogPost[] = [
     slug: "future-developer-tools-2026"
   },
   {
-    id: "4",
-    title: "Building Scalable Applications with Modern Architecture",
-    excerpt: "A deep dive into architectural patterns that ensure your apps grow seamlessly.",
-    category: "Architecture",
+    id: "5",
+    title: "Building Your Personal Writing Style with AI",
+    excerpt: "A deep dive into how AI can learn and enhance your unique voice while maintaining authenticity.",
+    category: "Writing",
     readTime: "10 min read",
     date: "Dec 15, 2025",
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
     slug: "scalable-applications-architecture"
   },
   {
-    id: "5",
-    title: "Code Quality Best Practices for Teams",
-    excerpt: "Establish coding standards and review processes that elevate your team's output.",
+    id: "6",
+    title: "Content Quality Best Practices for Teams",
+    excerpt: "Establish writing standards and review processes that elevate your team's content output.",
     category: "Best Practices",
     readTime: "6 min read",
     date: "Dec 10, 2025",
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop",
     slug: "code-quality-best-practices"
-  },
-  {
-    id: "6",
-    title: "Integrating AI into Your Development Workflow",
-    excerpt: "Harness the power of AI assistants to write better code faster than ever before.",
-    category: "AI & ML",
-    readTime: "9 min read",
-    date: "Dec 5, 2025",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
-    slug: "ai-development-workflow"
   }
 ];
 
