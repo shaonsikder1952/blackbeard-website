@@ -9,6 +9,7 @@ import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Contact from "./pages/Contact";
 import Documentation from "./pages/Documentation";
+import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient({
@@ -40,6 +41,7 @@ const App = () => {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/documentation" element={<Documentation />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
 
             {/* Catch-all route for unknown URLs */}
             <Route path="*" element={<NotFound />} />
