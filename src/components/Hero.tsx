@@ -38,11 +38,13 @@ const Hero = () => {
 
         {/* Enhanced CTA with better styling */}
         <div className="pt-2 sm:pt-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <Button variant="brand" size="lg" className="group animate-pulse-glow text-sm sm:text-base">
-            <Chrome className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
-            Install on Chrome
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 sm:ml-3 transition-transform group-hover:translate-x-1" />
-          </Button>
+          <a href="https://chromewebstore.google.com/detail/blackbeard-ai-rewriter/iglodhieknpcndnhbjdflklohidmbfon" target="_blank" rel="noopener noreferrer">
+            <Button variant="brand" size="lg" className="group animate-pulse-glow text-sm sm:text-base">
+              <Chrome className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
+              Install on Chrome
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 sm:ml-3 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </a>
           
           <p className="text-xs sm:text-sm text-foreground-subtle mt-3">
             Dead simple • Transparent pricing • 5 free rewrites per day
