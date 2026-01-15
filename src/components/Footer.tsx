@@ -92,10 +92,27 @@ const Footer = () => {
         </div>
 
         {/* Bottom section */}
-        <div className="pt-6 sm:pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center space-y-3 sm:space-y-4 md:space-y-0">
+        <div className="pt-6 sm:pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-foreground-subtle text-xs sm:text-sm text-center md:text-left">
             © 2026 Blackbeard. All rights reserved. Made with ❤️ for better writing.
           </p>
+          
+          {/* Product Hunt Badge */}
+          <a 
+            href="https://www.producthunt.com/products/blackbeard?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-blackbeard" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="transition-transform hover:scale-105"
+          >
+            <img 
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1063496&theme=light&t=1768509910436" 
+              alt="Blackbeard - Instantly rewrite any text in your style. | Product Hunt" 
+              width="250" 
+              height="54"
+              className="h-[44px] sm:h-[54px] w-auto"
+            />
+          </a>
+          
           <div className="flex items-center space-x-2 text-xs sm:text-sm text-foreground-subtle">
             <span>Built with</span>
             <div className="w-1 h-1 bg-brand-primary rounded-full animate-pulse"></div>
