@@ -4,11 +4,11 @@ import { ArrowRight, Chrome, Star } from "lucide-react";
 const Hero = () => {
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-6 py-12 sm:py-16 overflow-hidden">
-      {/* Beautiful sky gradient background */}
+      {/* Blackbeard purple gradient background */}
       <div 
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(180deg, hsl(205, 79%, 72%) 0%, hsl(210, 70%, 82%) 35%, hsl(35, 75%, 88%) 100%)'
+          background: 'linear-gradient(180deg, hsl(245, 75%, 65%) 0%, hsl(255, 70%, 75%) 50%, hsl(265, 60%, 88%) 100%)'
         }}
       />
       
