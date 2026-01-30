@@ -12,9 +12,9 @@ const Pricing = () => {
         "Basic style adaptation", 
         "Works on major sites",
       ],
-      cta: "Current Plan",
+      cta: "Get Started",
       featured: false,
-      disabled: true,
+      disabled: false,
     },
     {
       name: "Premium",
@@ -38,10 +38,10 @@ const Pricing = () => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-4">
-            Simple pricing
+            Plans & Pricing
           </h2>
           <p className="text-lg text-foreground-muted">
-            Start free, upgrade when you need more
+            Choose the plan that works for you
           </p>
         </div>
 
