@@ -10,35 +10,29 @@ const Features = () => {
       icon: Feather,
       title: "Style tuned to you",
       description: "Upload samples + set rules, Blackbeard adapts to your unique writing voice and tone.",
-      color: "from-blue-500 to-purple-600",
     },
     {
       icon: Globe,
       title: "Works everywhere",
       description: "Gmail, LinkedIn, Twitter, Docs— any text box becomes instantly more powerful.",
-      color: "from-green-500 to-blue-500",
     },
     {
       icon: Zap,
       title: "One-click rewrite",
       description: "Press ⌘S. Rewrite and your text is ready to send. Lightning fast, seamless workflow.",
-      color: "from-purple-500 to-pink-500",
     },
   ];
 
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 relative">
-      {/* Background decorations */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.05)_0%,transparent_50%)]" />
-      
+    <section className="py-16 sm:py-24 px-4 sm:px-6 bg-background relative">
       <div className="max-w-6xl mx-auto">
         {/* Tutorial Video Section */}
-        <div className="text-center mb-10 sm:mb-12 animate-fade-in-up">
+        <div className="text-center mb-16 sm:mb-20 animate-fade-in-up">
           <h2 className="section-title mb-6 sm:mb-8">
-            Tutorial Video
+            See It In Action
           </h2>
           <div className="max-w-xl sm:max-w-2xl lg:max-w-4xl mx-auto">
-            <div className="rounded-xl sm:rounded-2xl overflow-hidden border border-border/50 shadow-lg shadow-brand-primary/5 bg-surface/30 backdrop-blur-sm">
+            <div className="rounded-2xl overflow-hidden border border-border shadow-xl bg-white">
               <AspectRatio ratio={16 / 9}>
                 {isVideoPlaying ? (
                   <iframe
@@ -51,7 +45,7 @@ const Features = () => {
                 ) : (
                   <button
                     onClick={() => setIsVideoPlaying(true)}
-                    className="relative w-full h-full group cursor-pointer bg-background"
+                    className="relative w-full h-full group cursor-pointer bg-muted"
                   >
                     {/* Thumbnail */}
                     <img
@@ -59,11 +53,11 @@ const Features = () => {
                       alt="Tutorial video thumbnail"
                       className="w-full h-full object-cover"
                     />
-                    {/* Dark overlay */}
-                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-300" />
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
                     {/* Play button */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-brand-primary/90 group-hover:bg-brand-primary group-hover:scale-110 transition-all duration-300 flex items-center justify-center shadow-2xl">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-brand-primary group-hover:bg-brand-primary-hover group-hover:scale-110 transition-all duration-300 flex items-center justify-center shadow-brand-lg">
                         <Play className="w-7 h-7 sm:w-9 sm:h-9 text-white fill-white ml-1" />
                       </div>
                     </div>
@@ -75,7 +69,7 @@ const Features = () => {
         </div>
 
         {/* Why Blackbeard Section */}
-        <div className="text-center mb-10 sm:mb-12 animate-fade-in-up">
+        <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
           <h2 className="section-title">
             Why Blackbeard?
           </h2>
@@ -88,34 +82,34 @@ const Features = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="flex flex-col items-center text-center group relative animate-fade-in-up p-6 rounded-2xl bg-surface/30 border border-border/30 hover:border-brand-primary/30 transition-all duration-300"
+              className="flex flex-col items-center text-center group relative animate-fade-in-up p-8 rounded-2xl bg-white border border-border hover:border-brand-primary/30 transition-all duration-300 shadow-sm hover:shadow-lg"
               style={{
                 animationDelay: `${index * 0.1}s`
               }}
             >
               {/* Icon */}
-              <div className="relative mb-4">
-                <div className={`feature-icon bg-gradient-to-br ${feature.color} shadow-xl`}>
-                  <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+              <div className="relative mb-5">
+                <div className="feature-icon">
+                  <feature.icon className="w-6 h-6 text-white" />
                 </div>
               </div>
               
-              <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-brand-primary transition-colors duration-300">
+              <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-brand-primary transition-colors duration-300">
                 {feature.title}
               </h3>
               
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 {feature.description}
               </p>
             </div>
           ))}
         </div>
 
-        {/* Additional visual elements */}
-        <div className="flex justify-center mt-10 sm:mt-12 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-          <div className="flex items-center gap-2 sm:gap-3 px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-surface/50 border border-border/50 backdrop-blur-sm">
-            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span className="text-xs sm:text-sm font-medium text-foreground-muted">Real-time adaptation to your style</span>
+        {/* Bottom indicator */}
+        <div className="flex justify-center mt-12 sm:mt-16 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+          <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-white border border-border shadow-sm">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-foreground-muted">Real-time adaptation to your style</span>
           </div>
         </div>
       </div>
