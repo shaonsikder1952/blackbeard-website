@@ -63,8 +63,7 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        serif: ['Playfair Display', 'Georgia', 'serif'],
+        sans: ['FK Grotesk Neue Trial', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         "gradient-hero": "var(--gradient-hero)",
