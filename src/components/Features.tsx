@@ -27,12 +27,21 @@ const Features = () => {
     <section className="py-16 sm:py-24 px-4 sm:px-6 bg-background relative">
       <div className="max-w-6xl mx-auto">
         {/* Tutorial Video Section */}
-        <div className="text-center mb-16 sm:mb-20 animate-fade-in-up">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 sm:mb-8">
+        <div className="text-center mb-20 sm:mb-28 animate-fade-in-up">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
             See It <span className="bg-gradient-to-r from-brand-primary to-purple-500 bg-clip-text text-transparent">In Action</span>
           </h2>
-          <div className="max-w-xl sm:max-w-2xl lg:max-w-4xl mx-auto">
-            <div className="rounded-2xl overflow-hidden border border-border shadow-xl bg-white">
+          <p className="text-lg text-foreground-muted mb-10 sm:mb-14">
+            Watch how Blackbeard transforms your writing in seconds
+          </p>
+          
+          {/* Video with elegant frame */}
+          <div className="max-w-3xl mx-auto relative">
+            {/* Decorative gradient behind video */}
+            <div className="absolute -inset-4 bg-gradient-to-br from-brand-primary/20 via-purple-400/10 to-transparent rounded-3xl blur-2xl"></div>
+            
+            {/* Video container */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-border/50">
               <AspectRatio ratio={16 / 9}>
                 {isVideoPlaying ? (
                   <iframe
@@ -45,7 +54,7 @@ const Features = () => {
                 ) : (
                   <button
                     onClick={() => setIsVideoPlaying(true)}
-                    className="relative w-full h-full group cursor-pointer bg-muted"
+                    className="relative w-full h-full group cursor-pointer"
                   >
                     {/* Thumbnail */}
                     <img
@@ -54,11 +63,11 @@ const Features = () => {
                       className="w-full h-full object-cover"
                     />
                     {/* Overlay */}
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
+                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors duration-300" />
                     {/* Play button */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-brand-primary group-hover:bg-brand-primary-hover group-hover:scale-110 transition-all duration-300 flex items-center justify-center shadow-brand-lg">
-                        <Play className="w-7 h-7 sm:w-9 sm:h-9 text-white fill-white ml-1" />
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/95 group-hover:bg-white group-hover:scale-110 transition-all duration-300 flex items-center justify-center shadow-xl">
+                        <Play className="w-7 h-7 sm:w-9 sm:h-9 text-brand-primary fill-brand-primary ml-1" />
                       </div>
                     </div>
                   </button>
