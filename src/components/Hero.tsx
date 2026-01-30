@@ -1,75 +1,58 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Chrome, Star } from "lucide-react";
+import { ArrowRight, Chrome } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-6 py-12 sm:py-16 overflow-hidden bg-background">
-      {/* Purple gradient fading to white */}
+    <section className="relative min-h-[90vh] flex items-center justify-center px-6 sm:px-8 lg:px-12 py-20 sm:py-24 bg-background overflow-hidden">
+      {/* Subtle gradient background */}
       <div 
-        className="absolute inset-0"
+        className="absolute inset-0 opacity-60"
         style={{
-          background: 'linear-gradient(180deg, hsl(245, 70%, 88%) 0%, hsl(250, 50%, 94%) 40%, hsl(0, 0%, 100%) 70%, hsl(0, 0%, 100%) 100%)'
+          background: 'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(245, 70%, 92%), transparent)'
         }}
       />
       
-      <div className="relative max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
-        {/* Trust indicator */}
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-sm animate-fade-in-up">
-          <div className="flex items-center gap-1">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-3 h-3 fill-amber-400 text-amber-400" />
-            ))}
-          </div>
-          <span className="text-xs sm:text-sm text-foreground-muted font-medium">Trusted by 10k+ users</span>
+      <div className="relative max-w-3xl mx-auto text-center">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-brand-primary/10 border border-brand-primary/20">
+          <div className="w-2 h-2 bg-brand-primary rounded-full animate-pulse" />
+          <span className="text-sm font-medium text-brand-primary">Now available on Chrome Web Store</span>
         </div>
 
-        {/* Hero headline with gradient accent */}
-        <div className="space-y-4 sm:space-y-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1]">
-            Rewrite Any Text
-            <br />
-            <span className="bg-gradient-to-r from-brand-primary to-purple-500 bg-clip-text text-transparent">
-              In Your Voice
-            </span>
-          </h1>
-          
-          <p className="text-lg sm:text-xl lg:text-xl leading-relaxed text-foreground-muted mx-auto max-w-xl">
-            Blackbeard is an AI Chrome extension that rewrites text
-            to sound like <span className="text-foreground font-semibold">you</span>. Perfect for Gmail, LinkedIn, Twitter, and anywhere you write.
-          </p>
-        </div>
+        {/* Headline */}
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-6">
+          Rewrite any text
+          <br />
+          <span className="text-brand-primary">in your voice</span>
+        </h1>
+        
+        {/* Description */}
+        <p className="text-lg sm:text-xl text-foreground-muted leading-relaxed max-w-xl mx-auto mb-10">
+          Blackbeard is an AI Chrome extension that rewrites text to sound like you. 
+          Works everywhere you write.
+        </p>
 
-        {/* CTA Button */}
-        <div className="pt-2 sm:pt-4 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        {/* CTA */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
           <a href="https://chromewebstore.google.com/detail/blackbeard-ai-rewriter/iglodhieknpcndnhbjdflklohidmbfon" target="_blank" rel="noopener noreferrer">
-            <Button variant="brand" size="lg" className="group text-sm sm:text-base">
-              <Chrome className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
+            <Button variant="brand" size="lg" className="group h-12 px-6 text-base">
+              <Chrome className="w-5 h-5 mr-2" />
               Install on Chrome
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 sm:ml-3 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </Button>
           </a>
-          
-          <p className="text-xs sm:text-sm text-muted-foreground mt-3 font-medium">
-            Dead simple • Transparent pricing • 5 free rewrites per day
-          </p>
+          <span className="text-sm text-foreground-muted">
+            Free tier • 5 rewrites/day
+          </span>
         </div>
 
-        {/* Trust indicators */}
-        <div className="pt-4 sm:pt-6 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-12">
-            <div className="flex items-center gap-2 sm:gap-3 bg-surface border border-border px-4 py-2 rounded-full">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-xs sm:text-sm font-medium text-foreground">Free tier available</span>
+        {/* Trust pills */}
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          {['Works on Gmail', 'Works on LinkedIn', 'Works on Twitter'].map((item) => (
+            <div key={item} className="px-4 py-2 rounded-full bg-surface border border-border text-sm text-foreground-muted">
+              {item}
             </div>
-            <div className="flex items-center gap-2 sm:gap-3 bg-surface border border-border px-4 py-2 rounded-full">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-primary rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-              <span className="text-xs sm:text-sm font-medium text-foreground">Works everywhere</span>
-            </div>
-            <div className="flex items-center gap-2 sm:gap-3 bg-surface border border-border px-4 py-2 rounded-full">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-brand-primary rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-              <span className="text-xs sm:text-sm font-medium text-foreground">Privacy focused</span>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
