@@ -28,8 +28,8 @@ const Features = () => {
       <div className="max-w-6xl mx-auto">
         {/* Tutorial Video Section */}
         <div className="text-center mb-16 sm:mb-20 animate-fade-in-up">
-          <h2 className="section-title mb-6 sm:mb-8">
-            See It In Action
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6 sm:mb-8">
+            See It <span className="bg-gradient-to-r from-brand-primary to-purple-500 bg-clip-text text-transparent">In Action</span>
           </h2>
           <div className="max-w-xl sm:max-w-2xl lg:max-w-4xl mx-auto">
             <div className="rounded-2xl overflow-hidden border border-border shadow-xl bg-white">
@@ -70,11 +70,11 @@ const Features = () => {
 
         {/* Why Blackbeard Section */}
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
-          <h2 className="section-title">
-            Why Blackbeard?
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
+            Why <span className="bg-gradient-to-r from-brand-primary to-purple-500 bg-clip-text text-transparent">Blackbeard</span>?
           </h2>
-          <p className="section-description mx-auto">
-            The smartest way to maintain your voice across all your communications
+          <p className="text-lg sm:text-xl leading-relaxed text-foreground-muted mx-auto max-w-2xl">
+            The smartest way to maintain <span className="text-foreground font-medium">your voice</span> across all your communications
           </p>
         </div>
 

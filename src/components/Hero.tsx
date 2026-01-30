@@ -23,17 +23,19 @@ const Hero = () => {
           <span className="text-xs sm:text-sm text-foreground-muted font-medium">Trusted by 10k+ users</span>
         </div>
 
-        {/* Hero headline with serif font */}
+        {/* Hero headline with gradient accent */}
         <div className="space-y-4 sm:space-y-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-          <h1 className="hero-text">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1]">
             Rewrite Any Text
             <br />
-            In Your Voice
+            <span className="bg-gradient-to-r from-brand-primary to-purple-500 bg-clip-text text-transparent">
+              In Your Voice
+            </span>
           </h1>
           
-          <p className="hero-description mx-auto">
+          <p className="text-lg sm:text-xl lg:text-xl leading-relaxed text-foreground-muted mx-auto max-w-xl">
             Blackbeard is an AI Chrome extension that rewrites text
-            to sound like you. Perfect for Gmail, LinkedIn, Twitter, and anywhere you write.
+            to sound like <span className="text-foreground font-semibold">you</span>. Perfect for Gmail, LinkedIn, Twitter, and anywhere you write.
           </p>
         </div>
 
