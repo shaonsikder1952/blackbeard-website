@@ -4,11 +4,11 @@ import { ArrowRight, Chrome, Star } from "lucide-react";
 const Hero = () => {
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center px-4 sm:px-6 py-12 sm:py-16 overflow-hidden bg-background">
-      {/* Subtle purple accent at top */}
+      {/* Purple gradient fading to white */}
       <div 
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(180deg, hsl(250, 50%, 96%) 0%, hsl(0, 0%, 100%) 30%, hsl(0, 0%, 100%) 100%)'
+          background: 'linear-gradient(180deg, hsl(245, 70%, 88%) 0%, hsl(250, 50%, 94%) 40%, hsl(0, 0%, 100%) 70%, hsl(0, 0%, 100%) 100%)'
         }}
       />
       
