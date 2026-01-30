@@ -66,8 +66,9 @@ const Pricing = () => {
               <div className="mb-6">
                 <h3 className="text-lg font-semibold text-foreground mb-1">{plan.name}</h3>
                 <p className="text-sm text-foreground-muted mb-4">{plan.description}</p>
-                <div className="flex items-baseline">
-                  <span className="text-4xl font-bold text-foreground">{plan.price}</span>
+              <div className="flex items-baseline">
+                  <span className="text-2xl font-bold text-foreground">$</span>
+                  <span className="text-4xl font-bold text-foreground">{plan.price.replace('$', '')}</span>
                   {plan.period && (
                     <span className="text-foreground-muted ml-1">{plan.period}</span>
                   )}
