@@ -41,10 +41,10 @@ const Pricing = () => {
     <section className="py-16 sm:py-24 px-4 sm:px-6 bg-muted/30 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in-up">
-          <h2 className="section-title">
-            Select Plan
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+            Select <span className="bg-gradient-to-r from-brand-primary to-purple-500 bg-clip-text text-transparent">Plan</span>
           </h2>
-          <p className="section-description mx-auto">
+          <p className="text-lg sm:text-xl leading-relaxed text-foreground-muted mx-auto">
             Unlock full potential.
           </p>
         </div>
