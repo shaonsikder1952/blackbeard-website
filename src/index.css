@@ -1,71 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Blackbeard Design System - Dark, Modern, Professional */
+/* Blackbeard Design System - Light, Airy, Professional */
 
 @layer base {
   :root {
-    /* Core Brand Colors */
-    --background: 222 37% 8%;
-    --surface: 222 35% 12%;
-    --surface-elevated: 222 33% 16%;
-    --foreground: 0 0% 98%;
-    --foreground-muted: 220 14% 71%;
-    --foreground-subtle: 220 10% 50%;
+    /* Core Colors - Light Theme */
+    --background: 210 40% 98%;
+    --surface: 0 0% 100%;
+    --surface-elevated: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --foreground-muted: 215 16% 47%;
+    --foreground-subtle: 215 14% 60%;
 
-    /* Brand Accent */
-    --brand-primary: 237 92% 62%;
-    --brand-primary-hover: 237 95% 58%;
+    /* Brand Accent - Indigo */
+    --brand-primary: 243 80% 62%;
+    --brand-primary-hover: 243 85% 55%;
     --brand-primary-foreground: 0 0% 100%;
 
     /* Semantic Colors */
-    --card: 222 35% 12%;
-    --card-foreground: 0 0% 98%;
-    --card-border: 222 30% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --card-border: 214 32% 91%;
 
-    --popover: 222 35% 12%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 237 92% 62%;
+    --primary: 243 80% 62%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 222 33% 16%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 222 30% 20%;
-    --muted-foreground: 220 14% 71%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 222 33% 16%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 222 30% 20%;
-    --input: 222 30% 20%;
-    --ring: 237 92% 62%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 243 80% 62%;
 
     --radius: 0.75rem;
 
-    /* Gradients - Enhanced */
-    --gradient-hero: linear-gradient(135deg, hsl(222, 37%, 8%) 0%, hsl(222, 35%, 10%) 50%, hsl(222, 37%, 8%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(222, 35%, 12%) 0%, hsl(222, 33%, 14%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(237, 92%, 62%) 0%, hsl(237, 95%, 68%) 100%);
-    --gradient-feature: linear-gradient(135deg, hsl(237, 92%, 62%) 0%, hsl(220, 95%, 65%) 100%);
-    --gradient-surface: linear-gradient(135deg, hsl(222, 35%, 12%) 0%, hsl(222, 33%, 16%) 100%);
+    /* Sky Gradient for Hero */
+    --gradient-hero: linear-gradient(180deg, hsl(205, 79%, 70%) 0%, hsl(210, 60%, 80%) 40%, hsl(30, 80%, 90%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(210, 40%, 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(243, 80%, 62%) 0%, hsl(243, 85%, 70%) 100%);
+    --gradient-feature: linear-gradient(135deg, hsl(243, 80%, 62%) 0%, hsl(220, 95%, 65%) 100%);
+    --gradient-surface: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(210, 40%, 98%) 100%);
 
-    /* Shadows - Enhanced */
-    --shadow-sm: 0 1px 2px 0 hsl(222 37% 8% / 0.2);
-    --shadow-md: 0 4px 6px -1px hsl(222 37% 8% / 0.3), 0 2px 4px -1px hsl(222 37% 8% / 0.2);
-    --shadow-lg: 0 10px 15px -3px hsl(222 37% 8% / 0.4), 0 4px 6px -2px hsl(222 37% 8% / 0.3);
-    --shadow-xl: 0 20px 25px -5px hsl(222 37% 8% / 0.5), 0 10px 10px -5px hsl(222 37% 8% / 0.2);
-    --shadow-2xl: 0 25px 50px -12px hsl(222 37% 8% / 0.6);
-    --shadow-brand: 0 0 40px hsl(237 92% 62% / 0.15), 0 0 80px hsl(237 92% 62% / 0.1);
-    --shadow-brand-lg: 0 0 60px hsl(237 92% 62% / 0.25), 0 0 120px hsl(237 92% 62% / 0.15);
-    --shadow-inner: inset 0 1px 4px 0 hsl(222 37% 8% / 0.2);
+    /* Shadows - Soft for light theme */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.03);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.05), 0 2px 4px -1px hsl(0 0% 0% / 0.03);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.08), 0 4px 6px -2px hsl(0 0% 0% / 0.04);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 10px 10px -5px hsl(0 0% 0% / 0.04);
+    --shadow-2xl: 0 25px 50px -12px hsl(0 0% 0% / 0.15);
+    --shadow-brand: 0 4px 14px hsl(243 80% 62% / 0.25);
+    --shadow-brand-lg: 0 8px 25px hsl(243 80% 62% / 0.35);
+    --shadow-inner: inset 0 1px 4px 0 hsl(0 0% 0% / 0.05);
 
-    /* Transitions - Enhanced */
+    /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -78,37 +80,38 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    background: var(--gradient-hero);
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 
-  /* Enhanced Typography - Balanced Sizing */
+  /* Enhanced Typography with Serif Headings */
   .hero-text {
-    @apply text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[0.95];
-    background: linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--foreground-muted)) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 800;
-    letter-spacing: -0.02em;
+    @apply text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1];
+    font-family: 'Playfair Display', Georgia, serif;
+    color: hsl(var(--foreground));
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
 
   .hero-description {
-    @apply text-lg sm:text-xl lg:text-xl text-foreground-muted leading-relaxed;
+    @apply text-lg sm:text-xl lg:text-xl leading-relaxed;
+    color: hsl(var(--foreground-muted));
     font-weight: 400;
-    line-height: 1.5;
-    max-width: 80ch;
+    line-height: 1.7;
+    max-width: 50ch;
   }
 
   .section-title {
     @apply text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6;
+    font-family: 'Playfair Display', Georgia, serif;
     color: hsl(var(--foreground));
     line-height: 1.1;
   }
 
   .section-description {
-    @apply text-lg sm:text-xl text-foreground-muted leading-relaxed;
+    @apply text-lg sm:text-xl leading-relaxed;
+    color: hsl(var(--foreground-muted));
     max-width: 65ch;
   }
 
@@ -119,69 +122,51 @@
   }
 
   .feature-description {
-    @apply text-base sm:text-lg text-foreground-muted leading-relaxed;
+    @apply text-base sm:text-lg leading-relaxed;
+    color: hsl(var(--foreground-muted));
     line-height: 1.6;
   }
 
-  /* Enhanced Feature Icons */
+  /* Feature Icons */
   .feature-icon {
     @apply w-14 h-14 rounded-xl flex items-center justify-center;
     background: var(--gradient-feature);
-    box-shadow: var(--shadow-brand), var(--shadow-lg);
+    box-shadow: var(--shadow-brand), var(--shadow-md);
     transition: var(--transition-smooth);
   }
 
   .feature-icon:hover {
     transform: translateY(-2px) scale(1.05);
-    box-shadow: var(--shadow-brand-lg), var(--shadow-xl);
+    box-shadow: var(--shadow-brand-lg), var(--shadow-lg);
   }
 
-  /* Enhanced Pricing Cards */
+  /* Pricing Cards - Clean Light Style */
   .pricing-card {
-    @apply relative rounded-2xl border p-8 backdrop-blur-sm;
-    background: var(--gradient-surface);
+    @apply relative rounded-2xl border p-8;
+    background: hsl(var(--surface));
     border-color: hsl(var(--border));
     transition: var(--transition-smooth);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-md);
   }
 
   .pricing-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-2xl);
-    border-color: hsl(var(--border) / 0.8);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: hsl(var(--border));
   }
 
   .pricing-card.featured {
     border-color: hsl(var(--primary));
-    box-shadow: var(--shadow-brand), var(--shadow-xl);
-    transform: scale(1.02);
+    border-width: 2px;
+    box-shadow: var(--shadow-brand), var(--shadow-lg);
   }
 
   .pricing-card.featured:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: var(--shadow-brand-lg), var(--shadow-2xl);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-brand-lg), var(--shadow-xl);
   }
 
-  .pricing-card.featured::before {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    padding: 1px;
-    background: var(--gradient-accent);
-    border-radius: inherit;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-  }
-
-  /* Grid Background Pattern */
-  .grid-bg {
-    background-image: var(--gradient-hero), var(--grid-pattern);
-    background-size: 100%, 4rem 4rem;
-    background-position: 0 0, 0 0;
-  }
-
-  /* Enhanced Animations */
+  /* Animations */
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
@@ -192,7 +177,6 @@
 }
 
 @layer utilities {
-  /* Enhanced Animation Keyframes */
   @keyframes fadeInUp {
     from {
       opacity: 0;

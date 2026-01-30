@@ -36,13 +36,13 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="border-t border-border/50 py-12 sm:py-16 px-4 sm:px-6 bg-surface/30 backdrop-blur-sm">
+    <footer className="border-t border-border py-12 sm:py-16 px-4 sm:px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8 sm:gap-12 mb-8 sm:mb-12">
           {/* Brand section */}
           <div className="space-y-3 sm:space-y-4">
             <div className="flex items-center space-x-2 sm:space-x-3">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-accent rounded-xl flex items-center justify-center shadow-brand">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-brand-primary rounded-xl flex items-center justify-center shadow-brand">
                 <span className="text-white font-bold text-base sm:text-lg">B</span>
               </div>
               <span className="text-xl sm:text-2xl font-bold text-foreground">Blackbeard</span>
@@ -60,7 +60,7 @@ const Footer = () => {
               {links.map((link, index) => (
                 <Link
                   key={index}
-                  to={link.href} // ✅ HashRouter automatically handles the #
+                  to={link.href}
                   className="text-sm sm:text-base text-foreground-muted hover:text-brand-primary transition-colors duration-200 inline-flex items-center group"
                 >
                   {link.label}
@@ -79,7 +79,7 @@ const Footer = () => {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-surface hover:bg-surface-elevated border border-border/50 hover:border-brand-primary/50 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-brand/20"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-muted hover:bg-brand-primary/10 border border-border hover:border-brand-primary/50 flex items-center justify-center transition-all duration-300 hover:scale-110"
                 >
                   <social.icon className="w-4 h-4 sm:w-5 sm:h-5 text-foreground-muted hover:text-brand-primary transition-colors duration-200" />
                 </a>
@@ -92,7 +92,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom section */}
-        <div className="pt-6 sm:pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div className="pt-6 sm:pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-foreground-subtle text-xs sm:text-sm text-center md:text-left">
             © 2026 Blackbeard. All rights reserved. Made with ❤️ for better writing.
           </p>
