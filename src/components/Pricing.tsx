@@ -34,7 +34,7 @@ const Pricing = () => {
   ];
 
   return (
-    <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-background">
+    <section className="py-16 sm:py-20 px-6 sm:px-8 lg:px-12 bg-background">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-4">

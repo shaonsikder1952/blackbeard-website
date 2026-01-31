@@ -81,7 +81,7 @@ const blogPosts: BlogPost[] = [
 
 const BlogPosts = () => {
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-background to-background/95">
+    <section className="py-12 px-4 bg-gradient-to-b from-background to-background/95">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 gap-4">

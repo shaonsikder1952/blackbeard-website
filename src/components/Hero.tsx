@@ -3,7 +3,7 @@ import { ArrowRight, Chrome } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center px-6 sm:px-8 lg:px-12 py-20 sm:py-24 bg-background overflow-hidden">
+    <section className="relative min-h-[85vh] flex items-center justify-center px-6 sm:px-8 lg:px-12 pt-24 pb-16 bg-background overflow-hidden">
       {/* Subtle gradient background */}
       <div 
         className="absolute inset-0 opacity-60"
