@@ -6,10 +6,13 @@ import logo from "@/assets/logo.png";
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navLinks = [
-    { label: "Pricing", href: "#pricing" },
-    { label: "Blog", href: "#/blog" },
-  ];
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setMobileMenuOpen(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
@@ -23,15 +26,18 @@ const Header = () => {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-sm font-medium text-foreground-muted hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            <button
+              onClick={() => scrollToSection("pricing")}
+              className="text-sm font-medium text-foreground-muted hover:text-foreground transition-colors"
+            >
+              Pricing
+            </button>
+            <button
+              onClick={() => scrollToSection("blog")}
+              className="text-sm font-medium text-foreground-muted hover:text-foreground transition-colors"
+            >
+              Blog
+            </button>
           </nav>
 
           {/* CTA */}
@@ -57,16 +63,18 @@ const Header = () => {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border/50">
             <nav className="flex flex-col gap-3">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="text-sm font-medium text-foreground-muted hover:text-foreground transition-colors py-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ))}
+              <button
+                onClick={() => scrollToSection("pricing")}
+                className="text-sm font-medium text-foreground-muted hover:text-foreground transition-colors py-2 text-left"
+              >
+                Pricing
+              </button>
+              <button
+                onClick={() => scrollToSection("blog")}
+                className="text-sm font-medium text-foreground-muted hover:text-foreground transition-colors py-2 text-left"
+              >
+                Blog
+              </button>
               <a 
                 href="https://chromewebstore.google.com/detail/blackbeard-ai-rewriter/iglodhieknpcndnhbjdflklohidmbfon" 
                 target="_blank" 
