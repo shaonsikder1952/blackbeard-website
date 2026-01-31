@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Chrome, Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -16,9 +17,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <a href="#/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-brand-primary flex items-center justify-center">
-              <span className="text-brand-primary-foreground font-bold text-lg">B</span>
-            </div>
+            <img src={logo} alt="Blackbeard" className="h-8 w-8" />
             <span className="text-lg font-semibold text-foreground">Blackbeard</span>
           </a>
 
