@@ -24,10 +24,10 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-muted/30">
+    <section className="py-16 sm:py-20 px-6 sm:px-8 lg:px-12 bg-muted/30">
       <div className="max-w-5xl mx-auto">
         {/* Video Section */}
-        <div className="mb-24 sm:mb-32">
+        <div className="mb-16 sm:mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-4">
               See it in action
