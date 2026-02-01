@@ -2,37 +2,32 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Chrome } from "lucide-react";
 import { motion } from "framer-motion";
 
-// Animated flowing line component
-const FlowingLine = ({ 
-  d, 
+// Elegant diagonal line component
+const DiagonalLine = ({ 
+  x1, y1, x2, y2,
   duration, 
-  delay, 
-  strokeWidth = 1.5,
-  opacity = 0.15
+  delay,
+  opacity = 0.08
 }: { 
-  d: string; 
+  x1: number; y1: number; x2: number; y2: number;
   duration: number; 
   delay: number;
-  strokeWidth?: number;
   opacity?: number;
 }) => (
-  <motion.path
-    d={d}
-    fill="none"
-    stroke="url(#lineGradient)"
-    strokeWidth={strokeWidth}
+  <motion.line
+    x1={x1} y1={y1} x2={x2} y2={y2}
+    stroke="url(#blueGradient)"
+    strokeWidth="1"
     strokeLinecap="round"
     initial={{ pathLength: 0, opacity: 0 }}
     animate={{ 
-      pathLength: [0, 1, 1, 0],
-      opacity: [0, opacity, opacity, 0]
+      pathLength: [0, 1],
+      opacity: [0, opacity, opacity * 0.7]
     }}
     transition={{
       duration,
       delay,
-      repeat: Infinity,
-      ease: "easeInOut",
-      times: [0, 0.4, 0.6, 1]
+      ease: "easeOut",
     }}
   />
 );
@@ -40,7 +35,7 @@ const FlowingLine = ({
 const Hero = () => {
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center px-6 sm:px-8 lg:px-12 pt-24 pb-16 bg-background overflow-hidden">
-      {/* Animated flowing lines background */}
+      {/* Elegant diagonal lines background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <svg 
           className="absolute inset-0 w-full h-full"
@@ -48,88 +43,37 @@ const Hero = () => {
           preserveAspectRatio="xMidYMid slice"
         >
           <defs>
-            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="hsl(245, 75%, 60%)" stopOpacity="0" />
-              <stop offset="50%" stopColor="hsl(245, 75%, 60%)" stopOpacity="1" />
-              <stop offset="100%" stopColor="hsl(245, 75%, 60%)" stopOpacity="0" />
-            </linearGradient>
-            <linearGradient id="lineGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="hsl(245, 75%, 70%)" stopOpacity="0" />
-              <stop offset="50%" stopColor="hsl(245, 75%, 70%)" stopOpacity="1" />
-              <stop offset="100%" stopColor="hsl(245, 75%, 70%)" stopOpacity="0" />
+            <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="hsl(210, 60%, 70%)" stopOpacity="0" />
+              <stop offset="30%" stopColor="hsl(210, 60%, 65%)" stopOpacity="0.6" />
+              <stop offset="70%" stopColor="hsl(220, 55%, 60%)" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="hsl(230, 50%, 55%)" stopOpacity="0" />
             </linearGradient>
           </defs>
           
-          {/* Elegant flowing curves */}
-          <FlowingLine 
-            d="M-100,200 Q200,100 400,250 T800,200 T1300,150" 
-            duration={12} 
-            delay={0}
-            strokeWidth={2}
-            opacity={0.12}
-          />
-          <FlowingLine 
-            d="M-50,400 Q150,300 350,400 T750,350 T1250,400" 
-            duration={15} 
-            delay={2}
-            strokeWidth={1.5}
-            opacity={0.1}
-          />
-          <FlowingLine 
-            d="M1300,100 Q1000,200 800,150 T400,200 T-100,250" 
-            duration={14} 
-            delay={4}
-            strokeWidth={1.5}
-            opacity={0.08}
-          />
-          <FlowingLine 
-            d="M-100,600 Q200,500 500,550 T900,500 T1300,550" 
-            duration={16} 
-            delay={1}
-            strokeWidth={1}
-            opacity={0.06}
-          />
-          <FlowingLine 
-            d="M1300,700 Q1000,600 700,650 T300,600 T-100,700" 
-            duration={13} 
-            delay={3}
-            strokeWidth={1.5}
-            opacity={0.1}
-          />
+          {/* Primary diagonal lines - 45 degree angle */}
+          <DiagonalLine x1={-100} y1={300} x2={400} y2={-200} duration={2} delay={0.2} opacity={0.06} />
+          <DiagonalLine x1={100} y1={500} x2={600} y2={0} duration={2.2} delay={0.5} opacity={0.08} />
+          <DiagonalLine x1={300} y1={600} x2={800} y2={100} duration={2.4} delay={0.8} opacity={0.05} />
+          <DiagonalLine x1={500} y1={700} x2={1000} y2={200} duration={2.1} delay={0.3} opacity={0.07} />
+          <DiagonalLine x1={700} y1={800} x2={1200} y2={300} duration={2.3} delay={0.6} opacity={0.06} />
+          <DiagonalLine x1={900} y1={900} x2={1400} y2={400} duration={2} delay={0.4} opacity={0.05} />
           
-          {/* Subtle accent lines */}
-          <FlowingLine 
-            d="M600,0 Q550,200 600,400 T650,800" 
-            duration={18} 
-            delay={5}
-            strokeWidth={1}
-            opacity={0.05}
-          />
-          <FlowingLine 
-            d="M300,-50 Q350,150 300,350 T350,750" 
-            duration={20} 
-            delay={7}
-            strokeWidth={0.8}
-            opacity={0.04}
-          />
-          <FlowingLine 
-            d="M900,-50 Q850,200 900,400 T850,850" 
-            duration={17} 
-            delay={6}
-            strokeWidth={0.8}
-            opacity={0.04}
-          />
+          {/* Secondary offset lines */}
+          <DiagonalLine x1={-50} y1={150} x2={350} y2={-250} duration={2.5} delay={1} opacity={0.04} />
+          <DiagonalLine x1={400} y1={800} x2={900} y2={300} duration={2.6} delay={1.2} opacity={0.04} />
+          <DiagonalLine x1={800} y1={850} x2={1300} y2={350} duration={2.4} delay={1.1} opacity={0.03} />
         </svg>
       </div>
       
       {/* Subtle gradient overlay */}
       <motion.div 
-        className="absolute inset-0 opacity-40"
+        className="absolute inset-0 opacity-30"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.4 }}
+        animate={{ opacity: 0.3 }}
         transition={{ duration: 1.5 }}
         style={{
-          background: 'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(245, 70%, 92%), transparent)'
+          background: 'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 50%, 94%), transparent)'
         }}
       />
       
