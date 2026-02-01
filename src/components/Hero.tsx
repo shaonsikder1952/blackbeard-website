@@ -2,45 +2,134 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Chrome } from "lucide-react";
 import { motion } from "framer-motion";
 
+// Animated flowing line component
+const FlowingLine = ({ 
+  d, 
+  duration, 
+  delay, 
+  strokeWidth = 1.5,
+  opacity = 0.15
+}: { 
+  d: string; 
+  duration: number; 
+  delay: number;
+  strokeWidth?: number;
+  opacity?: number;
+}) => (
+  <motion.path
+    d={d}
+    fill="none"
+    stroke="url(#lineGradient)"
+    strokeWidth={strokeWidth}
+    strokeLinecap="round"
+    initial={{ pathLength: 0, opacity: 0 }}
+    animate={{ 
+      pathLength: [0, 1, 1, 0],
+      opacity: [0, opacity, opacity, 0]
+    }}
+    transition={{
+      duration,
+      delay,
+      repeat: Infinity,
+      ease: "easeInOut",
+      times: [0, 0.4, 0.6, 1]
+    }}
+  />
+);
+
 const Hero = () => {
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center px-6 sm:px-8 lg:px-12 pt-24 pb-16 bg-background overflow-hidden">
-      {/* Animated gradient background */}
+      {/* Animated flowing lines background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <svg 
+          className="absolute inset-0 w-full h-full"
+          viewBox="0 0 1200 800"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <defs>
+            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="hsl(245, 75%, 60%)" stopOpacity="0" />
+              <stop offset="50%" stopColor="hsl(245, 75%, 60%)" stopOpacity="1" />
+              <stop offset="100%" stopColor="hsl(245, 75%, 60%)" stopOpacity="0" />
+            </linearGradient>
+            <linearGradient id="lineGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="hsl(245, 75%, 70%)" stopOpacity="0" />
+              <stop offset="50%" stopColor="hsl(245, 75%, 70%)" stopOpacity="1" />
+              <stop offset="100%" stopColor="hsl(245, 75%, 70%)" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          
+          {/* Elegant flowing curves */}
+          <FlowingLine 
+            d="M-100,200 Q200,100 400,250 T800,200 T1300,150" 
+            duration={12} 
+            delay={0}
+            strokeWidth={2}
+            opacity={0.12}
+          />
+          <FlowingLine 
+            d="M-50,400 Q150,300 350,400 T750,350 T1250,400" 
+            duration={15} 
+            delay={2}
+            strokeWidth={1.5}
+            opacity={0.1}
+          />
+          <FlowingLine 
+            d="M1300,100 Q1000,200 800,150 T400,200 T-100,250" 
+            duration={14} 
+            delay={4}
+            strokeWidth={1.5}
+            opacity={0.08}
+          />
+          <FlowingLine 
+            d="M-100,600 Q200,500 500,550 T900,500 T1300,550" 
+            duration={16} 
+            delay={1}
+            strokeWidth={1}
+            opacity={0.06}
+          />
+          <FlowingLine 
+            d="M1300,700 Q1000,600 700,650 T300,600 T-100,700" 
+            duration={13} 
+            delay={3}
+            strokeWidth={1.5}
+            opacity={0.1}
+          />
+          
+          {/* Subtle accent lines */}
+          <FlowingLine 
+            d="M600,0 Q550,200 600,400 T650,800" 
+            duration={18} 
+            delay={5}
+            strokeWidth={1}
+            opacity={0.05}
+          />
+          <FlowingLine 
+            d="M300,-50 Q350,150 300,350 T350,750" 
+            duration={20} 
+            delay={7}
+            strokeWidth={0.8}
+            opacity={0.04}
+          />
+          <FlowingLine 
+            d="M900,-50 Q850,200 900,400 T850,850" 
+            duration={17} 
+            delay={6}
+            strokeWidth={0.8}
+            opacity={0.04}
+          />
+        </svg>
+      </div>
+      
+      {/* Subtle gradient overlay */}
       <motion.div 
-        className="absolute inset-0 opacity-60"
+        className="absolute inset-0 opacity-40"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.6 }}
+        animate={{ opacity: 0.4 }}
         transition={{ duration: 1.5 }}
         style={{
           background: 'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(245, 70%, 92%), transparent)'
-        }}
-      />
-      
-      {/* Floating orbs */}
-      <motion.div
-        className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-brand-primary/10 blur-3xl"
-        animate={{ 
-          x: [0, 30, 0],
-          y: [0, -20, 0],
-          scale: [1, 1.1, 1]
-        }}
-        transition={{ 
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-      <motion.div
-        className="absolute bottom-1/4 right-1/4 w-48 h-48 rounded-full bg-brand-primary/15 blur-3xl"
-        animate={{ 
-          x: [0, -20, 0],
-          y: [0, 30, 0],
-          scale: [1, 1.15, 1]
-        }}
-        transition={{ 
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut"
         }}
       />
       
