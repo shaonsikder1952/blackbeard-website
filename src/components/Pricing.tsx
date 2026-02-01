@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 const Pricing = () => {
   const plans = [
@@ -33,42 +34,94 @@ const Pricing = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6 }
+    }
+  };
+
   return (
-    <section className="py-16 sm:py-20 px-6 sm:px-8 lg:px-12 bg-background">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-12">
+    <section className="py-16 sm:py-20 px-6 sm:px-8 lg:px-12 bg-background relative overflow-hidden">
+      {/* Subtle gradient accent */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-primary/5 blur-3xl rounded-full" />
+      
+      <div className="max-w-4xl mx-auto relative">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-4">
             Plans & Pricing
           </h2>
           <p className="text-lg text-foreground-muted">
             Choose the plan that works for you
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <motion.div 
+          className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {plans.map((plan, index) => (
-            <div 
+            <motion.div 
               key={index}
-              className={`relative p-6 sm:p-8 rounded-xl border transition-all duration-200 ${
+              variants={cardVariants}
+              whileHover={{ 
+                y: -8,
+                transition: { duration: 0.3 }
+              }}
+              className={`relative p-6 sm:p-8 rounded-xl border transition-all duration-300 ${
                 plan.featured 
-                  ? 'bg-background border-brand-primary shadow-lg ring-1 ring-brand-primary' 
-                  : 'bg-background border-border hover:border-border hover:shadow-md'
+                  ? 'bg-background border-brand-primary shadow-[0_0_40px_hsl(245,75%,60%,0.15)] ring-1 ring-brand-primary' 
+                  : 'bg-background border-border hover:border-brand-primary/30 hover:shadow-lg'
               }`}
             >
               {plan.featured && (
-                <div className="absolute -top-3 left-6">
-                  <span className="px-3 py-1 text-xs font-semibold text-brand-primary-foreground bg-brand-primary rounded-full">
+                <motion.div 
+                  className="absolute -top-3 left-6"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <span className="px-3 py-1 text-xs font-semibold text-brand-primary-foreground bg-brand-primary rounded-full shadow-[0_0_15px_hsl(245,75%,60%,0.4)]">
                     Recommended
                   </span>
-                </div>
+                </motion.div>
               )}
 
               <div className="mb-6">
                 <h3 className="text-lg font-semibold text-foreground mb-1">{plan.name}</h3>
                 <p className="text-sm text-foreground-muted mb-4">{plan.description}</p>
-              <div className="flex items-baseline">
+                <div className="flex items-baseline">
                   <span className="text-2xl font-bold text-foreground" style={{ fontFamily: 'Arial, sans-serif' }}>$</span>
-                  <span className="text-4xl font-bold text-foreground">{plan.price.replace('$', '')}</span>
+                  <motion.span 
+                    className="text-4xl font-bold text-foreground"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 + index * 0.1, type: "spring" }}
+                  >
+                    {plan.price.replace('$', '')}
+                  </motion.span>
                   {plan.period && (
                     <span className="text-foreground-muted ml-1">{plan.period}</span>
                   )}
@@ -77,28 +130,51 @@ const Pricing = () => {
 
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-brand-primary shrink-0 mt-0.5" />
+                  <motion.li 
+                    key={i} 
+                    className="flex items-start gap-3"
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 + i * 0.1 }}
+                  >
+                    <motion.div
+                      whileHover={{ scale: 1.2, rotate: 360 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <Check className="w-5 h-5 text-brand-primary shrink-0 mt-0.5" />
+                    </motion.div>
                     <span className="text-foreground-muted">{feature}</span>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
 
-              <Button 
-                variant={plan.featured ? "brand" : "outline"} 
-                className="w-full"
-                size="lg"
-                disabled={plan.disabled}
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                {plan.cta}
-              </Button>
-            </div>
+                <Button 
+                  variant={plan.featured ? "brand" : "outline"} 
+                  className={`w-full ${plan.featured ? 'shadow-[0_4px_20px_hsl(245,75%,60%,0.3)]' : ''}`}
+                  size="lg"
+                  disabled={plan.disabled}
+                >
+                  {plan.cta}
+                </Button>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <p className="text-center text-sm text-foreground-muted mt-8">
+        <motion.p 
+          className="text-center text-sm text-foreground-muted mt-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6 }}
+        >
           Cancel anytime. No questions asked.
-        </p>
+        </motion.p>
       </div>
     </section>
   );
