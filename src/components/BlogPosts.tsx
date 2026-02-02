@@ -81,26 +81,24 @@ const blogPosts: BlogPost[] = [
 
 const BlogPosts = () => {
   return (
-    <section className="py-12 px-4 bg-gradient-to-b from-background to-background/95">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-background">
+      <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-8 gap-3">
           <div>
-            <span className="text-brand-primary text-sm font-semibold tracking-wider uppercase mb-2 block">
-              Latest Insights
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            <span className="text-brand-primary text-xs font-bold uppercase tracking-[0.15em]">Resources</span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mt-1">
               From Our Blog
             </h2>
-            <p className="text-muted-foreground mt-2 max-w-xl">
-              Stay updated with the latest tutorials, tips, and industry insights to level up your development game.
+            <p className="text-sm text-foreground-muted mt-1 max-w-lg">
+              Tips, tutorials, and insights to improve your writing
             </p>
           </div>
           <a 
             href="#/blog" 
-            className="inline-flex items-center gap-2 text-brand-primary hover:text-brand-primary/80 font-medium transition-colors group"
+            className="inline-flex items-center gap-2 text-sm text-brand-primary hover:text-brand-primary/80 font-medium transition-colors group"
           >
-            View all articles
+            View all
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>

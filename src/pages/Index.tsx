@@ -6,40 +6,34 @@ import Pricing from "@/components/Pricing";
 import BlogPosts from "@/components/BlogPosts";
 import Footer from "@/components/Footer";
 import BeforeAfter from "@/components/BeforeAfter";
-import { motion } from "framer-motion";
-
-const Section = ({ children }: { children: React.ReactNode }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-50px" }}
-    transition={{ duration: 0.6, ease: "easeOut" }}
-  >
-    {children}
-  </motion.div>
-);
 
 const Index = () => {
   return (
-    <section className="py-10 sm:py-14 px-6 sm:px-8 lg:px-12 bg-muted/30 relative overflow-hidden">
+    <div className="min-h-screen bg-background">
       <Header />
+      
+      {/* 1. HERO - Hook & Value Proposition */}
       <Hero />
+      
+      {/* 2. FEATURES - How it works (Video + Benefits side by side) */}
+      <Features />
+      
+      {/* 3. PROOF - Before/After comparison showing real results */}
       <BeforeAfter />
-      <Section>
-        <Features />
-      </Section>
-      <Section>
-        <div id="pricing">
-          <Pricing />
-        </div>
-      </Section>
-      <Section>
-        <div id="blog">
-          <BlogPosts />
-        </div>
-      </Section>
+      
+      {/* 4. PRICING - Convert visitors */}
+      <div id="pricing">
+        <Pricing />
+      </div>
+      
+      {/* 5. BLOG - Build trust with content */}
+      <div id="blog">
+        <BlogPosts />
+      </div>
+      
+      {/* 6. FOOTER - Final CTA & links */}
       <Footer />
-    </section>
+    </div>
   );
 };
 
