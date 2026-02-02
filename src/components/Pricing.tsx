@@ -54,23 +54,24 @@ const Pricing = () => {
   };
 
   return (
-    <section className="py-10 sm:py-14 px-6 sm:px-8 lg:px-12 bg-background relative overflow-hidden">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
       {/* Subtle gradient accent */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-primary/5 blur-3xl rounded-full" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-brand-primary/5 blur-3xl rounded-full" />
 
-      <div className="max-w-4xl mx-auto relative">
+      <div className="max-w-3xl mx-auto relative">
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-4">
-            Plans & Pricing
+          <span className="text-brand-primary text-xs font-bold uppercase tracking-[0.15em]">Pricing</span>
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mt-1">
+            Simple, transparent pricing
           </h2>
-          <p className="text-lg text-foreground-muted">
-            Choose the plan that works for you
+          <p className="text-sm text-foreground-muted mt-1">
+            Start free, upgrade when you need more
           </p>
         </motion.div>
 
