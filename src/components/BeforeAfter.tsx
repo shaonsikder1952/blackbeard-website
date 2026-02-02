@@ -55,40 +55,93 @@ const RewriteButton = ({ className }: { className?: string }) => (
     </motion.div>
 );
 
-const LinkedInBubble = ({
+const TwitterPost = ({
     text,
-    sender = "Alexander Stoic",
-    time = "1:24 PM",
+    name = "Shaon Sikder",
+    handle = "@shaonsikder1971",
+    time = "04:12 · 21.07.25",
+    views = "69",
     isAfter = false
 }: {
     text: string,
-    sender?: string,
+    name?: string,
+    handle?: string,
     time?: string,
+    views?: string,
     isAfter?: boolean
 }) => (
-    <div className={`flex flex-col gap-2 w-full max-w-[380px] p-5 rounded-2xl ${isAfter
-        ? 'bg-[#eef3f8] dark:bg-slate-800 border-[1.5px] border-brand-primary/30'
-        : 'bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800'
+    <div className={`flex flex-col w-full max-w-[380px] bg-white dark:bg-slate-900 rounded-2xl overflow-hidden ${isAfter
+        ? 'border-[1.5px] border-brand-primary/30'
+        : 'border border-slate-200 dark:border-slate-800'
         } shadow-sm transition-all duration-300`}>
-        <div className="flex items-center justify-between mb-1">
-            <div className="flex items-center gap-2.5">
-                <div className={`w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold shadow-sm ${isAfter ? 'bg-brand-primary text-white' : 'bg-slate-200 text-slate-500'
-                    }`}>
-                    {sender[0]}
-                </div>
-                <div>
-                    <div className="text-[14px] font-bold text-foreground leading-none">{sender}</div>
-                    <div className="text-[11px] text-foreground-muted mt-0.5 font-medium">Growth Leader</div>
-                </div>
-            </div>
-            <div className="text-[11px] text-foreground-muted font-medium">{time}</div>
+        {/* Header */}
+        <div className="flex items-center justify-between px-4 py-3 border-b border-slate-100 dark:border-slate-800">
+            <svg className="w-5 h-5 text-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            <span className="text-base font-bold text-foreground">Post</span>
+            <svg className="w-5 h-5 text-foreground" viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="5" r="1.5" />
+                <circle cx="12" cy="12" r="1.5" />
+                <circle cx="12" cy="19" r="1.5" />
+            </svg>
         </div>
-        <p className={`text-[14px] leading-relaxed tracking-tight ${isAfter ? 'text-foreground font-semibold' : 'text-foreground-muted italic'}`}>
-            "{text}"
-        </p>
 
+        {/* Post Content */}
+        <div className="p-4">
+            {/* Author Row */}
+            <div className="flex items-start justify-between mb-3">
+                <div className="flex items-center gap-3">
+                    <div className={`w-11 h-11 rounded-full flex items-center justify-center text-sm font-bold shadow-sm ${isAfter ? 'bg-brand-primary text-white' : 'bg-slate-300 text-slate-600'}`}>
+                        {name[0]}
+                    </div>
+                    <div className="flex flex-col">
+                        <span className="text-[15px] font-bold text-foreground leading-tight">{name}</span>
+                        <span className="text-[13px] text-foreground-muted">{handle}</span>
+                    </div>
+                </div>
+                {/* X logo */}
+                <span className="text-[15px] font-bold text-foreground">𝕏.com</span>
+            </div>
+
+            {/* Tweet Text */}
+            <p className={`text-[15px] leading-relaxed mb-4 ${isAfter ? 'text-foreground' : 'text-foreground-muted'}`}>
+                {text}
+            </p>
+
+            {/* Timestamp & Views */}
+            <div className="text-[13px] text-foreground-muted mb-3 pb-3 border-b border-slate-100 dark:border-slate-800">
+                {time} · <span className="font-bold text-foreground">{views}</span> Views
+            </div>
+
+            {/* Action Icons */}
+            <div className="flex items-center justify-between text-foreground-muted">
+                <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                </svg>
+                <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M17 1l4 4-4 4" />
+                    <path d="M3 11V9a4 4 0 0 1 4-4h14" />
+                    <path d="M7 23l-4-4 4-4" />
+                    <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+                </svg>
+                <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+                <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                </svg>
+                <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                    <polyline points="16 6 12 2 8 6" />
+                    <line x1="12" y1="2" x2="12" y2="15" />
+                </svg>
+            </div>
+        </div>
+
+        {/* Optimized Badge for After */}
         {isAfter && (
-            <div className="mt-4 flex items-center justify-between pt-3 border-t border-brand-primary/10">
+            <div className="mx-4 mb-4 flex items-center justify-between pt-3 border-t border-brand-primary/10">
                 <div className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.4)]" />
                     <span className="text-[10px] font-black text-brand-primary uppercase tracking-widest">Optimized</span>
@@ -172,7 +225,7 @@ const BeforeAfter = () => {
                             >
                                 {/* RIGHT SIDE (AFTER) */}
                                 <div className="absolute inset-0 flex items-center justify-center p-8 bg-[#f3f6f8] dark:bg-slate-900">
-                                    <LinkedInBubble
+                                    <TwitterPost
                                         isAfter={true}
                                         text="Life tests us constantly. The Stoics teach: control your judgments and actions; externals are indifferent. Epictetus reminds us impressions deceive, examine them rationally. Virtue alone brings tranquility."
                                     />
@@ -184,7 +237,7 @@ const BeforeAfter = () => {
                                     style={{ width: leftWidth }}
                                 >
                                     <div className="absolute inset-0 w-[550px] flex items-center p-8 bg-white dark:bg-slate-950">
-                                        <LinkedInBubble
+                                        <TwitterPost
                                             text="life hard sometimes, stoics say control what you can, like your thoughts and actions, dont worry about externals, but its hard to do everyday, epictetus said something about impressions, anyway focus on virtue, and be happy i guess."
                                         />
                                     </div>
