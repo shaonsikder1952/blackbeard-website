@@ -73,7 +73,7 @@ const TwitterPost = ({
     isAfter?: boolean,
     avatar?: string
 }) => (
-    <div className={`flex flex-col w-full max-w-[380px] bg-white dark:bg-slate-900 rounded-2xl overflow-hidden ${isAfter
+    <div className={`flex flex-col w-[380px] h-[380px] bg-white dark:bg-slate-900 rounded-2xl overflow-hidden ${isAfter
         ? 'border-[1.5px] border-brand-primary/30'
         : 'border border-slate-200 dark:border-slate-800'
         } shadow-sm transition-all duration-300`}>
@@ -91,7 +91,7 @@ const TwitterPost = ({
         </div>
 
         {/* Post Content */}
-        <div className="p-4">
+        <div className="p-4 flex-1 flex flex-col">
             {/* Author Row */}
             <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-3">
@@ -111,8 +111,8 @@ const TwitterPost = ({
                 <span className="text-[15px] font-bold text-foreground">𝕏.com</span>
             </div>
 
-            {/* Tweet Text */}
-            <p className={`text-[15px] leading-relaxed mb-4 ${isAfter ? 'text-foreground' : 'text-foreground-muted'}`}>
+            {/* Tweet Text - Fixed height */}
+            <p className={`text-[15px] leading-relaxed mb-4 h-[120px] overflow-hidden ${isAfter ? 'text-foreground' : 'text-foreground-muted'}`}>
                 {text}
             </p>
 
@@ -146,16 +146,20 @@ const TwitterPost = ({
             </div>
         </div>
 
-        {/* Optimized Badge for After */}
-        {isAfter && (
-            <div className="mx-4 mb-4 flex items-center justify-between pt-3 border-t border-brand-primary/10">
-                <div className="flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.4)]" />
-                    <span className="text-[10px] font-black text-brand-primary uppercase tracking-widest">Optimized</span>
-                </div>
-                <div className="text-[12px] font-black text-brand-primary tracking-tighter">98.4% Match</div>
-            </div>
-        )}
+        {/* Optimized Badge - Always render space, only show content for After */}
+        <div className="mx-4 mb-4 flex items-center justify-between pt-3 border-t border-brand-primary/10 h-[32px]">
+            {isAfter ? (
+                <>
+                    <div className="flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.4)]" />
+                        <span className="text-[10px] font-black text-brand-primary uppercase tracking-widest">Optimized</span>
+                    </div>
+                    <div className="text-[12px] font-black text-brand-primary tracking-tighter">98.4% Match</div>
+                </>
+            ) : (
+                <div className="opacity-0">Placeholder</div>
+            )}
+        </div>
     </div>
 );
 
@@ -225,12 +229,12 @@ const BeforeAfter = () => {
                     >
                         <div
                             ref={containerRef}
-                            className="relative w-full h-[420px] cursor-ew-resize select-none overflow-hidden rounded-2xl"
+                            className="relative w-[380px] h-[380px] cursor-ew-resize select-none overflow-visible mx-auto"
                             onMouseMove={handleMouseMove}
                             onTouchMove={handleTouchMove}
                         >
-                            {/* RIGHT SIDE (AFTER) */}
-                            <div className="absolute inset-0 flex items-center justify-center">
+                            {/* RIGHT SIDE (AFTER) - positioned exactly */}
+                            <div className="absolute inset-0">
                                 <TwitterPost
                                     isAfter={true}
                                     avatar={profilePhoto}
@@ -238,12 +242,12 @@ const BeforeAfter = () => {
                                 />
                             </div>
 
-                            {/* LEFT SIDE (BEFORE) */}
+                            {/* LEFT SIDE (BEFORE) - clipped by width */}
                             <motion.div
                                 className="absolute left-0 top-0 bottom-0 overflow-hidden z-10 border-r-2 border-brand-primary/40"
                                 style={{ width: leftWidth }}
                             >
-                                <div className="absolute inset-0 w-[550px] flex items-center justify-center">
+                                <div className="absolute left-0 top-0 w-[380px] h-[380px]">
                                     <TwitterPost
                                         avatar={profilePhoto}
                                         text="life hard sometimes, stoics say control what you can, like your thoughts and actions, dont worry about externals, but its hard to do everyday, epictetus said something about impressions, anyway focus on virtue, and be happy i guess."
