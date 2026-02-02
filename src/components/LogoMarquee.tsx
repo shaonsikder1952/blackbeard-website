@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-// Brand icons with their official colors
+// Brand icons with their official colors - icons only
 const brands = [
   {
     name: "Gmail", color: "#EA4335", icon: (
@@ -91,44 +91,61 @@ const brands = [
   },
 ];
 
-const LogoMarquee = () => {
+interface LogoMarqueeProps {
+  horizontal?: boolean;
+}
+
+const LogoMarquee = ({ horizontal = false }: LogoMarqueeProps) => {
   const duplicatedBrands = [...brands, ...brands, ...brands];
 
-  return (
-    <div className="relative w-full max-w-md overflow-hidden touch-none select-none pointer-events-none">
-      {/* Fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-10" />
+  if (horizontal) {
+    // Horizontal scrolling for mobile
+    return (
+      <div className="relative w-full overflow-hidden touch-none select-none pointer-events-none">
+        <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background to-transparent z-10" />
 
-      {/* Scrolling container */}
+        <motion.div
+          className="flex gap-6 py-2 touch-none select-none pointer-events-none"
+          animate={{ x: [0, -800] }}
+          transition={{
+            x: { repeat: Infinity, repeatType: "loop", duration: 15, ease: "linear" },
+          }}
+        >
+          {duplicatedBrands.map((brand, index) => (
+            <div
+              key={`${brand.name}-${index}`}
+              className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-muted/50 hover:bg-muted transition-colors"
+              style={{ color: brand.color }}
+            >
+              {brand.icon}
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    );
+  }
+
+  // Vertical scrolling for desktop sidebar
+  return (
+    <div className="relative h-[300px] overflow-hidden touch-none select-none pointer-events-none">
+      <div className="absolute left-0 right-0 top-0 h-12 bg-gradient-to-b from-background to-transparent z-10" />
+      <div className="absolute left-0 right-0 bottom-0 h-12 bg-gradient-to-t from-background to-transparent z-10" />
+
       <motion.div
-        className="flex gap-8 py-4 touch-none select-none pointer-events-none"
-        animate={{
-          x: [0, -1200],
-        }}
+        className="flex flex-col gap-4 touch-none select-none pointer-events-none"
+        animate={{ y: [0, -400] }}
         transition={{
-          x: {
-            repeat: Infinity,
-            repeatType: "loop",
-            duration: 20,
-            ease: "linear",
-          },
+          y: { repeat: Infinity, repeatType: "loop", duration: 12, ease: "linear" },
         }}
       >
         {duplicatedBrands.map((brand, index) => (
           <div
             key={`${brand.name}-${index}`}
-            className="flex items-center gap-2 flex-shrink-0"
+            className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-muted/50"
+            style={{ color: brand.color }}
           >
-            <div style={{ color: brand.color }}>
-              {brand.icon}
-            </div>
-            <span
-              className="text-sm font-semibold whitespace-nowrap"
-              style={{ color: brand.color }}
-            >
-              {brand.name}
-            </span>
+            {brand.icon}
           </div>
         ))}
       </motion.div>
