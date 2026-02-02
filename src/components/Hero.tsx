@@ -77,15 +77,15 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="relative w-full max-w-[560px] mx-auto lg:mx-0"
           >
-            {/* Video - styled like BeforeAfter section */}
-            <div className="relative overflow-hidden rounded-2xl border border-black/10 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] bg-black/5">
+            {/* Video - keep proportions, but slightly zoom to crop embedded black bars */}
+            <div className="relative aspect-[16/8.3] overflow-hidden rounded-2xl border border-border/60 shadow-[0_32px_64px_-16px_hsl(0_0%_0%_/0.10)] bg-surface">
               <video
                 src="/hero-demo.mov"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-full h-auto object-contain rounded-2xl block"
+                className="absolute inset-0 w-full h-full object-contain scale-[1.08] block"
               />
             </div>
           </motion.div>
