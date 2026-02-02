@@ -223,52 +223,50 @@ const BeforeAfter = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="flex flex-col gap-6 relative"
                     >
-                        <WindowFrame title="linkedin.com / messaging">
-                            <div
-                                ref={containerRef}
-                                className="relative w-full h-[480px] cursor-ew-resize select-none overflow-hidden bg-[#f3f6f8] dark:bg-slate-950"
-                                onMouseMove={handleMouseMove}
-                                onTouchMove={handleTouchMove}
+                        <div
+                            ref={containerRef}
+                            className="relative w-full h-[420px] cursor-ew-resize select-none overflow-hidden rounded-2xl"
+                            onMouseMove={handleMouseMove}
+                            onTouchMove={handleTouchMove}
+                        >
+                            {/* RIGHT SIDE (AFTER) */}
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <TwitterPost
+                                    isAfter={true}
+                                    avatar={profilePhoto}
+                                    text="Life tests us constantly. The Stoics teach: control your judgments and actions; externals are indifferent. Epictetus reminds us impressions deceive, examine them rationally. Virtue alone brings tranquility."
+                                />
+                            </div>
+
+                            {/* LEFT SIDE (BEFORE) */}
+                            <motion.div
+                                className="absolute left-0 top-0 bottom-0 overflow-hidden z-10 border-r-2 border-brand-primary/40"
+                                style={{ width: leftWidth }}
                             >
-                                {/* RIGHT SIDE (AFTER) */}
-                                <div className="absolute inset-0 flex items-start justify-center pt-8 bg-[#f3f6f8] dark:bg-slate-900">
+                                <div className="absolute inset-0 w-[550px] flex items-center justify-center">
                                     <TwitterPost
-                                        isAfter={true}
                                         avatar={profilePhoto}
-                                        text="Life tests us constantly. The Stoics teach: control your judgments and actions; externals are indifferent. Epictetus reminds us impressions deceive, examine them rationally. Virtue alone brings tranquility."
+                                        text="life hard sometimes, stoics say control what you can, like your thoughts and actions, dont worry about externals, but its hard to do everyday, epictetus said something about impressions, anyway focus on virtue, and be happy i guess."
                                     />
                                 </div>
+                            </motion.div>
 
-                                {/* LEFT SIDE (BEFORE) */}
-                                <motion.div
-                                    className="absolute left-0 top-0 bottom-0 overflow-hidden z-10 bg-white dark:bg-slate-950 border-r-2 border-brand-primary/40 shadow-[10px_0_30px_rgba(0,0,0,0.05)]"
-                                    style={{ width: leftWidth }}
-                                >
-                                    <div className="absolute inset-0 w-[550px] flex items-start justify-center pt-8 bg-white dark:bg-slate-950">
-                                        <TwitterPost
-                                            avatar={profilePhoto}
-                                            text="life hard sometimes, stoics say control what you can, like your thoughts and actions, dont worry about externals, but its hard to do everyday, epictetus said something about impressions, anyway focus on virtue, and be happy i guess."
-                                        />
-                                    </div>
-                                </motion.div>
+                            {/* Handle / Slider Line */}
+                            <motion.div
+                                className="absolute top-0 bottom-0 w-[2px] bg-brand-primary z-20 flex items-center justify-center pointer-events-none"
+                                style={{ left: leftWidth }}
+                            >
+                                <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(79,70,229,0.4)] -ml-[1px] border-2 border-white dark:border-slate-900">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M18 8L22 12L18 16" />
+                                        <path d="M6 8L2 12L6 16" />
+                                    </svg>
+                                </div>
+                            </motion.div>
 
-                                {/* Handle / Slider Line */}
-                                <motion.div
-                                    className="absolute top-0 bottom-0 w-[2px] bg-brand-primary z-20 flex items-center justify-center pointer-events-none"
-                                    style={{ left: leftWidth }}
-                                >
-                                    <div className="w-10 h-10 bg-brand-primary rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(79,70,229,0.4)] -ml-[1px] border-2 border-white dark:border-slate-900">
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M18 8L22 12L18 16" />
-                                            <path d="M6 8L2 12L6 16" />
-                                        </svg>
-                                    </div>
-                                </motion.div>
-
-                                {/* The Rewrite Button matching the photo */}
-                                <RewriteButton />
-                            </div>
-                        </WindowFrame>
+                            {/* The Rewrite Button matching the photo */}
+                            <RewriteButton />
+                        </div>
 
                         <div className="flex justify-center gap-8 mt-2">
                             <div className="flex flex-col items-center">
