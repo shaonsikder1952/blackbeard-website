@@ -20,7 +20,7 @@ const Hero = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-primary/[0.03] blur-[120px] rounded-full -z-10 pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-6 w-full">
-        {/* Hero Content - Tighter spacing */}
+        {/* Hero Content */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -68,64 +68,64 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Video + Logo Marquee Section */}
-        <div className="relative max-w-4xl mx-auto">
-          {/* Video Frame */}
+        {/* Video + Logo Marquee - Side by Side */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-5xl mx-auto">
+          {/* Left: Video Frame - Smaller, proportional */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="relative z-10"
+            className="relative"
           >
-            <div className="rounded-2xl overflow-hidden border border-border shadow-xl bg-surface">
+            <div className="rounded-xl overflow-hidden border border-border shadow-lg bg-surface">
               {/* Browser bar */}
-              <div className="flex items-center gap-2 px-4 py-3 bg-muted/50 border-b border-border">
+              <div className="flex items-center gap-2 px-3 py-2 bg-muted/50 border-b border-border">
                 <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-destructive/80" />
-                  <div className="w-3 h-3 rounded-full bg-accent-foreground/30" />
-                  <div className="w-3 h-3 rounded-full bg-brand-primary/50" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-destructive/70" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-foreground/20" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-brand-primary/40" />
                 </div>
               </div>
 
-              {/* Video - Original aspect ratio */}
-              <div className="relative aspect-video bg-background">
+              {/* Video - Original aspect ratio, no crop */}
+              <div className="relative bg-background">
                 <video
                   src="/hero-demo.mov"
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-contain"
+                  className="w-full h-auto block"
                 />
               </div>
             </div>
 
-            {/* Glow behind video */}
-            <div className="absolute -inset-8 bg-brand-primary/[0.03] blur-3xl rounded-full -z-10" />
+            {/* Subtle glow behind video */}
+            <div className="absolute -inset-4 bg-brand-primary/[0.02] blur-2xl rounded-full -z-10" />
           </motion.div>
 
-          {/* Logo Marquee - Right side of video */}
+          {/* Right: Logo Marquee Section */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="absolute right-0 top-0 bottom-0 w-24 flex flex-col items-center justify-center -mr-28 hidden lg:flex"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="flex flex-col items-center justify-center py-8"
           >
-            <div className="text-[10px] font-semibold text-foreground-muted tracking-widest uppercase mb-4 rotate-90 origin-center whitespace-nowrap">
-              Works on
+            <div className="text-[11px] font-semibold text-foreground-muted tracking-[0.2em] uppercase mb-6">
+              Rewrite works on
             </div>
             <LogoMarquee />
           </motion.div>
         </div>
 
-        {/* Mobile Logo Marquee */}
+        {/* Mobile: Horizontal Logo Marquee */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-8 lg:hidden"
+          className="mt-10 lg:hidden"
         >
-          <div className="text-[10px] font-semibold text-foreground-muted tracking-widest uppercase text-center mb-3">
+          <div className="text-[10px] font-semibold text-foreground-muted tracking-widest uppercase text-center mb-4">
             Works on
           </div>
           <LogoMarquee horizontal />

@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
 
-// Brand icons with their official colors - icons only
+// Brand icons with their official colors
 const brands = [
   {
     name: "Gmail", color: "#EA4335", icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+      <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
         <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
       </svg>
     )
   },
   {
     name: "Slack", color: "#4A154B", icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5">
+      <svg viewBox="0 0 24 24" className="w-6 h-6">
         <path fill="#E01E5A" d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313z" />
         <path fill="#36C5F0" d="M8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312z" />
         <path fill="#2EB67D" d="M18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312z" />
@@ -21,70 +21,70 @@ const brands = [
   },
   {
     name: "Discord", color: "#5865F2", icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+      <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
         <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z" />
       </svg>
     )
   },
   {
     name: "Twitter", color: "#000000", icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+      <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
       </svg>
     )
   },
   {
     name: "LinkedIn", color: "#0A66C2", icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+      <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
       </svg>
     )
   },
   {
     name: "WhatsApp", color: "#25D366", icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+      <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
       </svg>
     )
   },
   {
     name: "Telegram", color: "#26A5E4", icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+      <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
         <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
       </svg>
     )
   },
   {
     name: "Notion", color: "#000000", icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+      <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
         <path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.934zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952l1.448.327s0 .84-1.168.84l-3.22.186c-.094-.187 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.454-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z" />
       </svg>
     )
   },
   {
     name: "Figma", color: "#F24E1E", icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+      <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
         <path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zM8.148 24c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v4.49c0 2.476-2.014 4.49-4.588 4.49zm-.001-7.51c-1.665 0-3.019 1.355-3.019 3.02s1.354 3.02 3.019 3.02 3.019-1.355 3.019-3.02v-3.02H8.147zM8.148 8.981c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981H8.148zm-.001-7.51c-1.665 0-3.019 1.355-3.019 3.02s1.355 3.019 3.019 3.019h3.117V1.471H8.147zM8.148 15.02c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98H8.148zm3.117-7.51H8.148c-1.665 0-3.019 1.355-3.019 3.02s1.355 3.019 3.019 3.019h3.117V7.51zM15.852 15.02h-4.588v-8.98h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-3.117-7.51v5.99h3.117c1.665 0 3.019-1.355 3.019-3.02s-1.355-3.019-3.019-3.019h-3.117z" />
       </svg>
     )
   },
   {
     name: "GitHub", color: "#181717", icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+      <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
         <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
       </svg>
     )
   },
   {
     name: "YouTube", color: "#FF0000", icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+      <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
         <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
       </svg>
     )
   },
   {
     name: "Zoom", color: "#2D8CFF", icon: (
-      <svg viewBox="0 0 24 24" className="w-5 h-5" fill="currentColor">
+      <svg viewBox="0 0 24 24" className="w-6 h-6" fill="currentColor">
         <path d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0s12 5.373 12 12zm-5.2-1.8l-3.6 2.4V9.8c0-.6-.5-1.1-1.1-1.1H6.3c-.6 0-1.1.5-1.1 1.1v4.4c0 .6.5 1.1 1.1 1.1h7.8c.6 0 1.1-.5 1.1-1.1v-2.8l3.6 2.4c.4.3.9.1.9-.4V10.6c0-.5-.5-.7-.9-.4z" />
       </svg>
     )
@@ -106,16 +106,16 @@ const LogoMarquee = ({ horizontal = false }: LogoMarqueeProps) => {
         <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background to-transparent z-10" />
 
         <motion.div
-          className="flex gap-6 py-2 touch-none select-none pointer-events-none"
-          animate={{ x: [0, -800] }}
+          className="flex gap-5 py-2 touch-none select-none pointer-events-none"
+          animate={{ x: [0, -600] }}
           transition={{
-            x: { repeat: Infinity, repeatType: "loop", duration: 15, ease: "linear" },
+            x: { repeat: Infinity, repeatType: "loop", duration: 12, ease: "linear" },
           }}
         >
           {duplicatedBrands.map((brand, index) => (
             <div
               key={`${brand.name}-${index}`}
-              className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg bg-muted/50 hover:bg-muted transition-colors"
+              className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-muted/30"
               style={{ color: brand.color }}
             >
               {brand.icon}
@@ -126,27 +126,44 @@ const LogoMarquee = ({ horizontal = false }: LogoMarqueeProps) => {
     );
   }
 
-  // Vertical scrolling for desktop sidebar
+  // Grid layout with flowing animation for desktop
   return (
-    <div className="relative h-[300px] overflow-hidden touch-none select-none pointer-events-none">
-      <div className="absolute left-0 right-0 top-0 h-12 bg-gradient-to-b from-background to-transparent z-10" />
-      <div className="absolute left-0 right-0 bottom-0 h-12 bg-gradient-to-t from-background to-transparent z-10" />
+    <div className="relative w-full max-w-sm overflow-hidden touch-none select-none pointer-events-none">
+      <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent z-10" />
+      <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent z-10" />
+      <div className="absolute left-0 right-0 top-0 h-8 bg-gradient-to-b from-background to-transparent z-10" />
+      <div className="absolute left-0 right-0 bottom-0 h-8 bg-gradient-to-t from-background to-transparent z-10" />
 
       <motion.div
-        className="flex flex-col gap-4 touch-none select-none pointer-events-none"
-        animate={{ y: [0, -400] }}
-        transition={{
-          y: { repeat: Infinity, repeatType: "loop", duration: 12, ease: "linear" },
-        }}
+        className="flex flex-wrap gap-3 justify-center py-4 touch-none select-none pointer-events-none"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
       >
-        {duplicatedBrands.map((brand, index) => (
-          <div
-            key={`${brand.name}-${index}`}
-            className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-muted/50"
+        {brands.map((brand, index) => (
+          <motion.div
+            key={brand.name}
+            className="w-12 h-12 flex items-center justify-center rounded-xl bg-muted/40 border border-border/50"
             style={{ color: brand.color }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ 
+              opacity: 1, 
+              scale: 1,
+              y: [0, -4, 0],
+            }}
+            transition={{
+              opacity: { delay: index * 0.05, duration: 0.3 },
+              scale: { delay: index * 0.05, duration: 0.3 },
+              y: { 
+                delay: index * 0.1,
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }
+            }}
           >
             {brand.icon}
-          </div>
+          </motion.div>
         ))}
       </motion.div>
     </div>
