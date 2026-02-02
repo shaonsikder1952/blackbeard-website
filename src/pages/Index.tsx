@@ -10,11 +10,10 @@ import { motion } from "framer-motion";
 
 const Section = ({ children }: { children: React.ReactNode }) => (
   <motion.div
-    initial={{ opacity: 0, y: 50 }}
+    initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-50px" }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    className="mb-10 sm:mb-12"
+    transition={{ duration: 0.6, ease: "easeOut" }}
   >
     {children}
   </motion.div>
