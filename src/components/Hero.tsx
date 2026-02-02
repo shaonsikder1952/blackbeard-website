@@ -86,7 +86,7 @@ const Hero = () => {
                 loop
                 muted
                 playsInline
-                className="absolute left-1/2 top-1/2 min-w-[115%] min-h-[140%] -translate-x-1/2 -translate-y-1/2 object-cover"
+                className="absolute left-1/2 top-1/2 min-w-[106%] min-h-[122%] sm:min-h-[118%] -translate-x-1/2 -translate-y-1/2 object-cover object-[50%_45%]"
               />
             </div>
           </motion.div>
