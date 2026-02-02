@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import type { CSSProperties } from "react";
 
 // Brand icons with their official colors
 const brands = [
@@ -96,59 +96,48 @@ interface LogoMarqueeProps {
 }
 
 const LogoMarquee = ({ horizontal = false }: LogoMarqueeProps) => {
-  const duplicatedBrands = [...brands, ...brands, ...brands];
+  const duration = horizontal ? "16s" : "22s";
+  const fadeWidthClass = horizontal ? "w-12" : "w-16";
+  const containerClass = horizontal ? "w-full" : "w-full max-w-md";
+  const gapClass = horizontal ? "gap-5 py-2" : "gap-6 py-4";
+  const itemClass = horizontal
+    ? "flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-muted/30"
+    : "flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-muted/40 border border-border/50";
 
-  if (horizontal) {
-    // Horizontal scrolling for mobile
-    return (
-      <div className="relative w-full overflow-hidden touch-none select-none pointer-events-none">
-        <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background to-transparent z-10" />
+  const style = {
+    ["--bb-marquee-duration" as any]: duration,
+  } satisfies CSSProperties;
 
-        <motion.div
-          className="flex gap-5 py-2 touch-none select-none pointer-events-none"
-          animate={{ x: [0, -600] }}
-          transition={{
-            x: { repeat: Infinity, repeatType: "loop", duration: 12, ease: "linear" },
-          }}
-        >
-          {duplicatedBrands.map((brand, index) => (
-            <div
-              key={`${brand.name}-${index}`}
-              className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-muted/30"
-              style={{ color: brand.color }}
-            >
-              {brand.icon}
-            </div>
-          ))}
-        </motion.div>
-      </div>
-    );
-  }
-
-  // Horizontal scrolling marquee for desktop (same as mobile but wider)
   return (
-    <div className="relative w-full max-w-md overflow-hidden touch-none select-none pointer-events-none">
-      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10" />
-      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-10" />
+    <div
+      className={`relative ${containerClass} overflow-hidden touch-none select-none pointer-events-none`}
+      style={style}
+    >
+      {/* Edge fades */}
+      <div className={`absolute left-0 top-0 bottom-0 ${fadeWidthClass} bg-gradient-to-r from-background to-transparent z-10`} />
+      <div className={`absolute right-0 top-0 bottom-0 ${fadeWidthClass} bg-gradient-to-l from-background to-transparent z-10`} />
 
-      <motion.div
-        className="flex gap-6 py-4 touch-none select-none pointer-events-none"
-        animate={{ x: [0, -800] }}
-        transition={{
-          x: { repeat: Infinity, repeatType: "loop", duration: 20, ease: "linear" },
-        }}
-      >
-        {duplicatedBrands.map((brand, index) => (
+      {/* GPU-friendly marquee (CSS transform) */}
+      <div className="bb-marquee-track">
+        <div className={`bb-marquee-group ${gapClass}`}>{brands.map((brand) => (
           <div
-            key={`${brand.name}-${index}`}
-            className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-muted/40 border border-border/50"
+            key={`a-${brand.name}`}
+            className={itemClass}
             style={{ color: brand.color }}
           >
             {brand.icon}
           </div>
-        ))}
-      </motion.div>
+        ))}</div>
+        <div className={`bb-marquee-group ${gapClass}`} aria-hidden="true">{brands.map((brand) => (
+          <div
+            key={`b-${brand.name}`}
+            className={itemClass}
+            style={{ color: brand.color }}
+          >
+            {brand.icon}
+          </div>
+        ))}</div>
+      </div>
     </div>
   );
 };

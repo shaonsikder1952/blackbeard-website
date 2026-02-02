@@ -78,14 +78,14 @@ const Hero = () => {
              className="relative w-full max-w-[360px] sm:max-w-[440px] mx-auto lg:mx-0 lg:flex-1"
           >
             {/* Video container - tighter crop to hide black bars */}
-             <div className="relative aspect-[16/8.6] overflow-hidden rounded-xl sm:rounded-2xl border border-border/60 shadow-[0_20px_40px_-12px_hsl(0_0%_0%_/0.12)] bg-surface">
+             <div className="relative aspect-[16/9] overflow-hidden rounded-xl sm:rounded-2xl border border-border/60 shadow-[0_20px_40px_-12px_hsl(0_0%_0%_/0.12)] bg-surface">
               <video
                 src="/hero-demo.mov"
                 autoPlay
                 loop
                 muted
                 playsInline
-                 className="absolute inset-0 h-full w-full object-cover object-[50%_42%] transform-gpu scale-[1.14] sm:scale-[1.12] lg:scale-[1.10]"
+                 className="absolute inset-0 h-full w-full object-cover object-[50%_46%] transform-gpu scale-[1.18] sm:scale-[1.14] lg:scale-[1.12]"
               />
             </div>
           </motion.div>
