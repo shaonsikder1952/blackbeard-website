@@ -77,16 +77,15 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="relative"
           >
-            {/* Video - no frame, no border, fully blended */}
-            <div className="relative overflow-hidden">
+            {/* Video - blended, proper proportions, black bars hidden */}
+            <div className="relative aspect-[16/10] overflow-hidden">
               <video
                 src="/hero-demo.mov"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-full h-auto object-cover scale-[1.12]"
-                style={{ marginTop: '-6%', marginBottom: '-6%' }}
+                className="absolute inset-x-0 top-1/2 -translate-y-1/2 w-full"
               />
             </div>
           </motion.div>
