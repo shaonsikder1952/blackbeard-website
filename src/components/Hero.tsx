@@ -77,22 +77,18 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="relative"
           >
-            {/* Video container - crops black bars with overflow hidden */}
-            <div className="relative rounded-2xl overflow-hidden shadow-xl bg-background">
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <video
-                  src="/hero-demo.mov"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover scale-[1.15]"
-                />
-              </div>
+            {/* Video - no frame, no border, fully blended */}
+            <div className="relative overflow-hidden">
+              <video
+                src="/hero-demo.mov"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto object-cover scale-[1.12]"
+                style={{ marginTop: '-6%', marginBottom: '-6%' }}
+              />
             </div>
-
-            {/* Subtle glow behind */}
-            <div className="absolute -inset-4 bg-brand-primary/[0.03] blur-3xl rounded-full -z-10" />
           </motion.div>
 
           {/* Right: Logo Marquee Section */}
