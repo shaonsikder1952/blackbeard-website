@@ -6,7 +6,7 @@ import LogoMarquee from "./LogoMarquee";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-start pt-32 pb-24 overflow-hidden bg-white">
+    <section className="relative min-h-[90vh] flex flex-col items-center justify-start pt-32 pb-24 overflow-hidden bg-background">
       {/* Precise Diagonal Grid Background - Matching Screenshot Aesthetic */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.06]"
@@ -37,7 +37,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-5xl sm:text-7xl lg:text-[88px] font-extrabold tracking-tight text-[#1a1c2d] leading-[1.05] mb-8"
+            className="text-5xl sm:text-7xl lg:text-[88px] font-extrabold tracking-tight text-foreground leading-[1.05] mb-8"
           >
             Rewrite any text <br className="hidden sm:block" />
             <span className="text-brand-primary">
@@ -49,7 +49,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-xl sm:text-2xl text-slate-500 leading-relaxed max-w-3xl mb-14"
+            className="text-xl sm:text-2xl text-foreground-muted leading-relaxed max-w-3xl mb-14"
           >
             Blackbeard is an AI Chrome extension that rewrites text to <br className="hidden sm:block" />
             sound like you. Works everywhere you write.
@@ -68,7 +68,7 @@ const Hero = () => {
                 <ArrowRight className="ml-3 w-5 h-5 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
               </Button>
             </a>
-            <div className="text-base font-semibold text-slate-400 tracking-tight">
+            <div className="text-base font-semibold text-foreground-muted tracking-tight">
               Free tier • 5 rewrites/day
             </div>
           </motion.div>
@@ -121,7 +121,7 @@ const Hero = () => {
             transition={{ duration: 0.9, delay: 0.6 }}
             className="relative flex flex-col items-center justify-center min-h-[500px] overflow-visible"
           >
-            <div className="mb-8 text-[12px] font-bold text-slate-400 tracking-[0.3em] uppercase pointer-events-none select-none">
+            <div className="mb-8 text-[12px] font-bold text-foreground-muted tracking-[0.3em] uppercase pointer-events-none select-none">
               Rewrite works on
             </div>
 
