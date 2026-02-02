@@ -77,8 +77,8 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="relative w-full max-w-[560px] mx-auto lg:mx-0"
           >
-            {/* Video - cropped slightly to remove embedded black bars (no distortion) */}
-            <div className="relative aspect-[16/8.3] overflow-hidden">
+            {/* Video - styled like BeforeAfter section */}
+            <div className="relative aspect-[16/8.3] overflow-hidden rounded-2xl border border-black/10 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] bg-black/5">
               <video
                 src="/hero-demo.mov"
                 autoPlay
