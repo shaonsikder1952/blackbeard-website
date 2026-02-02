@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
+import profilePhoto from '@/assets/profile-photo.jpg';
 
 const WindowFrame = ({ children, title }: { children: React.ReactNode, title: string }) => (
     <div className="flex flex-col w-full h-full bg-[#f3f6f8] dark:bg-slate-900 rounded-xl overflow-hidden border border-border shadow-2xl">
@@ -61,14 +62,16 @@ const TwitterPost = ({
     handle = "@shaonsikder1971",
     time = "04:12 · 21.07.25",
     views = "69",
-    isAfter = false
+    isAfter = false,
+    avatar
 }: {
     text: string,
     name?: string,
     handle?: string,
     time?: string,
     views?: string,
-    isAfter?: boolean
+    isAfter?: boolean,
+    avatar?: string
 }) => (
     <div className={`flex flex-col w-full max-w-[380px] bg-white dark:bg-slate-900 rounded-2xl overflow-hidden ${isAfter
         ? 'border-[1.5px] border-brand-primary/30'
@@ -92,9 +95,13 @@ const TwitterPost = ({
             {/* Author Row */}
             <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-3">
-                    <div className={`w-11 h-11 rounded-full flex items-center justify-center text-sm font-bold shadow-sm ${isAfter ? 'bg-brand-primary text-white' : 'bg-slate-300 text-slate-600'}`}>
-                        {name[0]}
-                    </div>
+                    {avatar ? (
+                        <img src={avatar} alt={name} className="w-11 h-11 rounded-full object-cover" />
+                    ) : (
+                        <div className={`w-11 h-11 rounded-full flex items-center justify-center text-sm font-bold shadow-sm ${isAfter ? 'bg-brand-primary text-white' : 'bg-slate-300 text-slate-600'}`}>
+                            {name[0]}
+                        </div>
+                    )}
                     <div className="flex flex-col">
                         <span className="text-[15px] font-bold text-foreground leading-tight">{name}</span>
                         <span className="text-[13px] text-foreground-muted">{handle}</span>
@@ -224,9 +231,10 @@ const BeforeAfter = () => {
                                 onTouchMove={handleTouchMove}
                             >
                                 {/* RIGHT SIDE (AFTER) */}
-                                <div className="absolute inset-0 flex items-center justify-center p-8 bg-[#f3f6f8] dark:bg-slate-900">
+                                <div className="absolute inset-0 flex items-start justify-center pt-8 bg-[#f3f6f8] dark:bg-slate-900">
                                     <TwitterPost
                                         isAfter={true}
+                                        avatar={profilePhoto}
                                         text="Life tests us constantly. The Stoics teach: control your judgments and actions; externals are indifferent. Epictetus reminds us impressions deceive, examine them rationally. Virtue alone brings tranquility."
                                     />
                                 </div>
@@ -236,8 +244,9 @@ const BeforeAfter = () => {
                                     className="absolute left-0 top-0 bottom-0 overflow-hidden z-10 bg-white dark:bg-slate-950 border-r-2 border-brand-primary/40 shadow-[10px_0_30px_rgba(0,0,0,0.05)]"
                                     style={{ width: leftWidth }}
                                 >
-                                    <div className="absolute inset-0 w-[550px] flex items-center p-8 bg-white dark:bg-slate-950">
+                                    <div className="absolute inset-0 w-[550px] flex items-start justify-center pt-8 bg-white dark:bg-slate-950">
                                         <TwitterPost
+                                            avatar={profilePhoto}
                                             text="life hard sometimes, stoics say control what you can, like your thoughts and actions, dont worry about externals, but its hard to do everyday, epictetus said something about impressions, anyway focus on virtue, and be happy i guess."
                                         />
                                     </div>
