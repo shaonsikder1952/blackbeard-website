@@ -5,7 +5,7 @@ import LogoMarquee from "./LogoMarquee";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-start pt-16 sm:pt-20 lg:pt-24 pb-12 sm:pb-16 overflow-hidden bg-background">
+    <section className="relative min-h-screen flex flex-col items-center justify-start pt-4 sm:pt-6 lg:pt-8 pb-12 sm:pb-16 overflow-hidden bg-background">
       {/* Subtle diagonal grid background */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.04]"
@@ -77,15 +77,15 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="relative w-full max-w-[560px] mx-auto lg:mx-0"
           >
-            {/* Video - keep proportions, but slightly zoom to crop embedded black bars */}
-            <div className="relative aspect-[16/8.3] overflow-hidden rounded-2xl border border-border/60 shadow-[0_32px_64px_-16px_hsl(0_0%_0%_/0.10)] bg-surface">
+            {/* Video - crop off the black bars entirely */}
+            <div className="relative aspect-[16/7] overflow-hidden rounded-2xl border border-border/60 shadow-[0_32px_64px_-16px_hsl(0_0%_0%_/0.10)] bg-surface">
               <video
                 src="/hero-demo.mov"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="absolute inset-0 w-full h-full object-contain scale-[1.08] block"
+                className="absolute inset-0 w-full h-full object-cover block"
               />
             </div>
           </motion.div>
