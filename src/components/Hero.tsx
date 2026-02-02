@@ -92,12 +92,12 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Right: Logo Marquee Section */}
+          {/* Right: Logo Marquee Section - Desktop only */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="flex flex-col items-center justify-center py-8"
+            className="hidden lg:flex flex-col items-center justify-center py-8"
           >
             <div className="text-[11px] font-semibold text-foreground-muted tracking-[0.2em] uppercase mb-6">
               Rewrite works on
