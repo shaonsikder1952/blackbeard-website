@@ -75,18 +75,20 @@ const Hero = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="relative"
+            className="relative w-full max-w-[560px] mx-auto lg:mx-0"
           >
-            {/* Video - blended, proper proportions, black bars hidden */}
-            <div className="relative aspect-[16/10] overflow-hidden">
+            {/* Video - full frame visible, with subtle top/bottom fades to hide black bars */}
+            <div className="relative aspect-[16/8.3] overflow-hidden">
               <video
                 src="/hero-demo.mov"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="absolute inset-x-0 top-1/2 -translate-y-1/2 w-full"
+                className="absolute inset-0 w-full h-full object-contain"
               />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-background to-transparent" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-background to-transparent" />
             </div>
           </motion.div>
 
