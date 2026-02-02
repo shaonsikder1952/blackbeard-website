@@ -5,7 +5,7 @@ import LogoMarquee from "./LogoMarquee";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-start pt-24 pb-16 overflow-hidden bg-background">
+    <section className="relative min-h-screen flex flex-col items-center justify-start pt-16 sm:pt-20 lg:pt-24 pb-12 sm:pb-16 overflow-hidden bg-background">
       {/* Subtle diagonal grid background */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.04]"
