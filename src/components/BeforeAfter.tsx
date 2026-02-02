@@ -22,35 +22,62 @@ const WindowFrame = ({ children, title }: { children: React.ReactNode, title: st
 
 const RewriteButton = ({ className }: { className?: string }) => (
     <motion.div
-        className={`absolute -top-10 -right-4 z-50 cursor-pointer pointer-events-auto ${className}`}
+        className={`absolute top-3 right-3 z-50 cursor-pointer pointer-events-auto ${className}`}
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
     >
-        <div className="relative">
-            {/* Soft glow/shadow behind */}
-            <div className="absolute inset-[-4px] bg-brand-primary/10 blur-xl rounded-full opacity-60 flex items-center justify-center">
-                <div className="w-full h-full bg-brand-primary/20 animate-pulse rounded-full" />
-            </div>
-
-            {/* The circular button matching the photo */}
-            <div className="relative w-16 h-16 bg-white dark:bg-slate-900 rounded-full shadow-[0_4px_25px_rgba(0,0,0,0.18)] flex items-center justify-center border border-slate-200 dark:border-slate-800">
-                <div className="text-brand-primary">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M18.5 2.50001C18.8978 2.10218 19.4374 1.87869 20 1.87869C20.5626 1.87869 21.1022 2.10218 21.5 2.50001C21.8978 2.89783 22.1213 3.4374 22.1213 4.00001C22.1213 4.56262 21.8978 5.10218 21.5 5.50001L12 15L8 16L9 12L18.5 2.50001Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                </div>
-
-                {/* Small indicator label */}
-                <motion.div
-                    className="absolute -bottom-1 -right-2 bg-brand-primary text-white text-[9px] font-black px-2 py-0.5 rounded-full shadow-lg whitespace-nowrap"
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
+        {/* Speech bubble shape with pen icon */}
+        <div className="relative w-12 h-12">
+            <svg 
+                viewBox="0 0 48 48" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-full h-full drop-shadow-lg"
+            >
+                {/* Speech bubble background */}
+                <path 
+                    d="M24 4C12.954 4 4 12.954 4 24C4 35.046 12.954 44 24 44C26.5 44 28.5 42 28.5 39.5V38C28.5 36.5 29 35 31 35H32C39.18 35 44 29.18 44 22C44 11.507 35.046 4 24 4Z" 
+                    fill="white"
+                    stroke="hsl(243, 75%, 59%)"
+                    strokeWidth="1.5"
+                />
+                {/* Tail of speech bubble */}
+                <path 
+                    d="M8 38L12 32C10 30 8 27 8 24" 
+                    fill="white"
+                    stroke="hsl(243, 75%, 59%)"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </svg>
+            {/* Pen icon centered */}
+            <div className="absolute inset-0 flex items-center justify-center -mt-1">
+                <svg 
+                    width="20" 
+                    height="20" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="text-brand-primary"
                 >
-                    REWRITE
-                </motion.div>
+                    <path 
+                        d="M12 20H21M3 20H5.5L16.5 9L14 6.5L3 17.5V20Z" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
+                    />
+                    <path 
+                        d="M14 6.5L16.5 4L20 7.5L17.5 10L14 6.5Z" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
+                    />
+                </svg>
             </div>
         </div>
     </motion.div>
