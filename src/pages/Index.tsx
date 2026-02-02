@@ -22,7 +22,7 @@ const Section = ({ children }: { children: React.ReactNode }) => (
 
 const Index = () => {
   return (
-    <section className="pt-16 sm:pt-20 pb-10 sm:pb-14 px-6 sm:px-8 lg:px-12 bg-muted/30 relative overflow-hidden">
+    <section className="py-10 sm:py-14 px-6 sm:px-8 lg:px-12 bg-muted/30 relative overflow-hidden">
       <Header />
       <Hero />
       <BeforeAfter />

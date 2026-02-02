@@ -67,36 +67,3 @@
     font-family: 'FK Grotesk Neue Trial', system-ui, sans-serif;
   }
 }
-
-/* Ultra-smooth marquee (mobile friendly) */
-@layer utilities {
-  @keyframes bb-marquee-ltr {
-    from {
-      transform: translate3d(-50%, 0, 0);
-    }
-    to {
-      transform: translate3d(0, 0, 0);
-    }
-  }
-
-  .bb-marquee-track {
-    display: flex;
-    width: max-content;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    will-change: transform;
-    animation: bb-marquee-ltr var(--bb-marquee-duration, 22s) linear infinite;
-  }
-
-  .bb-marquee-group {
-    display: flex;
-    flex-shrink: 0;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .bb-marquee-track {
-      animation: none;
-      transform: none;
-    }
-  }
-}

@@ -5,7 +5,7 @@ import LogoMarquee from "./LogoMarquee";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-start pt-4 sm:pt-6 lg:pt-8 pb-8 sm:pb-12 overflow-hidden bg-background">
+    <section className="relative min-h-screen flex flex-col items-center justify-start pt-24 pb-16 overflow-hidden bg-background">
       {/* Subtle diagonal grid background */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.04]"
@@ -19,24 +19,24 @@ const Hero = () => {
       {/* Subtle top glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-primary/[0.03] blur-[120px] rounded-full -z-10 pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 w-full">
+      <div className="relative max-w-6xl mx-auto px-6 w-full">
         {/* Hero Content */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 mb-4 sm:mb-6 rounded-full bg-brand-primary/5 border border-brand-primary/20"
+            className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-brand-primary/5 border border-brand-primary/20"
           >
             <div className="w-1.5 h-1.5 bg-brand-primary rounded-full" />
-            <span className="text-[10px] sm:text-xs font-semibold text-brand-primary">Now available on Chrome Web Store</span>
+            <span className="text-xs font-semibold text-brand-primary">Now available on Chrome Web Store</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-4 sm:mb-5"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-5"
           >
             Rewrite any text{" "}
             <span className="text-brand-primary">in your voice</span>
@@ -46,7 +46,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg text-foreground-muted leading-relaxed max-w-xl mb-6 sm:mb-8 px-2"
+            className="text-lg text-foreground-muted leading-relaxed max-w-xl mb-8"
           >
             Blackbeard is an AI Chrome extension that rewrites text to sound like you. Works everywhere you write.
           </motion.p>
@@ -55,55 +55,69 @@ const Hero = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4"
+            className="flex flex-col sm:flex-row items-center gap-4"
           >
             <a href="https://chromewebstore.google.com/detail/blackbeard-ai-rewriter/iglodhieknpcndnhbjdflklohidmbfon" target="_blank" rel="noopener noreferrer">
-              <Button variant="brand" size="lg" className="h-11 sm:h-12 px-6 sm:px-8 text-sm sm:text-base shadow-brand hover:scale-[1.02] transition-transform group">
-                <Chrome className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
+              <Button variant="brand" size="lg" className="h-12 px-8 text-base shadow-brand hover:scale-[1.02] transition-transform group">
+                <Chrome className="mr-2 w-5 h-5" />
                 Install on Chrome
                 <ArrowRight className="ml-2 w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
               </Button>
             </a>
-            <span className="text-xs sm:text-sm text-foreground-muted">Free tier • 5 rewrites/day</span>
+            <span className="text-sm text-foreground-muted">Free tier • 5 rewrites/day</span>
           </motion.div>
         </div>
 
-        {/* Video Section - Full width on mobile, side-by-side on desktop */}
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center max-w-5xl mx-auto">
-          {/* Video - LinkedIn message-box sized */}
+        {/* Video + Logo Marquee - Side by Side */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-5xl mx-auto">
+          {/* Left: Video - Clean, no frame, cropped to hide black bars */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="relative w-full max-w-[560px] mx-auto lg:mx-0 lg:flex-1"
+            className="relative w-full max-w-[560px] mx-auto lg:mx-0"
           >
-            {/* Outer container clips top/bottom black bars */}
-            <div className="relative w-full h-[320px] sm:h-[380px] overflow-hidden rounded-xl sm:rounded-2xl border border-border/60 shadow-[0_20px_40px_-12px_hsl(0_0%_0%_/0.12)] bg-surface">
-              {/* Video scaled up to push black bars outside visible area */}
+            {/* Video - full frame visible, with subtle top/bottom fades to hide black bars */}
+            <div className="relative aspect-[16/8.3] overflow-hidden">
               <video
                 src="/hero-demo.mov"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="absolute left-1/2 top-1/2 min-w-[106%] min-h-[122%] sm:min-h-[118%] -translate-x-1/2 -translate-y-1/2 object-cover object-[50%_45%]"
+                className="absolute inset-0 w-full h-full object-contain"
               />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-5 bg-[hsl(210_40%_98%)]" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-5 bg-[hsl(210_40%_98%)]" />
             </div>
           </motion.div>
 
-          {/* Logo Marquee Section - Single instance for all screen sizes */}
+          {/* Right: Logo Marquee Section */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="flex flex-col items-center justify-center py-4 lg:py-8 lg:flex-1"
+            className="flex flex-col items-center justify-center py-8"
           >
-            <div className="text-[10px] sm:text-[11px] font-semibold text-foreground-muted tracking-[0.2em] uppercase mb-4 sm:mb-6">
+            <div className="text-[11px] font-semibold text-foreground-muted tracking-[0.2em] uppercase mb-6">
               Rewrite works on
             </div>
             <LogoMarquee />
           </motion.div>
         </div>
+
+        {/* Mobile: Horizontal Logo Marquee */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-10 lg:hidden"
+        >
+          <div className="text-[10px] font-semibold text-foreground-muted tracking-widest uppercase text-center mb-4">
+            Works on
+          </div>
+          <LogoMarquee horizontal />
+        </motion.div>
       </div>
     </section>
   );
