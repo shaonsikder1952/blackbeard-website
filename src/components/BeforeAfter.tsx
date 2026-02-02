@@ -20,69 +20,6 @@ const WindowFrame = ({ children, title }: { children: React.ReactNode, title: st
     </div>
 );
 
-const RewriteButton = ({ className }: { className?: string }) => (
-    <motion.div
-        className={`absolute top-3 right-3 z-50 cursor-pointer pointer-events-auto ${className}`}
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.95 }}
-    >
-        {/* Speech bubble shape with pen icon */}
-        <div className="relative w-12 h-12">
-            <svg 
-                viewBox="0 0 48 48" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-full h-full drop-shadow-lg"
-            >
-                {/* Speech bubble background */}
-                <path 
-                    d="M24 4C12.954 4 4 12.954 4 24C4 35.046 12.954 44 24 44C26.5 44 28.5 42 28.5 39.5V38C28.5 36.5 29 35 31 35H32C39.18 35 44 29.18 44 22C44 11.507 35.046 4 24 4Z" 
-                    fill="white"
-                    stroke="hsl(243, 75%, 59%)"
-                    strokeWidth="1.5"
-                />
-                {/* Tail of speech bubble */}
-                <path 
-                    d="M8 38L12 32C10 30 8 27 8 24" 
-                    fill="white"
-                    stroke="hsl(243, 75%, 59%)"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                />
-            </svg>
-            {/* Pen icon centered */}
-            <div className="absolute inset-0 flex items-center justify-center -mt-1">
-                <svg 
-                    width="20" 
-                    height="20" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="text-brand-primary"
-                >
-                    <path 
-                        d="M12 20H21M3 20H5.5L16.5 9L14 6.5L3 17.5V20Z" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round"
-                    />
-                    <path 
-                        d="M14 6.5L16.5 4L20 7.5L17.5 10L14 6.5Z" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round"
-                    />
-                </svg>
-            </div>
-        </div>
-    </motion.div>
-);
-
 const TwitterPost = ({
     text,
     name = "Shaon Sikder",
@@ -295,8 +232,6 @@ const BeforeAfter = () => {
                                 </div>
                             </motion.div>
 
-                            {/* The Rewrite Button matching the photo */}
-                            <RewriteButton />
                         </div>
 
                         <div className="flex justify-center gap-8 mt-2">
