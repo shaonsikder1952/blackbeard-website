@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Chrome } from "lucide-react";
 import { motion } from "framer-motion";
+import LogoMarquee from "./LogoMarquee";
 
 // Elegant diagonal line component
 const DiagonalLine = ({ 
@@ -157,26 +158,8 @@ const Hero = () => {
           </motion.span>
         </motion.div>
 
-        {/* Trust pills */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="flex flex-wrap items-center justify-center gap-3"
-        >
-          {['Works on Gmail', 'Works on LinkedIn', 'Works on Twitter'].map((item, index) => (
-            <motion.div 
-              key={item} 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.6 + index * 0.1 }}
-              whileHover={{ scale: 1.05, y: -2 }}
-              className="px-4 py-2 rounded-full bg-surface border border-border text-sm text-foreground-muted hover:border-brand-primary/30 hover:text-foreground transition-colors cursor-default"
-            >
-              {item}
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* Logo Marquee */}
+        <LogoMarquee />
       </div>
     </section>
   );
