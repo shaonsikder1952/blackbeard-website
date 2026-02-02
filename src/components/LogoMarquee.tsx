@@ -1,4 +1,4 @@
-import type { CSSProperties } from "react";
+import { motion } from "framer-motion";
 
 // Brand icons with their official colors
 const brands = [
@@ -91,35 +91,31 @@ const brands = [
   },
 ];
 
-interface LogoMarqueeProps {
-  horizontal?: boolean;
-}
-
-const LogoMarquee = ({ horizontal = false }: LogoMarqueeProps) => {
-  const duration = horizontal ? "16s" : "22s";
-  const fadeWidthClass = horizontal ? "w-12" : "w-16";
-  const containerClass = horizontal ? "w-full" : "w-full max-w-md";
-  const gapClass = horizontal ? "gap-5 py-2" : "gap-6 py-4";
-  const itemClass = horizontal
-    ? "flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-muted/30"
-    : "flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-muted/40 border border-border/50";
-
-  const style = {
-    ["--bb-marquee-duration" as any]: duration,
-  } satisfies CSSProperties;
+const LogoMarquee = () => {
+  const itemClass =
+    "flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-muted/40 border border-border/50";
 
   return (
-    <div
-      className={`relative ${containerClass} overflow-hidden touch-none select-none pointer-events-none`}
-      style={style}
-    >
+    <div className="relative w-full max-w-md overflow-hidden touch-none select-none pointer-events-none">
       {/* Edge fades */}
-      <div className={`absolute left-0 top-0 bottom-0 ${fadeWidthClass} bg-gradient-to-r from-background to-transparent z-10`} />
-      <div className={`absolute right-0 top-0 bottom-0 ${fadeWidthClass} bg-gradient-to-l from-background to-transparent z-10`} />
+      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-10" />
 
-      {/* GPU-friendly marquee (CSS transform) */}
-      <div className="bb-marquee-track">
-        <div className={`bb-marquee-group ${gapClass}`}>{brands.map((brand) => (
+      {/* Smooth framer-motion marquee using percentage-based x */}
+      <motion.div
+        className="flex gap-6 py-4 w-max"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          x: {
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 20,
+            ease: "linear",
+          },
+        }}
+      >
+        {/* First set */}
+        {brands.map((brand) => (
           <div
             key={`a-${brand.name}`}
             className={itemClass}
@@ -127,17 +123,19 @@ const LogoMarquee = ({ horizontal = false }: LogoMarqueeProps) => {
           >
             {brand.icon}
           </div>
-        ))}</div>
-        <div className={`bb-marquee-group ${gapClass}`} aria-hidden="true">{brands.map((brand) => (
+        ))}
+        {/* Duplicate set for seamless loop */}
+        {brands.map((brand) => (
           <div
             key={`b-${brand.name}`}
             className={itemClass}
             style={{ color: brand.color }}
+            aria-hidden="true"
           >
             {brand.icon}
           </div>
-        ))}</div>
-      </div>
+        ))}
+      </motion.div>
     </div>
   );
 };
