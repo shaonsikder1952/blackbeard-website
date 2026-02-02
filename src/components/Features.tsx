@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Features = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-  
+
   const features = [
     {
       icon: Feather,
@@ -36,29 +36,29 @@ const Features = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.5 }
     }
   };
 
   return (
-    <section className="py-16 sm:py-20 px-6 sm:px-8 lg:px-12 bg-muted/30 relative overflow-hidden">
+    <section className="py-10 sm:py-14 px-6 sm:px-8 lg:px-12 bg-background relative overflow-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-50" />
-      
+
       <div className="max-w-5xl mx-auto relative">
         {/* Video Section */}
-        <motion.div 
-          className="mb-16 sm:mb-20"
+        <motion.div
+          className="mb-10 sm:mb-12"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
         >
           <div className="text-center mb-12">
-            <motion.h2 
+            <motion.h2
               className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ const Features = () => {
             >
               See it in action
             </motion.h2>
-            <motion.p 
+            <motion.p
               className="text-lg text-foreground-muted"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -77,9 +77,9 @@ const Features = () => {
               Watch how Blackbeard transforms your writing
             </motion.p>
           </div>
-          
+
           <div className="max-w-3xl mx-auto">
-            <motion.div 
+            <motion.div
               className="rounded-xl overflow-hidden shadow-xl ring-1 ring-border"
               whileHover={{ scale: 1.01 }}
               transition={{ duration: 0.3 }}
@@ -104,7 +104,7 @@ const Features = () => {
                       alt="Tutorial video thumbnail"
                       className="w-full h-full object-cover"
                     />
-                    <motion.div 
+                    <motion.div
                       className="absolute inset-0 bg-black/40"
                       variants={{
                         hover: { backgroundColor: "rgba(0,0,0,0.5)" }
@@ -112,7 +112,7 @@ const Features = () => {
                       transition={{ duration: 0.3 }}
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <motion.div 
+                      <motion.div
                         className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white flex items-center justify-center shadow-lg"
                         variants={{
                           hover: { scale: 1.1 }
@@ -140,7 +140,7 @@ const Features = () => {
 
         {/* Features Grid */}
         <div className="text-center mb-12">
-          <motion.h2 
+          <motion.h2
             className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -149,7 +149,7 @@ const Features = () => {
           >
             Why Blackbeard?
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-lg text-foreground-muted max-w-xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -160,7 +160,7 @@ const Features = () => {
           </motion.p>
         </div>
 
-        <motion.div 
+        <motion.div
           className="grid sm:grid-cols-3 gap-6"
           variants={containerVariants}
           initial="hidden"
@@ -168,16 +168,16 @@ const Features = () => {
           viewport={{ once: true, margin: "-50px" }}
         >
           {features.map((feature, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ 
-                y: -8, 
+              whileHover={{
+                y: -8,
                 boxShadow: "0 20px 40px -15px hsl(245, 75%, 60%, 0.15)"
               }}
               className="p-6 rounded-xl bg-background border border-border hover:border-brand-primary/40 transition-colors duration-300 group"
             >
-              <motion.div 
+              <motion.div
                 className="w-12 h-12 rounded-lg bg-brand-primary/10 flex items-center justify-center mb-4 group-hover:bg-brand-primary/20 transition-colors duration-300"
                 whileHover={{ rotate: [0, -10, 10, 0] }}
                 transition={{ duration: 0.5 }}

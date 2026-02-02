@@ -10,7 +10,7 @@ const Pricing = () => {
       description: "Perfect for trying out",
       features: [
         "5 rewrites per day",
-        "Basic style adaptation", 
+        "Basic style adaptation",
         "Works on major sites",
       ],
       cta: "Get Started",
@@ -46,20 +46,20 @@ const Pricing = () => {
 
   const cardVariants = {
     hidden: { opacity: 0, y: 40 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.6 }
     }
   };
 
   return (
-    <section className="py-16 sm:py-20 px-6 sm:px-8 lg:px-12 bg-background relative overflow-hidden">
+    <section className="py-10 sm:py-14 px-6 sm:px-8 lg:px-12 bg-background relative overflow-hidden">
       {/* Subtle gradient accent */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-primary/5 blur-3xl rounded-full" />
-      
+
       <div className="max-w-4xl mx-auto relative">
-        <motion.div 
+        <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ const Pricing = () => {
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto"
           variants={containerVariants}
           initial="hidden"
@@ -82,21 +82,20 @@ const Pricing = () => {
           viewport={{ once: true, margin: "-50px" }}
         >
           {plans.map((plan, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               variants={cardVariants}
-              whileHover={{ 
+              whileHover={{
                 y: -8,
                 transition: { duration: 0.3 }
               }}
-              className={`relative p-6 sm:p-8 rounded-xl border transition-all duration-300 ${
-                plan.featured 
-                  ? 'bg-background border-brand-primary shadow-[0_0_40px_hsl(245,75%,60%,0.15)] ring-1 ring-brand-primary' 
+              className={`relative p-6 sm:p-8 rounded-xl border transition-all duration-300 ${plan.featured
+                  ? 'bg-background border-brand-primary shadow-[0_0_40px_hsl(245,75%,60%,0.15)] ring-1 ring-brand-primary'
                   : 'bg-background border-border hover:border-brand-primary/30 hover:shadow-lg'
-              }`}
+                }`}
             >
               {plan.featured && (
-                <motion.div 
+                <motion.div
                   className="absolute -top-3 left-6"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -113,7 +112,7 @@ const Pricing = () => {
                 <p className="text-sm text-foreground-muted mb-4">{plan.description}</p>
                 <div className="flex items-baseline">
                   <span className="text-2xl font-bold text-foreground" style={{ fontFamily: 'Arial, sans-serif' }}>$</span>
-                  <motion.span 
+                  <motion.span
                     className="text-4xl font-bold text-foreground"
                     initial={{ opacity: 0, scale: 0.5 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -130,8 +129,8 @@ const Pricing = () => {
 
               <ul className="space-y-3 mb-8">
                 {plan.features.map((feature, i) => (
-                  <motion.li 
-                    key={i} 
+                  <motion.li
+                    key={i}
                     className="flex items-start gap-3"
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -153,8 +152,8 @@ const Pricing = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Button 
-                  variant={plan.featured ? "brand" : "outline"} 
+                <Button
+                  variant={plan.featured ? "brand" : "outline"}
                   className={`w-full ${plan.featured ? 'shadow-[0_4px_20px_hsl(245,75%,60%,0.3)]' : ''}`}
                   size="lg"
                   disabled={plan.disabled}
@@ -166,7 +165,7 @@ const Pricing = () => {
           ))}
         </motion.div>
 
-        <motion.p 
+        <motion.p
           className="text-center text-sm text-foreground-muted mt-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
