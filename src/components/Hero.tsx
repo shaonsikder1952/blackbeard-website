@@ -75,17 +75,17 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="relative w-full max-w-[400px] sm:max-w-[480px] mx-auto lg:mx-0 lg:flex-1"
+             className="relative w-full max-w-[360px] sm:max-w-[440px] mx-auto lg:mx-0 lg:flex-1"
           >
             {/* Video container - tighter crop to hide black bars */}
-            <div className="relative aspect-[16/7.5] overflow-hidden rounded-xl sm:rounded-2xl border border-border/60 shadow-[0_20px_40px_-12px_hsl(0_0%_0%_/0.12)] bg-surface">
+             <div className="relative aspect-[16/8.6] overflow-hidden rounded-xl sm:rounded-2xl border border-border/60 shadow-[0_20px_40px_-12px_hsl(0_0%_0%_/0.12)] bg-surface">
               <video
                 src="/hero-demo.mov"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="absolute inset-[-8%] w-[116%] h-[116%] object-cover block"
+                 className="absolute inset-0 h-full w-full object-cover object-[50%_42%] transform-gpu scale-[1.14] sm:scale-[1.12] lg:scale-[1.10]"
               />
             </div>
           </motion.div>
