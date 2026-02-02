@@ -87,8 +87,8 @@ const Hero = () => {
                 playsInline
                 className="absolute inset-0 w-full h-full object-contain"
               />
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[hsl(210_40%_98%)] via-[hsl(210_40%_98%/0.9)] to-transparent" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[hsl(210_40%_98%)] via-[hsl(210_40%_98%/0.9)] to-transparent" />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-5 bg-[hsl(210_40%_98%)]" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-5 bg-[hsl(210_40%_98%)]" />
             </div>
           </motion.div>
 
