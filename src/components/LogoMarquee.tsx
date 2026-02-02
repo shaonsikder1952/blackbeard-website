@@ -130,9 +130,9 @@ const LogoMarquee = () => {
         {/* Right fade */}
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
         
-        {/* Scrolling content */}
+      {/* Scrolling content - touch-none prevents finger scrolling */}
         <motion.div
-          className="flex items-center gap-8"
+          className="flex items-center gap-8 touch-none select-none pointer-events-none"
           animate={{
             x: ["0%", "-50%"],
           }}
@@ -140,7 +140,7 @@ const LogoMarquee = () => {
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 40,
+              duration: 20,
               ease: "linear",
             },
           }}
