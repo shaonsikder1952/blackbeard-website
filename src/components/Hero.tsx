@@ -77,7 +77,7 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="relative w-full max-w-[560px] mx-auto lg:mx-0"
           >
-            {/* Video - full frame visible, with subtle top/bottom fades to hide black bars */}
+            {/* Video - cropped slightly to remove embedded black bars (no distortion) */}
             <div className="relative aspect-[16/8.3] overflow-hidden">
               <video
                 src="/hero-demo.mov"
@@ -85,10 +85,8 @@ const Hero = () => {
                 loop
                 muted
                 playsInline
-                className="absolute inset-0 w-full h-full object-contain"
+                className="w-full h-full object-cover object-center block"
               />
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-5 bg-[hsl(210_40%_98%)]" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-5 bg-[hsl(210_40%_98%)]" />
             </div>
           </motion.div>
 
