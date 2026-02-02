@@ -250,7 +250,7 @@ const BeforeAfter = () => {
                                 <div className="absolute left-0 top-0 w-[380px] h-[380px]">
                                     <TwitterPost
                                         avatar={profilePhoto}
-                                        text="life hard sometimes, stoics say control what you can, like your thoughts and actions, dont worry about externals, but its hard to do everyday, epictetus said something about impressions, anyway focus on virtue, and be happy i guess."
+                                        text={`life — hard sometimes," stoics say, delve into what you can control — like your thoughts and actions, dont worry about externals, but its crucial to do everyday, epictetus said something about impressions, moreover — focus on virtue, and be happy i guess.`}
                                     />
                                 </div>
                             </motion.div>
