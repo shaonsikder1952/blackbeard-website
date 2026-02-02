@@ -75,10 +75,10 @@ const Hero = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="relative w-full max-w-[560px] mx-auto lg:mx-0"
+            className="relative w-full max-w-[480px] mx-auto lg:mx-0"
           >
-            {/* Video - crop off the black bars entirely */}
-            <div className="relative aspect-[16/7] overflow-hidden rounded-2xl border border-border/60 shadow-[0_32px_64px_-16px_hsl(0_0%_0%_/0.10)] bg-surface">
+            {/* Video - slightly smaller container with less aggressive crop */}
+            <div className="relative aspect-[16/8] overflow-hidden rounded-2xl border border-border/60 shadow-[0_32px_64px_-16px_hsl(0_0%_0%_/0.10)] bg-surface">
               <video
                 src="/hero-demo.mov"
                 autoPlay

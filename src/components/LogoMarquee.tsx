@@ -126,44 +126,27 @@ const LogoMarquee = ({ horizontal = false }: LogoMarqueeProps) => {
     );
   }
 
-  // Grid layout with flowing animation for desktop
+  // Horizontal scrolling marquee for desktop (same as mobile but wider)
   return (
-    <div className="relative w-full max-w-sm overflow-hidden touch-none select-none pointer-events-none">
-      <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-background to-transparent z-10" />
-      <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-background to-transparent z-10" />
-      <div className="absolute left-0 right-0 top-0 h-8 bg-gradient-to-b from-background to-transparent z-10" />
-      <div className="absolute left-0 right-0 bottom-0 h-8 bg-gradient-to-t from-background to-transparent z-10" />
+    <div className="relative w-full max-w-md overflow-hidden touch-none select-none pointer-events-none">
+      <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-10" />
 
       <motion.div
-        className="flex flex-wrap gap-3 justify-center py-4 touch-none select-none pointer-events-none"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        className="flex gap-6 py-4 touch-none select-none pointer-events-none"
+        animate={{ x: [0, -800] }}
+        transition={{
+          x: { repeat: Infinity, repeatType: "loop", duration: 20, ease: "linear" },
+        }}
       >
-        {brands.map((brand, index) => (
-          <motion.div
-            key={brand.name}
-            className="w-12 h-12 flex items-center justify-center rounded-xl bg-muted/40 border border-border/50"
+        {duplicatedBrands.map((brand, index) => (
+          <div
+            key={`${brand.name}-${index}`}
+            className="flex-shrink-0 w-12 h-12 flex items-center justify-center rounded-xl bg-muted/40 border border-border/50"
             style={{ color: brand.color }}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ 
-              opacity: 1, 
-              scale: 1,
-              y: [0, -4, 0],
-            }}
-            transition={{
-              opacity: { delay: index * 0.05, duration: 0.3 },
-              scale: { delay: index * 0.05, duration: 0.3 },
-              y: { 
-                delay: index * 0.1,
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }
-            }}
           >
             {brand.icon}
-          </motion.div>
+          </div>
         ))}
       </motion.div>
     </div>
