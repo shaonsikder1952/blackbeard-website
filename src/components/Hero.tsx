@@ -70,22 +70,23 @@ const Hero = () => {
 
         {/* Video Section - Full width on mobile, side-by-side on desktop */}
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center max-w-5xl mx-auto">
-          {/* Video */}
+          {/* Video - LinkedIn message-box sized */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-             className="relative w-full max-w-[360px] sm:max-w-[440px] mx-auto lg:mx-0 lg:flex-1"
+            className="relative w-full max-w-[560px] mx-auto lg:mx-0 lg:flex-1"
           >
-            {/* Video container - tighter crop to hide black bars */}
-            <div className="relative aspect-[16/10] overflow-hidden rounded-xl sm:rounded-2xl border border-border/60 shadow-[0_20px_40px_-12px_hsl(0_0%_0%_/0.12)] bg-surface">
+            {/* Outer container clips top/bottom black bars */}
+            <div className="relative w-full h-[320px] sm:h-[380px] overflow-hidden rounded-xl sm:rounded-2xl border border-border/60 shadow-[0_20px_40px_-12px_hsl(0_0%_0%_/0.12)] bg-surface">
+              {/* Video scaled up to push black bars outside visible area */}
               <video
                 src="/hero-demo.mov"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="absolute inset-0 h-full w-full object-cover object-center"
+                className="absolute left-1/2 top-1/2 min-w-[115%] min-h-[140%] -translate-x-1/2 -translate-y-1/2 object-cover"
               />
             </div>
           </motion.div>
