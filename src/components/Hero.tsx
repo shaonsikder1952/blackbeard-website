@@ -36,10 +36,10 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-5"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-5"
           >
-            Rewrite any text{" "}
-            <span className="text-brand-primary">in your voice</span>
+            Don't sound like ChatGPT.{" "}
+            <span className="text-brand-primary">Sound like you.</span>
           </motion.h1>
 
           <motion.p
