@@ -1,5 +1,6 @@
 import { Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const XIcon = () => (
   <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current">
@@ -40,9 +41,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8 mb-8">
           {/* Brand */}
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-brand-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">B</span>
-            </div>
+            <img src={logo} alt="Blackbeard" className="w-9 h-9 rounded-lg object-cover" />
             <span className="text-xl font-bold text-foreground">Blackbeard</span>
           </div>
 
