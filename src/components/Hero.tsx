@@ -69,25 +69,25 @@ const Hero = () => {
         </div>
 
         {/* Two Videos Side by Side */}
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch justify-center max-w-5xl mx-auto mb-12">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 items-start justify-center max-w-5xl mx-auto mb-12 px-2 sm:px-0">
           {/* Left: Hero Demo Video */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="relative w-full lg:w-[380px] flex-shrink-0"
+            className="relative w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[380px] mx-auto sm:mx-0 flex-shrink-0"
           >
             <div className="text-[10px] font-semibold text-foreground-muted tracking-[0.15em] uppercase text-center mb-2">
               Before
             </div>
-            <div className="relative overflow-hidden rounded-xl border border-border shadow-lg bg-background">
+            <div className="relative overflow-hidden rounded-lg sm:rounded-xl border border-border shadow-md sm:shadow-lg bg-background">
               <video
                 src="/hero-demo.mov"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-full h-auto object-contain block"
+                className="w-full h-auto object-contain block max-h-[400px]"
               />
             </div>
           </motion.div>
@@ -97,19 +97,19 @@ const Hero = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="relative w-full lg:w-[380px] flex-shrink-0"
+            className="relative w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[380px] mx-auto sm:mx-0 flex-shrink-0"
           >
             <div className="text-[10px] font-semibold text-foreground-muted tracking-[0.15em] uppercase text-center mb-2">
               After
             </div>
-            <div className="relative overflow-hidden rounded-xl border border-border shadow-lg bg-background">
+            <div className="relative overflow-hidden rounded-lg sm:rounded-xl border border-border shadow-md sm:shadow-lg bg-background">
               <video
                 src="/use-case.mov"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="w-full h-auto object-contain block"
+                className="w-full h-auto object-contain block max-h-[400px]"
               />
             </div>
           </motion.div>
