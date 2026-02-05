@@ -5,7 +5,7 @@ import LogoMarquee from "./LogoMarquee";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-20 pb-12 overflow-hidden bg-background">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-16 overflow-hidden bg-background">
       {/* Subtle diagonal grid background */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.04]"
@@ -69,14 +69,17 @@ const Hero = () => {
         </div>
 
         {/* Two Videos Side by Side */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-10 items-start max-w-4xl mx-auto mb-10">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch justify-center max-w-5xl mx-auto mb-12">
           {/* Left: Hero Demo Video */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="relative w-full"
+            className="relative w-full lg:w-[380px] flex-shrink-0"
           >
+            <div className="text-[10px] font-semibold text-foreground-muted tracking-[0.15em] uppercase text-center mb-2">
+              Before
+            </div>
             <div className="relative overflow-hidden rounded-xl border border-border shadow-lg bg-background">
               <video
                 src="/hero-demo.mov"
@@ -94,8 +97,11 @@ const Hero = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="relative w-full"
+            className="relative w-full lg:w-[380px] flex-shrink-0"
           >
+            <div className="text-[10px] font-semibold text-foreground-muted tracking-[0.15em] uppercase text-center mb-2">
+              After
+            </div>
             <div className="relative overflow-hidden rounded-xl border border-border shadow-lg bg-background">
               <video
                 src="/use-case.mov"
