@@ -75,10 +75,10 @@ const Hero = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="relative w-full max-w-[560px] mx-auto lg:mx-0"
+            className="relative w-full max-w-[280px] mx-auto lg:mx-0"
           >
             {/* Video - full frame visible, with subtle top/bottom fades to hide black bars */}
-            <div className="relative aspect-[16/8.3] overflow-hidden">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-lg shadow-md">
               <video
                 src="/hero-demo.mov"
                 autoPlay
