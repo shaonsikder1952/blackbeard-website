@@ -5,7 +5,7 @@ import LogoMarquee from "./LogoMarquee";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-start pt-24 pb-16 overflow-hidden bg-background">
+    <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-20 pb-12 overflow-hidden bg-background">
       {/* Subtle diagonal grid background */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.04]"
@@ -21,7 +21,7 @@ const Hero = () => {
 
       <div className="relative max-w-6xl mx-auto px-6 w-full">
         {/* Hero Content */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12">
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -68,53 +68,56 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Video + Logo Marquee - Side by Side */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-5xl mx-auto">
-          {/* Left: Video - Clean, no frame, cropped to hide black bars */}
+        {/* Two Videos Side by Side */}
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-10 items-start max-w-4xl mx-auto mb-10">
+          {/* Left: Hero Demo Video */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="relative w-full max-w-[280px] mx-auto lg:mx-0"
+            className="relative w-full"
           >
-            {/* Video - full frame visible, with subtle top/bottom fades to hide black bars */}
-            <div className="relative aspect-[16/9] overflow-hidden rounded-lg shadow-md">
+            <div className="relative overflow-hidden rounded-xl border border-border shadow-lg bg-background">
               <video
                 src="/hero-demo.mov"
                 autoPlay
                 loop
                 muted
                 playsInline
-                className="absolute inset-0 w-full h-full object-contain"
+                className="w-full h-auto object-contain block"
               />
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-5 bg-[hsl(210_40%_98%)]" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-5 bg-[hsl(210_40%_98%)]" />
             </div>
           </motion.div>
 
-          {/* Right: Logo Marquee Section - Desktop only */}
+          {/* Right: Use Case Video */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="hidden lg:flex flex-col items-center justify-center py-8"
+            className="relative w-full"
           >
-            <div className="text-[11px] font-semibold text-foreground-muted tracking-[0.2em] uppercase mb-6">
-              Rewrite works on
+            <div className="relative overflow-hidden rounded-xl border border-border shadow-lg bg-background">
+              <video
+                src="/use-case.mov"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-auto object-contain block"
+              />
             </div>
-            <LogoMarquee />
           </motion.div>
         </div>
 
-        {/* Mobile: Horizontal Logo Marquee */}
+        {/* Logo Marquee */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-10 lg:hidden"
+          className="max-w-4xl mx-auto"
         >
-          <div className="text-[10px] font-semibold text-foreground-muted tracking-widest uppercase text-center mb-4">
-            Works on
+          <div className="text-[11px] font-semibold text-foreground-muted tracking-[0.2em] uppercase text-center mb-5">
+            Rewrite works on
           </div>
           <LogoMarquee horizontal />
         </motion.div>

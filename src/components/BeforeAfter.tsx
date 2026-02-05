@@ -128,7 +128,7 @@ const BeforeAfter = () => {
             <div className="max-w-6xl mx-auto">
                 {/* Section Header */}
                 <motion.div
-                    className="text-center mb-8 sm:mb-10"
+                    className="text-center mb-10 sm:mb-12"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -143,45 +143,14 @@ const BeforeAfter = () => {
                     </p>
                 </motion.div>
 
-                {/* Two-column layout */}
-                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                    {/* LEFT: Use case video */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="flex flex-col gap-4"
-                    >
-                        <div>
-                            <h3 className="text-lg sm:text-xl font-bold text-foreground">
-                                Works where you work
-                            </h3>
-                            <p className="text-sm text-foreground-muted mt-1">
-                                Blackbeard lives in your browser for every LinkedIn post, comment, and DM.
-                            </p>
-                        </div>
-
-                        <div className="relative overflow-hidden rounded-xl border border-border shadow-lg bg-background">
-                            <video
-                                src="/use-case.mov"
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className="w-full h-auto object-contain block"
-                            />
-                        </div>
-                    </motion.div>
-
-                    {/* RIGHT: Before/After Comparison */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                        className="flex flex-col items-center gap-4"
-                    >
+                {/* Centered Before/After Comparison */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="flex flex-col items-center gap-6"
+                >
                         <div
                             ref={containerRef}
                             className="relative w-[320px] h-[320px] sm:w-[340px] sm:h-[340px] cursor-ew-resize select-none overflow-visible"
@@ -236,8 +205,7 @@ const BeforeAfter = () => {
                                 <span className="text-[9px] font-semibold text-foreground-muted uppercase tracking-wider">Blackbeard</span>
                             </div>
                         </div>
-                    </motion.div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
