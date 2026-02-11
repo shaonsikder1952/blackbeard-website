@@ -193,18 +193,6 @@ const BeforeAfter = () => {
                             </motion.div>
                         </div>
 
-                        {/* Labels */}
-                        <div className="flex justify-center gap-6">
-                            <div className="flex flex-col items-center">
-                                <span className="text-base font-bold text-brand-primary">Before</span>
-                                <span className="text-[9px] font-semibold text-foreground-muted uppercase tracking-wider">Generic AI</span>
-                            </div>
-                            <div className="w-px h-6 bg-border" />
-                            <div className="flex flex-col items-center">
-                                <span className="text-base font-bold text-brand-primary">After</span>
-                                <span className="text-[9px] font-semibold text-foreground-muted uppercase tracking-wider">Blackbeard</span>
-                            </div>
-                        </div>
                 </motion.div>
             </div>
         </section>
