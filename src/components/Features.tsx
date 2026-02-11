@@ -77,7 +77,7 @@ const Features = () => {
               <AspectRatio ratio={16 / 9}>
                 {isVideoPlaying ? (
                   <iframe
-                    src="https://www.youtube-nocookie.com/embed/G4-TCyp8S08?rel=0&modestbranding=1&iv_load_policy=3&fs=1&autoplay=1"
+                    src="https://www.youtube-nocookie.com/embed/5OV97nC1MME?rel=0&modestbranding=1&iv_load_policy=3&fs=1&autoplay=1"
                     title="Blackbeard Tutorial"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -90,7 +90,7 @@ const Features = () => {
                     whileHover="hover"
                   >
                     <img
-                      src="https://img.youtube.com/vi/G4-TCyp8S08/maxresdefault.jpg"
+                      src="https://img.youtube.com/vi/5OV97nC1MME/maxresdefault.jpg"
                       alt="Tutorial video thumbnail"
                       className="w-full h-full object-cover"
                     />
