@@ -13,8 +13,8 @@ const Hero = () => {
           backgroundImage: `linear-gradient(45deg, hsl(var(--border)) 0.5px, transparent 0.5px), 
                            linear-gradient(-45deg, hsl(var(--border)) 0.5px, transparent 0.5px)`,
           backgroundSize: '60px 60px'
-        }}
-      />
+        }} />
+
 
       {/* Subtle top glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-primary/[0.03] blur-[120px] rounded-full -z-10 pointer-events-none" />
@@ -26,8 +26,8 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-brand-primary/5 border border-brand-primary/20"
-          >
+            className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-brand-primary/5 border border-brand-primary/20">
+
             <div className="w-1.5 h-1.5 bg-brand-primary rounded-full" />
             <span className="text-xs font-semibold text-brand-primary">Now available on Chrome Web Store</span>
           </motion.div>
@@ -36,8 +36,8 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-5"
-          >
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-5">
+
             Don't sound like ChatGPT.{" "}
             <span className="text-brand-primary">Sound like you.</span>
           </motion.h1>
@@ -46,8 +46,8 @@ const Hero = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-foreground-muted leading-relaxed max-w-xl mb-8"
-          >
+            className="text-lg text-foreground-muted leading-relaxed max-w-xl mb-8">
+
             Blackbeard is an AI Chrome extension that rewrites text to sound like you. Works everywhere you write.
           </motion.p>
 
@@ -55,8 +55,8 @@ const Hero = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center gap-4"
-          >
+            className="flex flex-col sm:flex-row items-center gap-4">
+
             <a href="https://chromewebstore.google.com/detail/blackbeard-ai-rewriter/iglodhieknpcndnhbjdflklohidmbfon" target="_blank" rel="noopener noreferrer">
               <Button variant="brand" size="lg" className="h-12 px-8 text-base shadow-brand hover:scale-[1.02] transition-transform group">
                 <Chrome className="mr-2 w-5 h-5" />
@@ -75,10 +75,10 @@ const Hero = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="relative w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[380px] mx-auto sm:mx-0 flex-shrink-0"
-          >
+            className="relative w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[380px] mx-auto sm:mx-0 flex-shrink-0">
+
             <div className="text-[10px] font-semibold text-foreground-muted tracking-[0.15em] uppercase text-center mb-2">
-              Before
+
             </div>
             <div className="relative overflow-hidden rounded-lg sm:rounded-xl border border-border shadow-md sm:shadow-lg bg-background">
               <video
@@ -87,8 +87,8 @@ const Hero = () => {
                 loop
                 muted
                 playsInline
-                className="w-full h-auto object-contain block max-h-[400px]"
-              />
+                className="w-full h-auto object-contain block max-h-[400px]" />
+
             </div>
           </motion.div>
 
@@ -97,10 +97,10 @@ const Hero = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="relative w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[380px] mx-auto sm:mx-0 flex-shrink-0"
-          >
+            className="relative w-full max-w-[280px] sm:max-w-[300px] lg:max-w-[380px] mx-auto sm:mx-0 flex-shrink-0">
+
             <div className="text-[10px] font-semibold text-foreground-muted tracking-[0.15em] uppercase text-center mb-2">
-              After
+
             </div>
             <div className="relative overflow-hidden rounded-lg sm:rounded-xl border border-border shadow-md sm:shadow-lg bg-background">
               <video
@@ -109,8 +109,8 @@ const Hero = () => {
                 loop
                 muted
                 playsInline
-                className="w-full h-auto object-contain block max-h-[400px]"
-              />
+                className="w-full h-auto object-contain block max-h-[400px]" />
+
             </div>
           </motion.div>
         </div>
@@ -120,16 +120,16 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="max-w-4xl mx-auto"
-        >
+          className="max-w-4xl mx-auto">
+
           <div className="text-[11px] font-semibold text-foreground-muted tracking-[0.2em] uppercase text-center mb-5">
             Rewrite works on
           </div>
           <LogoMarquee horizontal />
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default Hero;
