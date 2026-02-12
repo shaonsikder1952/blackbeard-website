@@ -81,7 +81,7 @@ const blogPosts: BlogPost[] = [
 
 const BlogPosts = () => {
   return (
-    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-background">
+    <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-8 gap-3">
@@ -94,8 +94,8 @@ const BlogPosts = () => {
               Tips, tutorials, and insights to improve your writing
             </p>
           </div>
-          <a 
-            href="#/blog" 
+          <a
+            href="#/blog"
             className="inline-flex items-center gap-2 text-sm text-brand-primary hover:text-brand-primary/80 font-medium transition-colors group"
           >
             View all
@@ -107,18 +107,18 @@ const BlogPosts = () => {
         <div className="relative">
           {/* Gradient fade on right edge */}
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-          
+
           <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory -mx-4 px-4">
             {blogPosts.map((post) => (
-              <article 
-                key={post.id} 
+              <article
+                key={post.id}
                 className="snap-start flex-shrink-0 w-[320px] md:w-[360px] group"
               >
                 <Card className="h-full bg-card/50 border-border/50 hover:border-brand-primary/30 transition-all duration-300 overflow-hidden hover:shadow-lg hover:shadow-brand-primary/5">
                   {/* Image */}
                   <div className="relative h-48 overflow-hidden">
-                    <img 
-                      src={post.image} 
+                    <img
+                      src={post.image}
                       alt={post.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
@@ -153,7 +153,7 @@ const BlogPosts = () => {
                     </p>
 
                     {/* Read More Link */}
-                    <a 
+                    <a
                       href={`#/blog/${post.slug}`}
                       className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-primary hover:text-brand-primary/80 transition-colors"
                     >

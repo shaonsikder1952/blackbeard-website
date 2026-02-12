@@ -5,7 +5,7 @@ import LogoMarquee from "./LogoMarquee";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-16 overflow-hidden bg-transparent">
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 sm:pt-24 pb-12 sm:pb-16 overflow-hidden bg-transparent">
 
 
 
@@ -21,12 +21,12 @@ const Hero = () => {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 p-8 sm:p-10 backdrop-blur-[2px] rounded-3xl">
+          className="flex flex-col items-center text-center max-w-3xl mx-auto mb-8 sm:mb-10 p-6 sm:p-8 backdrop-blur-[2px] rounded-3xl">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-brand-primary/10 border border-brand-primary/30">
+            className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 sm:mb-6 rounded-full bg-brand-primary/10 border border-brand-primary/30">
 
             <div className="w-1.5 h-1.5 bg-brand-primary rounded-full" />
             <span className="text-xs sm:text-xs font-semibold text-brand-primary">Now available on Chrome Web Store</span>
@@ -71,7 +71,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Two Videos Side by Side */}
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 items-start justify-center max-w-5xl mx-auto mt-4 mb-12 px-2 sm:px-0">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 items-start justify-center max-w-5xl mx-auto mt-3 sm:mt-4 mb-8 sm:mb-12 px-2 sm:px-0">
           {/* Left: Hero Demo Video */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}

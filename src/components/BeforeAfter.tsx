@@ -108,6 +108,7 @@ const BeforeAfter = () => {
     const x = useMotionValue(50);
     const xSpring = useSpring(x, { stiffness: 400, damping: 40 });
     const leftWidth = useTransform(xSpring, (v) => `${v}%`);
+    const [activeTab, setActiveTab] = useState<'before' | 'after'>('before');
 
     const handleMouseMove = (e: React.MouseEvent | MouseEvent) => {
         if (!containerRef.current) return;
@@ -151,47 +152,47 @@ const BeforeAfter = () => {
                     transition={{ duration: 0.6 }}
                     className="flex flex-col items-center gap-6"
                 >
-                        <div
-                            ref={containerRef}
-                            className="relative w-[320px] h-[320px] sm:w-[340px] sm:h-[340px] cursor-ew-resize select-none overflow-visible"
-                            onMouseMove={handleMouseMove}
-                            onTouchMove={handleTouchMove}
+                    <div
+                        ref={containerRef}
+                        className="relative w-[320px] h-[320px] sm:w-[340px] sm:h-[340px] cursor-ew-resize select-none overflow-visible"
+                        onMouseMove={handleMouseMove}
+                        onTouchMove={handleTouchMove}
+                    >
+                        {/* RIGHT SIDE (AFTER) */}
+                        <div className="absolute inset-0">
+                            <TwitterPost
+                                isAfter={true}
+                                avatar={profilePhoto}
+                                text="Life tests us constantly. The Stoics teach: control your judgments and actions; externals are indifferent. Epictetus reminds us impressions deceive, examine them rationally. Virtue alone brings tranquility."
+                            />
+                        </div>
+
+                        {/* LEFT SIDE (BEFORE) */}
+                        <motion.div
+                            className="absolute left-0 top-0 bottom-0 overflow-hidden z-10 border-r-2 border-brand-primary/40"
+                            style={{ width: leftWidth }}
                         >
-                            {/* RIGHT SIDE (AFTER) */}
-                            <div className="absolute inset-0">
+                            <div className="absolute left-0 top-0 w-[320px] h-[320px] sm:w-[340px] sm:h-[340px]">
                                 <TwitterPost
-                                    isAfter={true}
                                     avatar={profilePhoto}
-                                    text="Life tests us constantly. The Stoics teach: control your judgments and actions; externals are indifferent. Epictetus reminds us impressions deceive, examine them rationally. Virtue alone brings tranquility."
+                                    text={`life — hard sometimes," stoics say, delve into what you can control — like your thoughts and actions, dont worry about externals, but its crucial to do everyday, epictetus said something about impressions, moreover — focus on virtue, and be happy i guess.`}
                                 />
                             </div>
+                        </motion.div>
 
-                            {/* LEFT SIDE (BEFORE) */}
-                            <motion.div
-                                className="absolute left-0 top-0 bottom-0 overflow-hidden z-10 border-r-2 border-brand-primary/40"
-                                style={{ width: leftWidth }}
-                            >
-                                <div className="absolute left-0 top-0 w-[320px] h-[320px] sm:w-[340px] sm:h-[340px]">
-                                    <TwitterPost
-                                        avatar={profilePhoto}
-                                        text={`life — hard sometimes," stoics say, delve into what you can control — like your thoughts and actions, dont worry about externals, but its crucial to do everyday, epictetus said something about impressions, moreover — focus on virtue, and be happy i guess.`}
-                                    />
-                                </div>
-                            </motion.div>
-
-                            {/* Slider Handle */}
-                            <motion.div
-                                className="absolute top-0 bottom-0 w-[2px] bg-brand-primary z-20 flex items-center justify-center pointer-events-none"
-                                style={{ left: leftWidth }}
-                            >
-                                <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center shadow-[0_0_16px_rgba(79,70,229,0.4)] -ml-[1px] border-2 border-white dark:border-slate-900">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M18 8L22 12L18 16" />
-                                        <path d="M6 8L2 12L6 16" />
-                                    </svg>
-                                </div>
-                            </motion.div>
-                        </div>
+                        {/* Slider Handle */}
+                        <motion.div
+                            className="absolute top-0 bottom-0 w-[2px] bg-brand-primary z-20 flex items-center justify-center pointer-events-none"
+                            style={{ left: leftWidth }}
+                        >
+                            <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center shadow-[0_0_16px_rgba(79,70,229,0.4)] -ml-[1px] border-2 border-white dark:border-slate-900">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M18 8L22 12L18 16" />
+                                    <path d="M6 8L2 12L6 16" />
+                                </svg>
+                            </div>
+                        </motion.div>
+                    </div>
 
                 </motion.div>
             </div>
