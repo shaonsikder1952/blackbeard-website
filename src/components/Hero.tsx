@@ -11,12 +11,12 @@ const Hero = () => {
 
       <div className="relative max-w-6xl mx-auto px-6 w-full">
         {/* Hero Content */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10">
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 bg-background/80 backdrop-blur-md rounded-2xl p-8 sm:p-10 border border-border/50 shadow-xl">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-brand-primary/5 border border-brand-primary/20">
+            className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-brand-primary/10 border border-brand-primary/30">
 
             <div className="w-1.5 h-1.5 bg-brand-primary rounded-full" />
             <span className="text-xs font-semibold text-brand-primary">Now available on Chrome Web Store</span>
@@ -26,7 +26,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-5 drop-shadow-lg">
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-5">
 
             Don't sound like ChatGPT.{" "}
             <span className="text-brand-primary">Sound like you.</span>
@@ -36,7 +36,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-foreground-muted leading-relaxed max-w-xl mb-8 drop-shadow-md">
+            className="text-lg text-foreground-muted leading-relaxed max-w-xl mb-8">
 
             Blackbeard is an AI Chrome extension that rewrites text to sound like you. Works everywhere you write.
           </motion.p>
