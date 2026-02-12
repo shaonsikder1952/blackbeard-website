@@ -10,7 +10,7 @@ import BeforeAfter from "@/components/BeforeAfter";
 const Index = () => {
   return (
     <div className="relative min-h-screen bg-background">
-      {/* Ocean waves background video */}
+      {/* Ocean waves background video - covers entire page */}
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
         <video
           src="/ocean-waves-bg.mp4"
@@ -18,7 +18,8 @@ const Index = () => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-[0.18] sm:opacity-[0.22]"
+          className="w-full h-full object-cover opacity-[0.4]"
+          style={{ minHeight: '100vh', minWidth: '100vw' }}
         />
       </div>
 
