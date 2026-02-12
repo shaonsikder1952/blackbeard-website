@@ -108,7 +108,6 @@ const BeforeAfter = () => {
     const x = useMotionValue(50);
     const xSpring = useSpring(x, { stiffness: 400, damping: 40 });
     const leftWidth = useTransform(xSpring, (v) => `${v}%`);
-    const [activeTab, setActiveTab] = useState<'before' | 'after'>('before');
 
     const handleMouseMove = (e: React.MouseEvent | MouseEvent) => {
         if (!containerRef.current) return;
