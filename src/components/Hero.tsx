@@ -5,19 +5,9 @@ import LogoMarquee from "./LogoMarquee";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-16 overflow-hidden bg-background">
-      {/* Subtle diagonal grid background */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.04]"
-        style={{
-          backgroundImage: `linear-gradient(45deg, hsl(var(--border)) 0.5px, transparent 0.5px), 
-                           linear-gradient(-45deg, hsl(var(--border)) 0.5px, transparent 0.5px)`,
-          backgroundSize: '60px 60px'
-        }} />
+    <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-16 overflow-hidden bg-transparent">
 
 
-      {/* Subtle top glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-primary/[0.03] blur-[120px] rounded-full -z-10 pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-6 w-full">
         {/* Hero Content */}
@@ -36,7 +26,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-5">
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-5 drop-shadow-lg">
 
             Don't sound like ChatGPT.{" "}
             <span className="text-brand-primary">Sound like you.</span>
@@ -46,7 +36,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-foreground-muted leading-relaxed max-w-xl mb-8">
+            className="text-lg text-foreground-muted leading-relaxed max-w-xl mb-8 drop-shadow-md">
 
             Blackbeard is an AI Chrome extension that rewrites text to sound like you. Works everywhere you write.
           </motion.p>
@@ -80,7 +70,7 @@ const Hero = () => {
             <div className="text-[10px] font-semibold text-foreground-muted tracking-[0.15em] uppercase text-center mb-2">
 
             </div>
-            <div className="relative overflow-hidden rounded-lg sm:rounded-xl border border-border shadow-md sm:shadow-lg bg-background">
+            <div className="relative overflow-hidden rounded-lg sm:rounded-xl border border-brand-primary/30 shadow-md sm:shadow-lg bg-transparent">
               <video
                 src="/hero-demo.mov"
                 autoPlay
@@ -102,7 +92,7 @@ const Hero = () => {
             <div className="text-[10px] font-semibold text-foreground-muted tracking-[0.15em] uppercase text-center mb-2">
 
             </div>
-            <div className="relative overflow-hidden rounded-lg sm:rounded-xl border border-border shadow-md sm:shadow-lg bg-background">
+            <div className="relative overflow-hidden rounded-lg sm:rounded-xl border border-brand-primary/30 shadow-md sm:shadow-lg bg-transparent">
               <video
                 src="/use-case.mov"
                 autoPlay
