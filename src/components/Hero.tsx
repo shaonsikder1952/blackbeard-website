@@ -69,7 +69,7 @@ const Hero = () => {
         </div>
 
         {/* Two Videos Side by Side */}
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 items-start justify-center max-w-5xl mx-auto mb-12 px-2 sm:px-0">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 items-start justify-center max-w-5xl mx-auto mt-4 mb-12 px-2 sm:px-0">
           {/* Left: Hero Demo Video */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
