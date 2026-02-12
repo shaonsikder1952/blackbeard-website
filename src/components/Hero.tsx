@@ -64,7 +64,7 @@ const Hero = () => {
                 <ArrowRight className="ml-2 w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
               </Button>
             </a>
-            <span className="text-sm text-foreground-muted">Free tier • 5 rewrites/day</span>
+            
           </motion.div>
         </div>
 
