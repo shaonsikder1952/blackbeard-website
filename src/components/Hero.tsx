@@ -33,24 +33,24 @@ const Hero = () => {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-4 sm:mb-5"
-            style={{ textShadow: '0 0 40px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.2)' }}
-          >
-            Write faster.{" "}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-5"
+            style={{ textShadow: "0 1px 1px rgba(255,255,255,0.9), 0 0 20px rgba(255,255,255,0.6)" }}>
+
+            Don't sound like ChatGPT.{" "}
             <span className="text-brand-primary">Sound like you.</span>
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base sm:text-lg text-foreground-muted leading-relaxed max-w-xl mb-6 sm:mb-8 font-semibold"
-            style={{ textShadow: '0 0 20px rgba(0, 0, 0, 0.5)' }}
-          >
-            A Chrome extension that rewrites your text to match your unique style—instantly.
+            style={{ textShadow: "0 1px 1px rgba(255,255,255,0.9), 0 0 1em rgba(255,255,255,0.4), 0 0 0.2em rgba(255,255,255,0.4)" }}>
+
+            Blackbeard is an AI Chrome extension that rewrites text to sound like you. Works everywhere you write.
           </motion.p>
 
           <motion.div

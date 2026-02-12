@@ -90,9 +90,9 @@ const Pricing = () => {
                 y: -8,
                 transition: { duration: 0.3 }
               }}
-              className={`relative p-6 sm:p-8 rounded-xl border transition-all duration-300 ${plan.featured
-                  ? 'bg-background border-brand-primary shadow-[0_0_40px_hsl(245,75%,60%,0.15)] ring-1 ring-brand-primary'
-                  : 'bg-background border-border hover:border-brand-primary/30 hover:shadow-lg'
+              className={`relative p-5 sm:p-8 rounded-xl border transition-all duration-300 ${plan.featured
+                ? 'bg-background border-brand-primary shadow-[0_0_40px_hsl(245,75%,60%,0.15)] ring-1 ring-brand-primary'
+                : 'bg-background border-border hover:border-brand-primary/30 hover:shadow-lg'
                 }`}
             >
               {plan.featured && (
@@ -108,13 +108,13 @@ const Pricing = () => {
                 </motion.div>
               )}
 
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold text-foreground mb-1">{plan.name}</h3>
-                <p className="text-sm text-foreground-muted mb-4">{plan.description}</p>
+              <div className="mb-5 sm:mb-6">
+                <h3 className="text-base sm:text-lg font-semibold text-foreground mb-1">{plan.name}</h3>
+                <p className="text-xs sm:text-sm text-foreground-muted mb-3 sm:mb-4">{plan.description}</p>
                 <div className="flex items-baseline">
-                  <span className="text-2xl font-bold text-foreground" style={{ fontFamily: 'Arial, sans-serif' }}>$</span>
+                  <span className="text-xl sm:text-2xl font-bold text-foreground" style={{ fontFamily: 'Arial, sans-serif' }}>$</span>
                   <motion.span
-                    className="text-4xl font-bold text-foreground"
+                    className="text-3xl sm:text-4xl font-bold text-foreground"
                     initial={{ opacity: 0, scale: 0.5 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -128,11 +128,11 @@ const Pricing = () => {
                 </div>
               </div>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                 {plan.features.map((feature, i) => (
                   <motion.li
                     key={i}
-                    className="flex items-start gap-3"
+                    className="flex items-start gap-2 sm:gap-3"
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -142,9 +142,9 @@ const Pricing = () => {
                       whileHover={{ scale: 1.2, rotate: 360 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <Check className="w-5 h-5 text-brand-primary shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 sm:w-5 sm:h-5 text-brand-primary shrink-0 mt-0.5" />
                     </motion.div>
-                    <span className="text-foreground-muted">{feature}</span>
+                    <span className="text-sm sm:text-base text-foreground-muted">{feature}</span>
                   </motion.li>
                 ))}
               </ul>

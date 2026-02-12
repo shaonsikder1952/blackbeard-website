@@ -158,7 +158,7 @@ const AmbientSound = () => {
                         variant="outline"
                         size="icon"
                         onClick={toggleSound}
-                        className="rounded-full w-16 h-16 sm:w-14 sm:h-14 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border-0 hover:bg-white/15 active:bg-white/10 text-white shadow-[0_8px_32px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.3)] transition-all duration-300 active:scale-90 relative overflow-hidden"
+                        className="rounded-full w-14 h-14 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border-0 hover:bg-white/15 active:bg-white/10 text-white shadow-[0_8px_32px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_40px_rgba(0,0,0,0.3)] transition-all duration-300 active:scale-90 relative overflow-hidden"
                     >
                         <AnimatePresence mode="wait">
                             {isPlaying ? (
@@ -178,7 +178,7 @@ const AmbientSound = () => {
                                         animate={{ scale: [1, 1.2, 1] }}
                                         transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
                                     >
-                                        <Volume2 className="w-7 h-7 sm:w-6 sm:h-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
+                                        <Volume2 className="w-6 h-6 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
                                     </motion.div>
                                 </motion.div>
                             ) : (
