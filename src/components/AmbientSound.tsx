@@ -9,7 +9,7 @@ const AmbientSound = () => {
     const [ripples, setRipples] = useState<number[]>([]);
 
     useEffect(() => {
-        const audio = new Audio("/copy_C920D647-22F3-4DDC-B217-90DB2992DFE3%20(1).mp3");
+        const audio = new Audio("/ocean-ambient.mp3");
         audio.loop = true;
         audio.volume = 0.5;
 
