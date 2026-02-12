@@ -20,13 +20,15 @@ const Index = () => {
           loop
           muted
           playsInline
+          preload="auto"
           className="absolute top-0 left-0 w-[150%] sm:w-[150%] h-full object-cover opacity-50"
           style={{ minHeight: '100vh', minWidth: '150vw' }}
-          animate={{ x: ["0%", "-20%", "0%"] }}
+          animate={{ x: ["0%", "-33.33%", "-33.33%", "0%"] }}
           transition={{
-            duration: 50,
+            duration: 80,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "linear",
+            times: [0, 0.5, 0.5, 1]
           }}
         />
       </div>
