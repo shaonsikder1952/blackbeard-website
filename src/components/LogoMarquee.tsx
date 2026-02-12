@@ -102,9 +102,6 @@ const LogoMarquee = ({ horizontal = false }: LogoMarqueeProps) => {
     // Horizontal scrolling for mobile
     return (
       <div className="relative w-full overflow-hidden touch-none select-none pointer-events-none">
-        <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background to-transparent z-10" />
-
         <motion.div
           className="flex gap-5 py-2 touch-none select-none pointer-events-none"
           animate={{ x: [0, -600] }}
@@ -115,7 +112,7 @@ const LogoMarquee = ({ horizontal = false }: LogoMarqueeProps) => {
           {duplicatedBrands.map((brand, index) => (
             <div
               key={`${brand.name}-${index}`}
-              className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-muted/30"
+              className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-lg bg-transparent"
               style={{ color: brand.color }}
             >
               {brand.icon}
@@ -143,18 +140,18 @@ const LogoMarquee = ({ horizontal = false }: LogoMarqueeProps) => {
         {brands.map((brand, index) => (
           <motion.div
             key={brand.name}
-            className="w-12 h-12 flex items-center justify-center rounded-xl bg-muted/40 border border-border/50"
+            className="w-12 h-12 flex items-center justify-center rounded-xl bg-transparent border-0"
             style={{ color: brand.color }}
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ 
-              opacity: 1, 
+            animate={{
+              opacity: 1,
               scale: 1,
               y: [0, -4, 0],
             }}
             transition={{
               opacity: { delay: index * 0.05, duration: 0.3 },
               scale: { delay: index * 0.05, duration: 0.3 },
-              y: { 
+              y: {
                 delay: index * 0.1,
                 duration: 2,
                 repeat: Infinity,

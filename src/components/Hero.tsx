@@ -11,7 +11,17 @@ const Hero = () => {
 
       <div className="relative max-w-6xl mx-auto px-6 w-full">
         {/* Hero Content */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 bg-background/80 backdrop-blur-md rounded-2xl p-8 sm:p-10 border border-border/50 shadow-xl">
+        <motion.div
+          animate={{
+            y: [0, -10, 0],
+            rotate: [0, 1, 0, -1, 0],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 p-8 sm:p-10 backdrop-blur-[2px] rounded-3xl">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -19,26 +29,28 @@ const Hero = () => {
             className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full bg-brand-primary/10 border border-brand-primary/30">
 
             <div className="w-1.5 h-1.5 bg-brand-primary rounded-full" />
-            <span className="text-xs font-semibold text-brand-primary">Now available on Chrome Web Store</span>
+            <span className="text-xs sm:text-xs font-semibold text-brand-primary">Now available on Chrome Web Store</span>
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-5">
-
-            Don't sound like ChatGPT.{" "}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-4 sm:mb-5"
+            style={{ textShadow: '0 0 40px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.2)' }}
+          >
+            Write faster.{" "}
             <span className="text-brand-primary">Sound like you.</span>
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-foreground-muted leading-relaxed max-w-xl mb-8">
-
-            Blackbeard is an AI Chrome extension that rewrites text to sound like you. Works everywhere you write.
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="text-base sm:text-lg text-foreground-muted leading-relaxed max-w-xl mb-6 sm:mb-8 font-semibold"
+            style={{ textShadow: '0 0 20px rgba(0, 0, 0, 0.5)' }}
+          >
+            A Chrome extension that rewrites your text to match your unique style—instantly.
           </motion.p>
 
           <motion.div
@@ -54,9 +66,9 @@ const Hero = () => {
                 <ArrowRight className="ml-2 w-4 h-4 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
               </Button>
             </a>
-            
+
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Two Videos Side by Side */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-8 items-start justify-center max-w-5xl mx-auto mt-4 mb-12 px-2 sm:px-0">
@@ -118,7 +130,7 @@ const Hero = () => {
           <LogoMarquee horizontal />
         </motion.div>
       </div>
-    </section>);
+    </section >);
 
 };
 

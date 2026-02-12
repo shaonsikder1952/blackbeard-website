@@ -51,7 +51,7 @@ const Features = () => {
       <div className="max-w-6xl mx-auto relative">
         {/* Two-column layout: Video + Features */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-          
+
           {/* LEFT: Video Section */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -85,7 +85,11 @@ const Features = () => {
                   />
                 ) : (
                   <motion.button
-                    onClick={() => setIsVideoPlaying(true)}
+                    onClick={() => {
+                      setIsVideoPlaying(true);
+                      // Notify ambient sound to pause
+                      window.dispatchEvent(new Event('videoPlaying'));
+                    }}
                     className="relative w-full h-full group cursor-pointer"
                     whileHover="hover"
                   >

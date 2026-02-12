@@ -67,7 +67,7 @@ const Footer = () => {
                 aria-label={social.label}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-background border border-border flex items-center justify-center text-foreground-muted hover:text-brand-primary hover:border-brand-primary/50 transition-colors"
+                className="w-11 h-11 sm:w-9 sm:h-9 rounded-lg bg-background border border-border flex items-center justify-center text-foreground-muted hover:text-brand-primary hover:border-brand-primary/50 transition-colors"
               >
                 <social.icon />
               </a>
@@ -80,19 +80,19 @@ const Footer = () => {
           <p className="text-sm text-foreground-muted">
             © 2026 Blackbeard. All rights reserved.
           </p>
-          
-          <a 
-            href="https://www.producthunt.com/products/blackbeard?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-blackbeard" 
-            target="_blank" 
+
+          <a
+            href="https://www.producthunt.com/products/blackbeard?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-blackbeard"
+            target="_blank"
             rel="noopener noreferrer"
             className="hover:opacity-90 transition-opacity"
           >
-            <img 
-              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1063496&theme=light&t=1768509910436" 
-              alt="Blackbeard on Product Hunt" 
-              width="200" 
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1063496&theme=light&t=1768509910436"
+              alt="Blackbeard on Product Hunt"
+              width="200"
               height="43"
-              className="h-[43px] w-auto"
+              className="h-[38px] sm:h-[43px] w-auto"
             />
           </a>
         </div>
